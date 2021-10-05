@@ -1,8 +1,8 @@
 app.config(
-  ['$stateProvider', '$urlRouterProvider', 'RestangularProvider',
-    function ($stateProvider, $urlRouterProvider, RestangularProvider) {
+  ['$stateProvider', '$urlRouterProvider', 'RestangularProvider', 'APP_CONSTANTS',
+    function ($stateProvider, $urlRouterProvider, RestangularProvider, APP_CONSTANTS) {
 
-      RestangularProvider.setBaseUrl("http://127.0.0.1:8000/");
+      RestangularProvider.setBaseUrl(APP_CONSTANTS.BASE_URL);
       $stateProvider
         .state({
           name: "signup",

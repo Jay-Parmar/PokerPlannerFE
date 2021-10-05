@@ -1,0 +1,22 @@
+{
+  "name": "fe_poker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.29",
+    "angular": "^1.8.2",
+    "angular-ui-router": "^1.0.29",
+    "angularjs": "0.0.1",
+    "bootstrap": "^5.1.1",
+    "bootstrap-icons": "^1.5.0",
+    "bootstrap-select": "^1.13.18",
+    "lodash": "^4.17.21",
+    "restangular": "^1.6.1"
+  }
+}

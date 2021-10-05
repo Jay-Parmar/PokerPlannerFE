@@ -20,6 +20,13 @@
     color: red;
 }
 
+form{
+    margin-top:40px;
+    border: 1px solid grey;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 40px;
+    box-shadow: 5px 5px 25px 15px lightgray;
+}
 
 .form-outline{
     position: relative;
@@ -27,7 +34,7 @@
 
 .error_msg{
     position: absolute;
-    left: 101%;
+    left: 108%;
     top:10%;
     color: red;
     width: 70%;

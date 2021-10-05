@@ -1,31 +1,29 @@
-app.controller('SignupController', function ($scope, $state, Restangular) {
+console.log("in app signupcontroller");
+app.controller('SignupController', function ($scope, $state, signUpService) {
 
   $scope.toLogin = function () {
     $state.go("login");
   }
-
   $scope.signUp = function () {
-    let user = {
-      "user":
+    console.log("in sigup");
+    let user = {"user":
       {
-        "username": $scope.username,
         "email": $scope.email,
         "password": $scope.password,
         "first_name": $scope.first_name,
         "last_name": $scope.last_name
       }
     };
-
-    Restangular.all('user').post(user)
+    signUpService.signup(user)
       .then(function (response) {
+        alert("SignUp Successfull");
+        $state.go("login");
       },
         function (response) {
-          console.log("signup failed");
-          console.log(response);
+          alert("SignUp Failed");
           $scope.msg = response.data.errors;
         }
       );
-
   };
 
 });

@@ -1,45 +1,45 @@
 <section class="vh-100" style="overflow-x:hidden;">
-    <div class="container-fluid h-custom">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-md-9 col-lg-6 col-xl-4">
-          <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid"
-            alt="Sample image">
-        </div>
-        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form name="myForm">
-            <h1 style="text-align: center;">Login</h1>
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input type="email" id="form3Example3" name="email" ng-model="email" class="form-control form-control-lg"
-                placeholder="Enter email address" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required novalidate/>
-                <span class="error_msg" ng-show="myForm.email.$invalid && myForm.email.$dirty">
-                    <span ng-show="myForm.email.$error.required">Email is required.</span>
-                    <span ng-show="myForm.email.$error.pattern">Invalid email address.</span>
-                </span>
-              <label class="form-label reqd" for="form3Example3">Email address</label>
-            </div>
-  
-            <!-- Password input -->
-            <div class="form-outline mb-3">
-              <input type="password" id="form3Example4" name="password" ng-model="password" class="form-control form-control-lg"
-                placeholder="Enter password" required novalidate/>
-                <span class="error_msg" ng-show="myForm.password.$invalid && myForm.password.$dirty">
-                    <span ng-show="myForm.password.$error.required">Password is required.</span>
-                </span>
-              <label class="form-label reqd" for="form3Example4">Password</label>
-            </div>
-  
-            <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="button" class="btn btn-primary btn-lg" ng-disabled="myForm.$invalid"
-                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-              <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
-                  class="link-danger" ng-click="toSignUp()">SignUp</a></p>
-            </div>
-  
-          </form>
-        </div>
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-4">
+        <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid"
+          alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form name="myForm">
+          <h1 style="text-align: center;">Login</h1>
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" id="form3Example3" name="email" ng-model="email" class="form-control form-control-lg"
+              placeholder="Enter email address" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required
+              novalidate />
+            <span class="error_msg" ng-show="myForm.email.$invalid && myForm.email.$dirty">
+              <span ng-show="myForm.email.$error.required">Email is required.</span>
+              <span ng-show="myForm.email.$error.pattern">Invalid email address.</span>
+            </span>
+            <label class="form-label reqd" for="form3Example3">Email address</label>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <input type="password" id="form3Example4" name="password" ng-model="password"
+              class="form-control form-control-lg" placeholder="Enter password" required novalidate />
+            <span class="error_msg" ng-show="myForm.password.$invalid && myForm.password.$dirty">
+              <span ng-show="myForm.password.$error.required">Password is required.</span>
+            </span>
+            <label class="form-label reqd" for="form3Example4">Password</label>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="button" class="btn btn-primary btn-lg" ng-disabled="myForm.$invalid"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!" class="link-danger"
+                ng-click="toSignUp()">SignUp</a></p>
+          </div>
+
+        </form>
       </div>
     </div>
+  </div>
 
-  </section>
-  
+</section>

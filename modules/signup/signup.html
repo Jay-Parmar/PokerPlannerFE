@@ -1,15 +1,15 @@
 <section class="vh-100">
-    <div class="container-fluid h-custom">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <!-- <div class="col-md-9 col-lg-6 col-xl-5">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <!-- <div class="col-md-9 col-lg-6 col-xl-5">
           <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid"
             alt="Sample image">
         </div> -->
-        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form name="myForm">
-            <h1 style="text-align: center;">SignUp Form</h1>
-             <!-- Username input -->
-             <!-- <div class="form-outline mb-4">
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form name="myForm">
+          <h1 style="text-align: center;">SignUp Form</h1>
+          <!-- Username input -->
+          <!-- <div class="form-outline mb-4">
                 <input type="text" id="form3Example0" name="username" ng-model="username" class="form-control form-control-lg"
                   placeholder="Enter username" required novalidate/>
                   <span class="error_msg" ng-show="myForm.username.$invalid && myForm.username.$dirty">
@@ -18,64 +18,69 @@
                 <label class="form-label reqd" for="form3Example1">Username </label>
             </div> -->
 
-             <!-- First name input -->
-             <div class="form-outline mb-4">
-                <input type="text" id="form3Example1" name="first_name" ng-model="first_name" class="form-control form-control-lg"
-                  placeholder="Enter first name" required novalidate/>
-                  <span class="error_msg" ng-show="myForm.first_name.$invalid && myForm.first_name.$dirty">
-                    first name is required
-                </span>
-                <label class="form-label reqd" for="form3Example1">First name </label>
-            </div>
+          <!-- First name input -->
+          <div class="form-outline mb-4">
+            <input type="text" id="form3Example1" name="first_name" ng-model="first_name"
+              class="form-control form-control-lg" placeholder="Enter first name" required novalidate />
+            <span class="error_msg" ng-show="myForm.first_name.$invalid && myForm.first_name.$dirty">
+              first name is required
+            </span>
+            <label class="form-label reqd" for="form3Example1">First name </label>
+          </div>
 
-             <!-- Last name input -->
-             <div class="form-outline mb-4">
-                <input type="text" id="form3Example2" ng-model="last_name" class="form-control form-control-lg"
-                  placeholder="Enter last name" novalidate/>
-                <label class="form-label " for="form3Example2">Last name</label>
-            </div>
+          <!-- Last name input -->
+          <div class="form-outline mb-4">
+            <input type="text" id="form3Example2" ng-model="last_name" class="form-control form-control-lg"
+              placeholder="Enter last name" novalidate />
+            <label class="form-label " for="form3Example2">Last name</label>
+          </div>
 
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input type="email" id="form3Example3" name="email" ng-model="email" class="form-control form-control-lg"
-                placeholder="Enter email address" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required novalidate/>
-                <span class="error_msg" ng-show="myForm.email.$invalid && myForm.email.$dirty">
-                    <span ng-show="myForm.email.$error.required">Email is required.</span>
-                    <span ng-show="myForm.email.$error.pattern">Invalid email address.</span>
-                </span>
-              <label class="form-label reqd" for="form3Example3">Email address</label>
-            </div>
-  
-            <!-- Password input -->
-            <div class="form-outline mb-3">
-              <input type="password" id="form3Example4" ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/" name="password" ng-model="password" class="form-control form-control-lg"
-                placeholder="Enter password" required novalidate/>
-                <span class="error_msg" ng-show="myForm.password.$invalid && myForm.password.$dirty">
-                    <span ng-show="myForm.password.$error.required">Password is required.</span>
-                    <span ng-show="myForm.password.$error.pattern">Password should be atleast 8 characters long and should contain one number,one character and one special character</span>
-                </span>
-              <label class="form-label reqd" for="form3Example4">Password</label>
-            </div>
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" id="form3Example3" name="email" ng-model="email" class="form-control form-control-lg"
+              placeholder="Enter email address" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required
+              novalidate />
+            <span class="error_msg" ng-show="myForm.email.$invalid && myForm.email.$dirty">
+              <span ng-show="myForm.email.$error.required">Email is required.</span>
+              <span ng-show="myForm.email.$error.pattern">Invalid email address.</span>
+            </span>
+            <label class="form-label reqd" for="form3Example3">Email address</label>
+          </div>
 
-            <!-- Confirm Password input -->
-            <div class="form-outline mb-3">
-                <input type="password" id="form3Example5" name="password2" ng-model="password2" class="form-control form-control-lg"
-                  placeholder="Confirm password" required />
-                  <span class="error_msg" ng-show="myForm.password2.$dirty && password != password2">Your passwords must match.</span>
-                <label class="form-label reqd" for="form3Example5">Confirm Password</label>
-              </div>
-  
-            <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="button" class="btn btn-primary btn-lg" ng-click="signUp()"ng-disabled="myForm.$invalid || password != password2"
-                style="padding-left: 2.5rem; padding-right: 2.5rem;">SignUp</button>
-              <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a
-                  class="link-danger" ng-click="toLogin()">Login</a></p>
-            </div>
-  
-          </form>
-        </div>
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <input type="password" id="form3Example4"
+              ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/" name="password"
+              ng-model="password" class="form-control form-control-lg" placeholder="Enter password" required
+              novalidate />
+            <span class="error_msg" ng-show="myForm.password.$invalid && myForm.password.$dirty">
+              <span ng-show="myForm.password.$error.required">Password is required.</span>
+              <span ng-show="myForm.password.$error.pattern">Password should be atleast 8 characters long and should
+                contain one number,one character and one special character</span>
+            </span>
+            <label class="form-label reqd" for="form3Example4">Password</label>
+          </div>
+
+          <!-- Confirm Password input -->
+          <div class="form-outline mb-3">
+            <input type="password" id="form3Example5" name="password2" ng-model="password2"
+              class="form-control form-control-lg" placeholder="Confirm password" required />
+            <span class="error_msg" ng-show="myForm.password2.$dirty && password != password2">Your passwords must
+              match.</span>
+            <label class="form-label reqd" for="form3Example5">Confirm Password</label>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="button" class="btn btn-primary btn-lg" ng-click="signUp()"
+              ng-disabled="myForm.$invalid || password != password2"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">SignUp</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a class="link-danger"
+                ng-click="toLogin()">Login</a></p>
+          </div>
+
+        </form>
       </div>
     </div>
+  </div>
 
-  </section>
-  
+</section>

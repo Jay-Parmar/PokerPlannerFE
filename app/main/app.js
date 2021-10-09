@@ -1,1 +1,1 @@
-var app = angular.module('app', ['ui.router', 'restangular']);
+app = angular.module('app', ['ui.router', 'restangular', 'n3-line-chart']);

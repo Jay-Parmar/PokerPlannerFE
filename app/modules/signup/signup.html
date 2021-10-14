@@ -20,9 +20,12 @@
 
           <!-- Last name input -->
           <div class="form-outline mb-4">
-            <input type="text" id="form3Example2" ng-model="last_name" class="form-control form-control-lg"
-              placeholder="Enter last name" novalidate />
-            <label class="form-label " for="form3Example2">Last name</label>
+            <input type="text" id="form3Example2" name="last_name" ng-model="last_name"
+              class="form-control form-control-lg" placeholder="Enter Last name" required novalidate />
+            <span class="error_msg" ng-show="myForm.last_name.$invalid && myForm.last_name.$dirty">
+              last name is required
+            </span>
+            <label class="form-label reqd" for="form3Example1">Last name </label>
           </div>
 
           <!-- Email input -->

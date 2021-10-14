@@ -1,27 +1,20 @@
-app.service('profileService', [ 'Restangular','APP_CONSTANTS', function (Restangular, APP_CONSTANTS,$cookies) {
-    
-    // Restangular.setDefaultHeaders({
-    //     Authorization: `Token token=${$cookies.get('token')};`,
-    // })
+app.service('profileService', ['Restangular', 'APP_CONSTANTS', '$cookies', '$rootScope',
+    function (Restangular, APP_CONSTANTS, $cookies, $rootScope) {
 
-    // this.save = function (user) {
-    //     return Restangular.all(APP_CONSTANTS.API_ENDPOINT.PROFILE).put(user);
-    // }
+        Restangular.setDefaultHeaders({
+            Authorization: `Token ${$cookies.get('token')}`,
+        })
 
-    // this.getUserDetails= function(){
-    //     return Restangular.all(APP_CONSTANTS.API_ENDPOINT.GET_USER_DETAILS).get();
-    // }
+        this.save = function (user) {
+            return Restangular.all(APP_CONSTANTS.API_ENDPOINT.GET_USER_DETAILS).patch(user);
+        }
 
-    // this.getUser = function(){
-    //     return Restangular.one(APP_CONSTANTS.API_ENDPOINT.PROFILE).get();
-    // }
+        this.getUserDetails = function(){
+            return Restangular.one(APP_CONSTANTS.API_ENDPOINT.GET_USER_DETAILS).get();
+        }
 
-    // this.getGroups=function(){
-    //     return Restangular.all(APP_CONSTANTS.API_ENDPOINT.GROUPS).get();
-    // }
+        this.changePassword = function(details){
+            return Restangular.all(APP_CONSTANTS.API_ENDPOINT.CHANGE_PASSWORD).customPUT(details);
+        }
 
-    // this.getPokerboards = function(){
-    //     return Restangular.all(APP_CONSTANTS.API_ENDPOINT.POKERBOARDS).get();
-    // }
-
-}]);
+    }]);

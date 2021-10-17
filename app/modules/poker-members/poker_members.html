@@ -1,0 +1,18 @@
+<div class="main-outer">
+    <h2 class="main-heading">Members</h2>
+    <div class="tab-content">
+        <p>{{ pokerboard.manager.email }}</p>
+        <p>-</p>
+        <p>Manager</p>
+    </div>
+    <hr>
+    <div ng-repeat="member in members">
+        <div class="tab-content">
+            <p>{{member.invitee}}</p>
+            <p>{{member.group_name}}</p>
+            <p>{{member.role}}</p>
+            <button ng-click="removeMember(member.id)" class="join-btn bg-danger" ng-show="isManager"></button>
+        </div>
+        <hr>
+    </div>
+</div>

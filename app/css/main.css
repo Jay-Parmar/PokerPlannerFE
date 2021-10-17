@@ -72,3 +72,176 @@ form{
 /* .aligncenter{
   margin-left: 400px;
 } */
+.group-user{
+  background-color: grey;
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 40px 5px 40px;
+  margin-top: 5px;
+  border-radius: 8px;
+}
+
+.user-btn{
+  color: white;
+  border: 0px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+}
+.btn-add-user{
+  background-color: steelblue;
+}
+
+.btn-remove-user{
+  background-color: crimson;
+}
+
+.btn-make-group{
+  background-color: steelblue;
+  margin-top: 10px;
+}
+
+.create-group-container{
+  margin: 0px 40px 0px 40px;
+}
+
+.estimation-card-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.estimation-card{
+  background-color: lightskyblue;
+  height: 100px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+.admin-actions{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.ticket-container{
+  justify-content: center;
+  display: flex;
+  margin: 0px 50px 0px 50px;
+}
+
+.ticket{
+  background-color: lightslategrey;
+  width: 40%;
+  padding: 20px 20px 50px 20px;
+  border-radius: 5px;
+}
+
+
+.admin-container{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.board-detail-container{
+  text-align: center;
+  margin-top: 50px;
+}
+
+.vote-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.vote{
+  background-color: sandybrown;
+  height: 120px;
+  width: 100px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-right: 20px;
+  border-radius: 5px;
+  padding: 20px 0px 0px 0px;
+}
+
+.participant{
+  border-radius: 3px;
+  margin-top: 6px;
+}
+
+.participant > span{
+  background-color: grey;
+  border-radius: 5px;
+  padding: 1px 10px 1px 10px;
+  text-transform: uppercase;
+}
+
+.right-panel{
+  width: 150px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: 0.5px solid black;
+  text-align: end;
+  padding: 0px 10px;
+  display: flex;
+  border-radius: 5px;
+  padding: 10px;
+  flex-direction: column;
+}
+
+.final-estimate-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.estimate-btn{
+  margin-left: 20px;
+}
+
+.comment-btn{
+  align-self: flex-end;
+}
+
+.comment-container{
+  border: 1px solid black;
+}
+
+.comment-modal{
+  width: 40%;
+  margin: auto;
+}
+
+.modal-button-container{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-container{
+  margin-bottom: 10px;
+}
+
+input[disabled='disabled'] {
+  opacity: 0.4;
+}
+
+.form-error {
+  color: red;
+  font-size: 14px;
+}
+
+.main-heading{
+  text-align: center;
+  margin-top: 40px;
+}

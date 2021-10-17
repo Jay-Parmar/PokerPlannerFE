@@ -1,0 +1,55 @@
+<div>
+  <h4 class="main-heading">Group</h4>
+  <!-- Modal -->
+  <div class="modal fade" id="addMemberModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addMemberModalLabel">Add member</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form name="addMemberForm">
+              <input ng-model="email" required name="email" placeholder="Enter email address" type="email">
+              <div class="form-error" ng-show='createGroupForm.groupName.$touched && createGroupForm.groupName.$invalid'>
+                <p>Please enter a valid email</p>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button ng-disabled="addMemberForm.$invalid" type="button" ng-click="createMember()" data-bs-dismiss="modal" class="btn btn-primary">Add</button>
+          </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal" id="deleteModal">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5>Remove Member</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                  Are you sure to want to remove this member ?
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                  <button type="button" ng-click="removeMember()" data-bs-dismiss="modal" class="btn btn-danger">Yes</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class=" m-2 d-flex justify-content-between">
+    <h2>{{ group.name }}</h2>
+    <button data-bs-toggle="modal" data-bs-target="#addMemberModal" class="user-btn btn-add-user">Add member</button>
+  </div>
+    <div class="user-list-container" ng-repeat='user in group.members'>
+        <div class="group-user">
+            <span>{{user.first_name}} {{user.last_name}}</span>
+            <span>{{user.email}}</span>
+            <button class="user-btn btn-remove-user" data-bs-toggle="modal" data-bs-target="#deleteModal">Remove</button>
+        </div>
+    </div>
+</div>

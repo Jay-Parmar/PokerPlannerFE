@@ -1,5 +1,10 @@
-app.service('groupServices', ['Restangular', 'APP_CONSTANTS', '$http',
-    function (Restangular, APP_CONSTANTS, $http){
+app.service('groupServices', ['Restangular', 'APP_CONSTANTS', '$cookies' , '$http',
+    function (Restangular, APP_CONSTANTS, $http, $cookies){
+
+        RestangularProvider.setDefaultHeaders({
+            Authorization: `token ${$cookies.get('token')}`
+        });
+        
         this.getUsers = function(){
             return $http.get('assets/tempgroups.json')
         }

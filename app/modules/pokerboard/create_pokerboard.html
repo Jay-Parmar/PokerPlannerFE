@@ -1,0 +1,68 @@
+<section class="vh-100" style="overflow-x:hidden;">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form name="myForm">
+                    <h1 style="text-align: center;">Create Pokerboard</h1>
+                    <div class="form-outline mb-4">
+                        <label class="form-label reqd" for="title">Title</label>
+                        <input type="text" id="title" name="title" ng-model="board.title"
+                            class="form-control form-control-lg" placeholder="Enter Title" required novalidate />
+                        <span class="error_msg" ng-show="myForm.title.$invalid && myForm.title.$touched">
+                            Title is required.
+                        </span>
+                    </div>
+
+                    <div class="form-outline mb-4 flex">
+                        <label class="form-label reqd" for="description">Description</label>
+                        <textarea type="text" class="form-control" name="description" required
+                            id="description" ng-model="board.description" placeholder="Enter Board description"></textarea>
+                        <span class="error_msg" ng-show="myForm.description.$invalid && myForm.description.$touched">
+                            Description is required.
+                        </span>
+                    </div>
+
+                    <div class="form-outline mb-4 flex">
+                        <label class="form-label reqd" for="type">Deck type</label>
+                        <select class="form-select" ng-model="selectedType">
+                            <option ng-repeat="deck in deckType" value="{{deck.val}}">{{ deck.name }}</option>
+                        </select>
+                        <div class="deck-array" ng-show="selectedType==5">
+                            <input type="text" name="deckValue" ng-model="deckValue" placeholder="Enter Custom Deck" required>
+                            <span class="error_msg" ng-show="selectedType==5 && myForm.deckValue.$touched 
+                            && myForm.deckValue.$invalid">
+                                Custom array is required.
+                        </span>
+                        </div>
+                    </div>
+
+                    <div class="form-outline mb-4 flex">
+                        <label class="form-label" for="ticketid">JIRA Ticket ids: Separated by ',' with no spaces</label>
+                        <textarea type="text" class="form-control" name="ticketid"
+                            id="ticketid" ng-model="board.ticketid" placeholder="Enter Board ticketids"></textarea>
+                    </div>
+
+                    <div class="form-outline mb-4 flex">
+                        <label class="form-label" for="sprintid">JIRA Sprint ids: Separated by ',' with no spaces</label>
+                        <textarea type="text" class="form-control" name="sprintid"
+                            id="sprintid" ng-model="board.sprintid" placeholder="Enter Board sprintids"></textarea>
+                    </div>
+
+                    <div class="form-outline mb-4 flex">
+                        <label class="form-label reqd" for="duration">Board duration</label>
+                        <input type="number" class="form-control form-control-lg" required name="duration" 
+                        id="duration" ng-model="board.duration" placeholder="Enter Duration in seconds">
+                    </div>
+
+                    <div class="mt-4 btn-create">
+                        <button ng-disabled="myForm.$invalid || 
+                        (!myForm.ticketid.$dirty && !myForm.sprintid.$dirty)" 
+                        ng-click="submit()" class="btn btn-dark">
+                            Create Board
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

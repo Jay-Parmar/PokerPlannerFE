@@ -33,9 +33,9 @@ form{
 }
 
 .error_msg{
-    position: absolute;
-    left: 108%;
-    top:10%;
+    position: relative;
+    left: 0%;
+    top:100%;
     color: red;
     width: 70%;
 }
@@ -68,4 +68,15 @@ form{
   margin-top: 20px;
   font-size: 20px;
   color: #fff;
+}
+/* .aligncenter{
+  margin-left: 400px;
+} */
+
+/* pokerboard */
+
+.board-list{
+  margin: 2rem;
+  padding: 1rem;
+  border: 1px solid cyan;
 }

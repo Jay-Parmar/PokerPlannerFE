@@ -1,5 +1,5 @@
 app.config(
-  ['$stateProvider', '$urlRouterProvider', 'RestangularProvider', 'APP_CONSTANTS',
+  ['$stateProvider', '$urlRouterProvider', 'RestangularProvider', 'APP_CONSTANTS', 
     function ($stateProvider, $urlRouterProvider, RestangularProvider, APP_CONSTANTS) {
 
       RestangularProvider.setBaseUrl(APP_CONSTANTS.BASE_URL);
@@ -21,6 +21,11 @@ app.config(
           url: APP_CONSTANTS.URLS.PROFILE,
           templateUrl: APP_CONSTANTS.TEMPLATE_URL.PROFILE,
           controller: APP_CONSTANTS.CONTROLLERS.PROFILE,
+          resolve: {
+            data: function($q, profileService) {
+              return profileService.getUserDetails()
+            }
+          },
         })
         .state({
           name: APP_CONSTANTS.NAME.VERIFY,
@@ -45,6 +50,12 @@ app.config(
           url: APP_CONSTANTS.URLS.BOARD,
           templateUrl: APP_CONSTANTS.TEMPLATE_URL.BOARD,
           controller: APP_CONSTANTS.CONTROLLERS.BOARD,
+        })
+        .state({
+          name: APP_CONSTANTS.NAME.EDIT_PASSWORD,
+          url: APP_CONSTANTS.URLS.EDIT_PASSWORD,
+          templateUrl: APP_CONSTANTS.TEMPLATE_URL.EDIT_PASSWORD,
+          controller: APP_CONSTANTS.CONTROLLERS.EDIT_PASSWORD,
         });
       $urlRouterProvider.otherwise("/");
     }]);

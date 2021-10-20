@@ -1,4 +1,8 @@
-app.controller('ProfileController', function ($scope, $state, profileService) {
+app.controller('ProfileController', function ($scope, $state, profileService, data) {
+
+    $scope.first_name = data.first_name
+    $scope.last_name = data.last_name
+    $scope.email = data.email
 
     $scope.data = {
         dataset0: [
@@ -34,31 +38,22 @@ app.controller('ProfileController', function ($scope, $state, profileService) {
             }
         ],
         axes: { x: { key: "x" } }
-    };
-    // profileService.getUserDetails()
-    //     .then(function (response) {
-    //         $scope.user = response.user;
-    //         $scope.groups = response.groups;
-    //         $scope.pokerboards = response.pokerboards;
-    //         $scope.tickets = response.tickets;
-    //     }, function (response) {
-            
-    //     });
+    }; 
     $scope.save = function () {
-        console.log("in sigup");
         let user = {
-            "email": $scope.email,
-            "password": $scope.password,
             "first_name": $scope.first_name,
             "last_name": $scope.last_name
         };
         profileService.save(user)
             .then(function (response) {
-                alert("update Successfull");
+                alert("Save Successfull");
             },
                 function (response) {
-                    alert("SignUp Failed");
+                    alert("Save Failed");
                 }
             );
     };
+    $scope.editPassword = function(){
+        $state.go("editPassword")
+    }
 });

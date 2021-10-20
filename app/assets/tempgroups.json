@@ -1,0 +1,222 @@
+[
+    {
+        "id": 1,
+        "name": "Developers",
+        "owner": 1,
+        "members": [
+            {
+                "id": 4,
+                "email": "jake11@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            },
+            {
+                "id": 5,
+                "email": "jake111@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            },
+            {
+                "id": 6,
+                "email": "jake1as11@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            },
+            {
+                "id": 7,
+                "email": "jake1as1sd1@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            }
+        ],
+        "created_at": "2021-10-13T12:40:55.365172Z"
+    },
+    {
+        "id": 2,
+        "name": "Frontend",
+        "owner": 4,
+        "members": [],
+        "created_at": "2021-10-14T05:29:15.414895Z"
+    },
+    {
+        "id": 3,
+        "name": "njhjb",
+        "owner": 4,
+        "members": [],
+        "created_at": "2021-10-14T05:35:17.382679Z"
+    },
+    {
+        "id": 4,
+        "name": "hvhbhb",
+        "owner": 4,
+        "members": [],
+        "created_at": "2021-10-14T05:38:33.467225Z"
+    },
+    {
+        "id": 5,
+        "name": "hvhbhbweqwe",
+        "owner": 4,
+        "members": [],
+        "created_at": "2021-10-14T06:11:14.480521Z"
+    },
+    {
+        "id": 6,
+        "name": "hvhbhbsdweqwe",
+        "owner": 4,
+        "members": [
+            {
+                "id": 4,
+                "email": "jake11@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            },
+            {
+                "id": 5,
+                "email": "jake111@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            },
+            {
+                "id": 6,
+                "email": "jake1as11@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            },
+            {
+                "id": 7,
+                "email": "jake1as1sd1@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            }
+        ],
+        "created_at": "2021-10-14T06:11:56.259132Z"
+    },
+    {
+        "id": 7,
+        "name": "sdashd",
+        "owner": 4,
+        "members": [
+            {
+                "id": 4,
+                "email": "jake11@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            },
+            {
+                "id": 5,
+                "email": "jake111@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            },
+            {
+                "id": 6,
+                "email": "jake1as11@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            },
+            {
+                "id": 7,
+                "email": "jake1as1sd1@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            }
+        ],
+        "created_at": "2021-10-16T17:15:45.979533Z"
+    },
+    {
+        "id": 8,
+        "name": "dfsdf",
+        "owner": 4,
+        "members": [
+            {
+                "id": 4,
+                "email": "jake11@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            },
+            {
+                "id": 5,
+                "email": "jake111@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            },
+            {
+                "id": 6,
+                "email": "jake1as11@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            },
+            {
+                "id": 7,
+                "email": "jake1as1sd1@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            }
+        ],
+        "created_at": "2021-10-16T17:17:59.520794Z"
+    },
+    {
+        "id": 9,
+        "name": "dfsadsdf",
+        "owner": 4,
+        "members": [
+            {
+                "id": 4,
+                "email": "jake11@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            },
+            {
+                "id": 5,
+                "email": "jake111@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            },
+            {
+                "id": 6,
+                "email": "jake1as11@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            },
+            {
+                "id": 7,
+                "email": "jake1as1sd1@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            }
+        ],
+        "created_at": "2021-10-16T17:18:36.345861Z"
+    },
+    {
+        "id": 10,
+        "name": "dfsdsaadsdf",
+        "owner": 4,
+        "members": [
+            {
+                "id": 4,
+                "email": "jake11@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            },
+            {
+                "id": 5,
+                "email": "jake111@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            },
+            {
+                "id": 6,
+                "email": "jake1as11@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            },
+            {
+                "id": 7,
+                "email": "jake1as1sd1@jake.jake",
+                "first_name": "Jacob",
+                "last_name": "Jacob"
+            }
+        ],
+        "created_at": "2021-10-16T17:20:03.206741Z"
+    }
+]

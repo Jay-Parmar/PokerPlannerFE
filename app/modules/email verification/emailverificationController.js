@@ -8,11 +8,11 @@ app.controller('emailVerificationCtrl', [
             $state.go('login');
         };
 
-        // emailverificationservices.activateAccount($stateParams.uid, { 'token': $stateParams.token })
-        //     .then(response => {
-        //         $scope.statusMsg = 'Account activated successfully';
-        //     }, error => {
-        //         $scope.statusMsg = 'Invalid email activation link';
-        //     });
+        emailverificationservices.activateAccount($stateParams.uid, { 'token': $stateParams.token })
+            .then(response => {
+                $scope.statusMsg = 'Account activated successfully';
+            }, error => {
+                $scope.statusMsg = 'Invalid email activation link';
+            });
     }
 ]);

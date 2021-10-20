@@ -1,0 +1,108 @@
+<div>
+    <!-- Modal -->
+    <div class="modal fade" id="postCommentsModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="postCommentsModalLabel">Add Comment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form name="commentForm" ng-submit="postComment()">
+                        <textarea type="text" name="comment" ng-model="comment" class="form-control grey-back"
+                            id="comment" required placeholder="Enter Comment"></textarea>
+                        <button type="submit" data-bs-dismiss="modal"
+                            class="btn btn-primary sub-btn mt-3">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="showCommentsModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="showCommentsModalLabel">Comments</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div ng-repeat="comment in comments">
+                        <small class="text-secondary">
+                            <!-- {{comment.author}} {{comment.created}} -->
+                        </small>
+                        <p>
+                            <!-- {{comment.body}} -->
+                        </p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="board-detail-container">
+        <h3>Board title</h3>
+        <p>Board Description</p>
+    </div>
+
+    <div class="right-panel">
+        <h6>TICKETS</h6>
+        <div class="board-ticket-estimate-container">
+            <div class="ticket-estimate" ng-repeat='ticketEstimate in ticketEstimateList'>
+                Ticket  {{ticketEstimate}}
+            </div>
+        </div>
+        <h6>PARTICIPANTS</h6>
+        <div class="board-participant-container">
+            <div class="participant" ng-repeat='participant in participantList'>
+                <span>{{participant}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="ticket-container">
+        <div class="ticket">
+            <h3>Ticket title</h3>
+            <p>Ticket Description</p>
+            <div class="comments-container" ng-if='comments.length > 0'>
+                <h5>Comments</h5>
+                <div ng-repeat="comment in comments">
+                    <small class="text-secondary">
+                        <!-- {{comment.author}} {{comment.created}} -->
+                    </small>
+                    <p>
+                        <!-- {{comment.body}} -->
+                    </p>
+                    <hr>
+                </div>
+                <a href="" class="link-dark" data-bs-toggle="modal" data-bs-target="#showCommentsModal" ng-if='comments.length > 1'>show more</a>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#postCommentsModal">Add Comment</button>
+        </div>
+    </div>
+    <div class="vote-container">
+        <div class="vote" ng-repeat='vote in voteList'>
+            <h6>username</h6>
+            <h6>estimate</h6>
+        </div>
+    </div>
+    <div class="admin-container" ng-show='true'>
+        <h6>Admin Actions</h6>
+        <div class="admin-actions">
+            <button type="button" class="btn btn-primary btn-lg" >Start Countdown</button>
+            <div><h4>COUNTDOWN</h4></div>
+            <button type="button" class="btn btn-primary btn-lg" >Skip &amp; Postpone</button>
+        </div>
+    </div>
+    <div class="estimation-card-container" ng-show='true'>
+        <div class="estimation-card" ng-repeat='estimate in estimateList'>
+            <h3>{{estimate}}</h3>
+        </div>
+    </div>
+</div>
+<!-- <div class="final-estimate-container">
+    <input type="number" placeholder="Final Estimate">
+    <button type="button" class="btn btn-primary btn-lg" >Start Countdown</button>
+</div> -->

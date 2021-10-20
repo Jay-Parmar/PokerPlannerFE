@@ -11,6 +11,7 @@
   "dependencies": {
     "@uirouter/angularjs": "^1.0.29",
     "angular": "^1.8.2",
+    "angular-cookies": "^1.8.2",
     "angular-ui-router": "^1.0.29",
     "angularjs": "0.0.1",
     "bootstrap": "^5.1.1",

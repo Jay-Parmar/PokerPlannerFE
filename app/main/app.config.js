@@ -56,6 +56,30 @@ app.config(
           url: APP_CONSTANTS.URLS.EDIT_PASSWORD,
           templateUrl: APP_CONSTANTS.TEMPLATE_URL.EDIT_PASSWORD,
           controller: APP_CONSTANTS.CONTROLLERS.EDIT_PASSWORD,
+        })
+        .state({
+          name: APP_CONSTANTS.NAME.POKER_CREATE,
+          url: APP_CONSTANTS.URLS.POKER_CREATE,
+          templateUrl: APP_CONSTANTS.TEMPLATE_URL.POKER_CREATE,
+          controller: APP_CONSTANTS.CONTROLLERS.POKER_CREATE,
+        })
+        .state({
+          name: APP_CONSTANTS.NAME.POKER_LIST,
+          url: APP_CONSTANTS.URLS.POKER_LIST,
+          templateUrl: APP_CONSTANTS.TEMPLATE_URL.POKER_LIST,
+          controller: APP_CONSTANTS.CONTROLLERS.POKER_LIST,
+        })
+        .state({
+          name: APP_CONSTANTS.NAME.POKER_DETAIL,
+          url: APP_CONSTANTS.URLS.POKER_DETAIL,
+          templateUrl: APP_CONSTANTS.TEMPLATE_URL.POKER_DETAIL,
+          controller: APP_CONSTANTS.CONTROLLERS.POKER_DETAIL,
+        })
+        .state({
+          name: APP_CONSTANTS.NAME.MEMBERS,
+          url: APP_CONSTANTS.URLS.MEMBERS,
+          templateUrl: APP_CONSTANTS.TEMPLATE_URL.MEMBERS,
+          controller: APP_CONSTANTS.CONTROLLERS.MEMBERS,
         });
       $urlRouterProvider.otherwise("/");
     }]);

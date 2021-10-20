@@ -80,6 +80,23 @@ app.config(
           url: APP_CONSTANTS.URLS.MEMBERS,
           templateUrl: APP_CONSTANTS.TEMPLATE_URL.MEMBERS,
           controller: APP_CONSTANTS.CONTROLLERS.MEMBERS,
+        })
+        .state({
+          name: APP_CONSTANTS.NAME.JIRA_CREDENTIALS,
+          url: APP_CONSTANTS.URLS.JIRA_CREDENTIALS,
+          templateUrl: APP_CONSTANTS.TEMPLATE_URL.JIRA_CREDENTIALS,
+          controller: APP_CONSTANTS.CONTROLLERS.JIRA_CREDENTIALS,
+        })
+        .state({
+          name: APP_CONSTANTS.NAME.INVITE,
+          url: APP_CONSTANTS.URLS.INVITE,
+          templateUrl: APP_CONSTANTS.TEMPLATE_URL.INVITE,
+          controller: APP_CONSTANTS.CONTROLLERS.INVITE,
+          resolve: {
+            data: function($q, inviteService) {
+              return inviteService.getUserInvites()
+            }
+          },
         });
       $urlRouterProvider.otherwise("/");
     }]);

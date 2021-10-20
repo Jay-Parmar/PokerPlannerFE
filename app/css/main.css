@@ -254,3 +254,9 @@ input[disabled='disabled'] {
   padding: 1rem;
   border: 1px solid cyan;
 }
+
+/* invites css */
+table, th, td {
+  border: 1px solid black;
+  margin-left: 400px;
+}

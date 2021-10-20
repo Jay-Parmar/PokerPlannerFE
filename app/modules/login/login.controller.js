@@ -21,7 +21,7 @@ app.controller('LoginController',
                 }
                 $cookies.put('token', response.token)
                 alert("Login Successful")
-                $state.go('pokerboard');
+                // $state.go('pokerboard');
             }, function () {
                 alert("login unsuccessfull");
             });

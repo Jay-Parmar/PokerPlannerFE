@@ -15,6 +15,7 @@
             ACCOUNT_ACTIVATE: '',
             POKERBOARD: 'pokerboard/',   //HAVE TO FILL THIS
             MEMBERS: '',    // fill the url here to invite users or group  
+            INVITE: 'users/invite/',
         },
         TEMPLATE_URL: {
             SIGNUP: 'modules/signup/signup.html',
@@ -28,7 +29,9 @@
             POKER_CREATE: 'modules/pokerboard/create_pokerboard.html',
             POKER_LIST: 'modules/pokerboard/list_pokerboard.html',
             POKER_DETAIL: 'modules/pokerboard/detail_pokerboard.html',
-            MEMBERS: 'modules/poker-members/poker_members.html'
+            MEMBERS: 'modules/poker-members/poker_members.html',
+            JIRA_CREDENTIALS: 'modules/pokerboard/jiraCredentials.html',
+            INVITE: 'modules/invite/invites.html'
         },
         CONTROLLERS: {
             SIGNUP: 'SignupController',
@@ -43,6 +46,8 @@
             POKER_LIST: 'pokerboardCtrl',
             POKER_DETAIL: 'pokerboardDetailsCtrl',
             MEMBERS: 'pokerboardMembersCtrl',
+            JIRA_CREDENTIALS: 'jiraCredentialsCtrl',
+            INVITE: 'inviteCtrl'
         },
         URLS: {
             SIGNUP: '/',
@@ -57,6 +62,8 @@
             POKER_LIST: '/pokerboards',
             POKER_DETAIL: '/pokerboard/:id',
             MEMBERS: '/pokerboard/:pid/members',
+            JIRA_CREDENTIALS: '/jiraCredentials',
+            INVITE: '/invites'
         },
         NAME: {
             SIGNUP: 'signup',
@@ -71,6 +78,8 @@
             POKER_LIST: 'pokerboards',
             POKER_DETAIL: 'pokerboard',
             MEMBERS: 'members',
+            JIRA_CREDENTIALS: 'jiraCredentials',
+            INVITE: 'invite'
         },
         DECK_NAME: {
             1: 'Serial',

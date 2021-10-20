@@ -1,0 +1,23 @@
+<div>
+    <h1 ng-show="invites.length!=0" style="margin-left: 535px;">Invites</h1>
+    <h1 ng-show="invites.length==0" style="margin-left: 535px;">No Invites</h1>
+    <table ng-show="invites.length!=0">
+        <th>
+          <td>Email</td>
+          <td>Pokerboard</td>
+          <td>Group</td>
+          <td colspan="2" style="text-align: center;">Actions</td>
+        </th>
+        <tr ng-repeat="invite in invites">
+          <td>{{$index+1}}</td>
+          <td > {{invite.email}} </td>
+          <td > {{invite.pokerboard}} </td>
+          <td > {{invite.group}} </td>
+          <td ng-show="!invite.is_accepted"><button ng-click="accept(invite)">Accept</button></td>
+          <td ng-show="!invite.is_accepted"><button ng-click="decline(invite)">Decline</button></td>
+          <td colspan="2" style="text-align: center;" ng-show="invite.is_accepted">{{message}}</td>
+        </tr>
+        
+      </table>
+
+</div>

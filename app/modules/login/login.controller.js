@@ -22,8 +22,7 @@ app.controller('LoginController',
                     email: response.email
                 }
                 $cookies.put('token', response.token)
-                alert("Login Successful")
-                // $state.go('pokerboard');
+                $state.go('pokerboards');
             }, function (response) {
                 $scope.errors = response.data.non_field_errors
             });

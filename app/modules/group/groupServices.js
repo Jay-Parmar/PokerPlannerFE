@@ -16,7 +16,7 @@ app.service('groupServices', ['Restangular', 'APP_CONSTANTS','$cookies',
 
         this.addMember = function(email, group){
             const user = { email, group };
-            return Restangular.all(APP_CONSTANTS.API_ENDPOINT.ADD_GROUP_USER).post(user);
+            return Restangular.all(APP_CONSTANTS.API_ENDPOINT.GROUP_MEMBER).post(user);
         }
 
         this.getGroupDetails = function(groupId){

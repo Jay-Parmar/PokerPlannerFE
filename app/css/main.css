@@ -93,7 +93,7 @@ form{
 /* .aligncenter{
   margin-left: 400px;
 } */
-.group-user{
+.group-item{
   background-color: grey;
   display: flex;
   color: white;
@@ -101,7 +101,6 @@ form{
   align-items: center;
   padding: 5px 40px 5px 40px;
   margin-top: 5px;
-  border-radius: 8px;
 }
 
 .user-btn{
@@ -123,8 +122,21 @@ form{
   margin-top: 10px;
 }
 
+.group-outer{
+  margin: 10px;
+}
 .create-group-container{
   margin: 0px 40px 0px 40px;
+}
+
+.group-name{
+  font-weight: 600px;
+  color: black;
+}
+
+.group-item{
+  display: flex;
+  justify-content: space-between;
 }
 
 .estimation-card-container{
@@ -269,11 +281,10 @@ input[disabled='disabled'] {
 
 
 /* pokerboard */
-
-.board-list{
-  margin: 2rem;
-  padding: 1rem;
-  border: 1px solid cyan;
+.pokerboard-item{
+  background-color: darkgrey;
+  margin-top: 10px;
+  padding: 10px;
 }
 
 /* invites css */
@@ -287,3 +298,4 @@ table, th, td {
   font-size: 16px;
   font-weight: 600;
 }
+

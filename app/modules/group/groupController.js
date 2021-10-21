@@ -17,10 +17,15 @@ app.controller('groupCtrl', [
         $scope.createGroup = () => {
             groupServices.createGroup({name: $scope.groupName}).
             then(function(response){
-                
+                $state.reload()
             }, function(errors){
 
             })
+        }
+
+        $scope.goToGroup = id => {
+            console.log(id)
+            $state.go('group', { "id": id });
         }
     }
 ]);

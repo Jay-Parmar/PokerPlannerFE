@@ -1,5 +1,5 @@
 
-<div class="main-outer" ng-init='getGroupsList()'>
+<div class="group-outer" ng-init='getGroupsList()'>
   <h4 class="main-heading">Available Groups</h4>
     <!-- Modal -->
   <div class="modal fade" id="createGroupModal" tabindex="-1" aria-labelledby="createGroupModalLabel" aria-hidden="true">
@@ -28,10 +28,9 @@
   <p class="main-heading" ng-show="!(groups.length)">No Group Available</p>
   <h2 class="main-heading">List of Available Groups</h2>
   <div ng-repeat="group in groups">
-        <div class="group-user">
-            <span>{{ group.name }}</span>
-            <span>{{ group.created_at }}</span>
-            <a href="#" class="user-btn btn-add-user">View</a>
+        <div class="group-item">
+            <p><span class='group-name'> Group Name : </span>{{ group.name }}</p>
+            <button class="btn-primary" ng-click="goToGroup(group.id)">View Group</button>
         </div>
   </div>
 </div>

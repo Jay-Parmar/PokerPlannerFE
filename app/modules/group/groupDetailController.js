@@ -5,11 +5,12 @@ app.controller('groupDetailController', [
         $scope, $state, groupServices, $stateParams
     ) {
         const groupId = $stateParams.id
-
+        $scope.group = {}
         $scope.getGroupDetails = () => {
             groupServices.getGroupDetails(groupId)
             .then(function(response){
-                
+                console.log(response)
+                $scope.group = response
             }, function(err){
 
             })

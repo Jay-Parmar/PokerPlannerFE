@@ -7,9 +7,6 @@
       </div>
 
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <ul class="backend-errors">
-          <li ng-repeat='error in errors'>{{error}}</li>
-        </ul>
         <form name="myForm">
           <h1 style="text-align: center;">Login</h1>
           <!-- Email input -->
@@ -33,7 +30,9 @@
               <span ng-show="myForm.password.$error.required">Password is required.</span>
             </span>
           </div>
-
+          <ul class="backend-errors">
+            <li ng-repeat='error in errors'>{{error}}</li>
+          </ul>
           <div class="text-center text-lg-start mt-4 pt-2">
             <button type="button" ng-click="login()" class="btn btn-primary btn-lg" ng-disabled="myForm.$invalid"
               style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>

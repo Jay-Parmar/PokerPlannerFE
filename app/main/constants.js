@@ -6,10 +6,9 @@
             LOGIN: 'users/login/',
             ACCOUNT_ACTIVATE: 'users/activate/:uid/:token',
             GROUP: 'groups/',
-            GROUP_DETAIL:'group/:id',
+            GROUP_DETAIL:'groups/:id',
             BOARD: 'board/',
-            REMOVE_GROUP_USER: 'groups/remove',
-            ADD_GROUP_USER: 'groups/add',
+            GROUP_MEMBER: 'groups/members',
             GET_USER_DETAILS: 'users/',
             CHANGE_PASSWORD: 'users/changepassword/',
             ACCOUNT_ACTIVATE: '',
@@ -31,7 +30,8 @@
             POKER_DETAIL: 'modules/pokerboard/detail_pokerboard.html',
             MEMBERS: 'modules/poker-members/poker_members.html',
             JIRA_CREDENTIALS: 'modules/pokerboard/jiraCredentials.html',
-            INVITE: 'modules/invite/invites.html'
+            INVITE: 'modules/invite/invites.html',
+            PAGE_404: 'modules/error_pages/404-page-not-found.html'
         },
         CONTROLLERS: {
             SIGNUP: 'SignupController',
@@ -63,7 +63,8 @@
             POKER_DETAIL: '/pokerboard/:id',
             MEMBERS: '/pokerboard/:pid/members',
             JIRA_CREDENTIALS: '/jiraCredentials',
-            INVITE: '/invites'
+            INVITE: '/invites',
+            PAGE_404:'/404'
         },
         NAME: {
             SIGNUP: 'signup',
@@ -79,7 +80,8 @@
             POKER_DETAIL: 'pokerboard',
             MEMBERS: 'members',
             JIRA_CREDENTIALS: 'jiraCredentials',
-            INVITE: 'invite'
+            INVITE: 'invite',
+            PAGE_404: 'PAGE_404'
         },
         DECK_NAME: {
             1: 'Serial',

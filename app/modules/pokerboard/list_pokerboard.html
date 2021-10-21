@@ -3,7 +3,6 @@
         <div class="row d-flex justify-content-center h-100">
             <h2 class="main-heading">Your Poker Boards</h2>
             <p class="mt-4 main-heading" ng-show="boardList.length==0">You have not created any pokerboards yet</p>
-
             <div class="filter-objects m-4">
                 <h3>Filter Boards : </h3>
                 <label for="manager">Manager : </label>
@@ -11,17 +10,16 @@
                 <label for="title">Title : </label>
                 <input type="text" name="title" ng-model="title" placeholder="Title">
             </div>
-
-            <div class="board-list" ng-repeat="board in boardList 
-            | filter : {title : title || undefined, creator : manager || undefined}">
-                <div>
-                    <p>{{board.title}}</p>
-                    <p>{{board.description}}</p>
-                    <p>{{board.creator}}</p>
-                    <!-- <button class="bg-dark" ng-click="goToPokerboard(board.id)">Details</button> -->
+            <div>
+                <div class="board-list pokerboard-item" ng-repeat="board in boardList 
+                | filter : {title : title || undefined, creator : manager || undefined}">
+                    <div>
+                        <p><span>Title : </span>{{board.title}}</p>
+                        <p><span>Description : {{board.description}}</p>
+                        <p><span>Manager : {{board.creator.first_name}}  {{board.creator.last_name}}</p>
+                        <button class="btn-primary" ng-click="goToPokerboard(board.id)">Details</button>
+                    </div>
                 </div>
-                <hr>
-            </div>
         </div>
     </div>
 </section>

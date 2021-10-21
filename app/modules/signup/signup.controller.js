@@ -16,7 +16,6 @@ app.controller('SignupController', function ($scope, $state, signUpService) {
       };
     signUpService.signup(user)
       .then(function (response) {
-        alert("SignUp Successfull");
         $state.go("login");
       },
         function (response) {

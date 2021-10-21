@@ -88,6 +88,11 @@ app.config(
           controller: APP_CONSTANTS.CONTROLLERS.JIRA_CREDENTIALS,
         })
         .state({
+          name: APP_CONSTANTS.NAME.PAGE_404,
+          url: APP_CONSTANTS.URLS.PAGE_404,
+          templateUrl: APP_CONSTANTS.TEMPLATE_URL.PAGE_404,
+        })
+        .state({
           name: APP_CONSTANTS.NAME.INVITE,
           url: APP_CONSTANTS.URLS.INVITE,
           templateUrl: APP_CONSTANTS.TEMPLATE_URL.INVITE,

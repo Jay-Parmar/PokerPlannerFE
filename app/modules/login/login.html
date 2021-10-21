@@ -10,6 +10,7 @@
           <h1 style="text-align: center;">Login</h1>
           <!-- Email input -->
           <div class="form-outline mb-4">
+            <label class="form-label reqd" for="form3Example3">Email address</label>
             <input type="email" id="form3Example3" name="email" ng-model="email" class="form-control form-control-lg"
               placeholder="Enter email address" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required
               novalidate />
@@ -17,17 +18,16 @@
               <span ng-show="myForm.email.$error.required">Email is required.</span>
               <span ng-show="myForm.email.$error.pattern">Invalid email address.</span>
             </span>
-            <label class="form-label reqd" for="form3Example3">Email address</label>
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
+            <label class="form-label reqd" for="form3Example4">Password</label>
             <input type="password" id="form3Example4" name="password" ng-model="password"
               class="form-control form-control-lg" placeholder="Enter password" required novalidate />
             <span class="error_msg" ng-show="myForm.password.$invalid && myForm.password.$dirty">
               <span ng-show="myForm.password.$error.required">Password is required.</span>
             </span>
-            <label class="form-label reqd" for="form3Example4">Password</label>
           </div>
 
           <div class="text-center text-lg-start mt-4 pt-2">

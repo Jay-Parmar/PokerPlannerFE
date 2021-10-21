@@ -1,6 +1,6 @@
 app.controller('createBoardCtrl', [
-    '$scope', '$state', 'APP_CONSTANTS', 
-    function($scope, $state, APP_CONSTANTS){
+    '$scope', '$state', 'pokerboardService', 'APP_CONSTANTS', 
+    function($scope, $state, pokerboardService, APP_CONSTANTS){
 
         $scope.board = {};
 
@@ -23,11 +23,11 @@ app.controller('createBoardCtrl', [
             $scope.estimation_cards = ($scope.selectedType!==5) ? APP_CONSTANTS.DECK_TYPE[$scope.selectedType] : 
                                        $scope.deckValue.split(',');
             const data = {
-                title: $scope.name,
-                description: $scope.description,
-                estimation_type: $scope.selectedType,
-                timer: $scope.duration,
-                estimation_cards: $scope.estimation_cards
+                title: $scope.board.title,
+                description: $scope.board.description,
+                estimation_type: $scope.board.selectedType,
+                timer: $scope.board.duration,
+                estimation_cards: $scope.deckValue
             };
             pokerboardService.createBoard(data).then(response => {
                 console.log(response);

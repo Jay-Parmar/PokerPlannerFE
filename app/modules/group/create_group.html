@@ -26,6 +26,7 @@
   </div>
   <button data-bs-toggle="modal" data-bs-target="#createGroupModal" class="user-btn btn-add-user">New group</button>
   <p class="main-heading" ng-show="!(groups.length)">No Group Available</p>
+  <h2 class="main-heading">List of Available Groups</h2>
   <div ng-repeat="group in groups">
         <div class="group-user">
             <span>{{ group.name }}</span>

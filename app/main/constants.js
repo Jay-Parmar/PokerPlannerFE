@@ -4,6 +4,7 @@
         API_ENDPOINT: {
             SIGNUP: 'users/',
             LOGIN: 'users/login/',
+            LOGOUT: 'users/logout/',
             ACCOUNT_ACTIVATE: 'users/activate/:uid/:token',
             GROUP: 'groups/',
             GROUP_DETAIL:'group/:id',

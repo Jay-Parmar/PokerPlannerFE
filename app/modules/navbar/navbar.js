@@ -1,7 +1,6 @@
 app.controller('navigationCtrl',[
-    '$scope', '$state', '$cookies', '$rootScope', '$window', 'APP_CONSTANTS',
-    function($scope, $state, $cookies, $rootScope, $window, APP_CONSTANTS){
-        
+    '$scope', '$state', '$cookies', '$rootScope', '$window', 'APP_CONSTANTS', 'navbarService', 
+    function($scope, $state, $cookies, $rootScope, $window, APP_CONSTANTS, navbarService){
         if($cookies.get('token')) {
             $rootScope.isAuth = true;
         }else{
@@ -9,6 +8,7 @@ app.controller('navigationCtrl',[
         }
         
         $scope.logout = function(){
+            navbarService.logout();
             $cookies.remove('token');
             $state.go(APP_CONSTANTS.NAME.LOGIN);
         };
@@ -21,8 +21,12 @@ app.controller('navigationCtrl',[
             $window.history.back();
         };
 
-        $scope.createBoard = function(){
+        $scope.toCreateBoard = function(){
             $state.go(APP_CONSTANTS.NAME.JIRA_CREDENTIALS);
+        };
+
+        $scope.toGroup = function(){
+            $state.go(APP_CONSTANTS.NAME.GROUP);
         };
 
         $scope.profile = function(){

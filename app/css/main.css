@@ -1,16 +1,17 @@
 .navbar{
-  text-decoration: none;
+  padding: 1rem;
+}
+.navbar ul{
   display: flex;
-  flex-direction: row;
+  text-decoration: none;
   list-style-type: none;
 }
-
-.navbar li{
+.nav-item{
   margin: 1px; 
   padding: 0rem 1rem;
 }
 
-.navbar li a { 
+.navbar li a{ 
   display: block; 
   width: 100%; 
   height: 100%; 

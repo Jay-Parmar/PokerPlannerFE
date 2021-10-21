@@ -16,6 +16,7 @@
             POKERBOARD: 'pokerboard/',   //HAVE TO FILL THIS
             MEMBERS: '',    // fill the url here to invite users or group  
             INVITE: 'users/invite/',
+            JIRA_CREDENTIALS: 'pokerboard/manager',
         },
         TEMPLATE_URL: {
             SIGNUP: 'modules/signup/signup.html',

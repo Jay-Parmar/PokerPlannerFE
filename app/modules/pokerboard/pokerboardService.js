@@ -25,5 +25,9 @@ app.service('pokerboardService', [
         this.inviteUser = user => {
             return Restangular.all(APP_CONSTANTS.API_ENDPOINT.MEMBERS).post(user)
         }
+
+        this.saveCredentials = function(details){
+            return Restangular.all(APP_CONSTANTS.API_ENDPOINT.JIRA_CREDENTIALS).post(details);
+        }
     }
 ]);

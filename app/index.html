@@ -24,6 +24,7 @@
     <script src="main/app.js"></script>
     <script src="main/constants.js"></script>
     <script src="main/app.config.js"></script>
+    <script src="modules/navbar/navbar.js"></script>
     <script src="modules/signup/signupServices.js"></script>
     <script src="modules/signup/signup.controller.js"></script>
     <script src="modules/email verification/emailverificationController.js"></script>
@@ -52,6 +53,17 @@
 </head>
 
 <body ng-app="app">
+    
+    <ul class="navbar" ng-controller="navigationCtrl">
+        <li><a ng-click="back()">Back</a></li>
+        <li ng-hide="isAuth"><a ng-click="signup()">Sign Up</a></li>
+        <li ng-hide="isAuth"><a ng-click="login()">Login</a></li>
+        <li ng-show="isAuth"><a ng-click="toPokerList()">Home</a></li>
+        <li ng-show="isAuth"><a ng-click="toCreateBoard()">Create Pokerboard</a></li>
+        <li ng-show="isAuth"><a ng-click="profile()">Profile</a></li>
+        <li ng-show="isAuth"><a ng-click="logout()">Logout</a></li>
+    </ul>
+
     <div ui-view></div>
 </body>
 

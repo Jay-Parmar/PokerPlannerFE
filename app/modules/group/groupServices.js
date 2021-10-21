@@ -1,6 +1,7 @@
 app.service('groupServices', ['Restangular', 'APP_CONSTANTS','$cookies',
     function (Restangular, APP_CONSTANTS, $cookies){
 
+        console.log("HEY")
         Restangular.setDefaultHeaders({
             Authorization: `Token ${$cookies.get('token')}`
         });

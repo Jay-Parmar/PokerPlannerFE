@@ -21,11 +21,11 @@ app.config(
           url: APP_CONSTANTS.URLS.PROFILE,
           templateUrl: APP_CONSTANTS.TEMPLATE_URL.PROFILE,
           controller: APP_CONSTANTS.CONTROLLERS.PROFILE,
-          resolve: {
-            data: function($q, profileService) {
-              return profileService.getUserDetails()
-            }
-          },
+          // resolve: {
+          //   data: function($q, profileService) {
+          //     return profileService.getUserDetails()
+          //   }
+          // },
         })
         .state({
           name: APP_CONSTANTS.NAME.VERIFY,
@@ -92,11 +92,11 @@ app.config(
           url: APP_CONSTANTS.URLS.INVITE,
           templateUrl: APP_CONSTANTS.TEMPLATE_URL.INVITE,
           controller: APP_CONSTANTS.CONTROLLERS.INVITE,
-          resolve: {
-            data: function($q, inviteService) {
-              return inviteService.getUserInvites()
-            }
-          },
+          // resolve: {
+          //   data: function($q, inviteService) {
+          //     return inviteService.getUserInvites()
+          //   }
+          // },
         });
       $urlRouterProvider.otherwise("/");
     }]);

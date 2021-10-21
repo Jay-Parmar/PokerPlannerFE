@@ -22,12 +22,14 @@ app.controller('createBoardCtrl', [
             // Creating the pokerboard from desired data
             $scope.estimation_cards = ($scope.selectedType!==5) ? APP_CONSTANTS.DECK_TYPE[$scope.selectedType] : 
                                        $scope.deckValue.split(',');
+            ticketid = $scope.board.ticketid.split(',')
             const data = {
                 title: $scope.board.title,
                 description: $scope.board.description,
                 estimation_type: $scope.board.selectedType,
                 timer: $scope.board.duration,
-                estimation_cards: $scope.deckValue
+                estimation_cards: $scope.deckValue,
+                tickets: ticketid 
             };
             pokerboardService.createBoard(data).then(response => {
                 console.log(response);

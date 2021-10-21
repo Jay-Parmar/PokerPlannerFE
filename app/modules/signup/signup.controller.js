@@ -3,6 +3,9 @@ app.controller('SignupController', function ($scope, $state, signUpService) {
   $scope.toLogin = function () {
     $state.go("login");
   }
+
+  $scope.errors = []
+
   $scope.signUp = function () {
     let user = 
       {
@@ -17,8 +20,7 @@ app.controller('SignupController', function ($scope, $state, signUpService) {
         $state.go("login");
       },
         function (response) {
-          console.log(response);
-          alert("SignUp Failed");
+          $scope.errors = response.data.email
         }
       );
   };

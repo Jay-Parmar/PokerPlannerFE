@@ -6,6 +6,7 @@
             alt="Sample image">
         </div> -->
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
         <form name="myForm">
           <h1 style="text-align: center;">SignUp Form</h1>
           <!-- First name input -->
@@ -62,7 +63,9 @@
             <span class="error_msg" ng-show="myForm.password2.$dirty && password != password2">Your passwords must
               match.</span>
           </div>
-
+          <ul class="backend-errors">
+            <li ng-repeat='error in errors'>{{error}}</li>
+          </ul>
           <div class="text-center text-lg-start mt-4 pt-2">
             <button type="button" class="btn btn-primary btn-lg" ng-click="signUp()"
               ng-disabled="myForm.$invalid || password != password2"

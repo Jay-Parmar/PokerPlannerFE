@@ -5,6 +5,8 @@ app.controller('LoginController',
             $state.go("signup");
         }
 
+        $scope.errors = []
+
         $scope.login = function () {
             let user =
             {
@@ -22,8 +24,8 @@ app.controller('LoginController',
                 $cookies.put('token', response.token)
                 alert("Login Successful")
                 // $state.go('pokerboard');
-            }, function () {
-                alert("login unsuccessfull");
+            }, function (response) {
+                $scope.errors = response.data.non_field_errors
             });
         }
     });

@@ -260,3 +260,9 @@ table, th, td {
   border: 1px solid black;
   margin-left: 400px;
 }
+
+.backend-errors {
+  color: crimson;
+  font-size: 16px;
+  font-weight: 600;
+}

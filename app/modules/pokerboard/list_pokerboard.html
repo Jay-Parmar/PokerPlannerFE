@@ -12,7 +12,7 @@
             </div>
             <div>
                 <div class="board-list pokerboard-item" ng-repeat="board in boardList 
-                | filter : {title : title || undefined, creator : manager || undefined}">
+                | filter : {title : title || undefined, manager : creator || undefined}">
                     <div>
                         <p><span>Title : </span>{{board.title}}</p>
                         <p><span>Description : {{board.description}}</p>

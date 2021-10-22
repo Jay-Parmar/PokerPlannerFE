@@ -40,5 +40,9 @@ app.controller('navigationCtrl',[
         $scope.login = function(){
             $state.go(APP_CONSTANTS.NAME.LOGIN);
         };
+
+        $scope.invites = function(){
+            $state.go(APP_CONSTANTS.NAME.INVITE)
+        }
     }
 ]);

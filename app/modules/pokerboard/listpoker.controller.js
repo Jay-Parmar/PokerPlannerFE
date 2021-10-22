@@ -15,7 +15,8 @@ app.controller('pokerboardCtrl', [
                     title: ele.title,
                     description: ele.description,
                     date: new Date(ele.created_at).toLocaleDateString(),
-                    creator: ele.manager,
+                    manager_name: ele.manager.first_name + " " + ele.manager.last_name,
+                    manager: ele.manager,
                 });
             };
             response.forEach(parse);

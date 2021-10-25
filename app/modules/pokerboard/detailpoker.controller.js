@@ -66,15 +66,20 @@ app.controller('pokerboardDetailsCtrl', [
         });
 
         $scope.inviteUser = () => {
-            const user = {
-                type: ($scope.emailInviteForm) ? 1 : 2,
-                user_email: ($scope.emailInviteForm) ? $scope.email : null,
-                pokerboard: $stateParams.id,
-                group_name: ($scope.emailInviteForm) ? null : $scope.group,
-                role: $scope.role
+            let user = {}
+            if($scope.email==null){
+                user = {
+                    group_id: $scope.group,
+                    role: $scope.role
+                }
             }
-
-            pokerboardService.inviteUser(user).then(response => {
+            else{
+                user = {
+                    email: $scope.email,
+                    role: $scope.role
+                }
+            }
+            pokerboardService.inviteUser(user, $scope.pokerboard.id).then(response => {
                 alert("User/Group invited");
                 console.log(response);
             }, error => {

@@ -22,8 +22,10 @@ app.service('pokerboardService', [
             return Restangular.one(`pokerboards/${pokerboardId}/order-tickets`).put(tickets);
         };
 
-        this.inviteUser = user => {
-            return Restangular.all(APP_CONSTANTS.API_ENDPOINT.MEMBERS).post(user)
+        this.inviteUser = function(user,pokerboardId){
+            url = pokerboardId+"/invite/"
+            console.log(url)
+            return Restangular.all(APP_CONSTANTS.API_ENDPOINT.POKERBOARD+url).post(user)
         }
 
         this.saveCredentials = function(details){

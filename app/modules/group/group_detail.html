@@ -46,9 +46,10 @@
       <h2><span class='group-name'> Group Name : </span>{{ group.name }}</h2>
       <button data-bs-toggle="modal" data-bs-target="#addMemberModal" class="user-btn btn-add-user">Add member</button>
     </div>
+    <hr>
       <div class="group-item" ng-repeat='user in group.members'>
               <span>{{user.email}}</span>
-              <button class="user-btn btn-remove-user" data-bs-toggle="modal" data-bs-target="#deleteModal" >Remove</button>
+              <button class="user-btn btn-remove-user" data-bs-toggle="modal" data-bs-target="#deleteModal" ng-show='isOwner'>Remove</button>
       </div>
   </div>
 </div>

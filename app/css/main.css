@@ -299,3 +299,7 @@ table, th, td {
   font-weight: 600;
 }
 
+/* Pokerboard Members*/
+.poker-members {
+  padding: 0px 15px 0px 15px;
+}

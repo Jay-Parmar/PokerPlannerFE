@@ -6,10 +6,10 @@ app.controller('groupDetailController', [
     ) {
         const groupId = $stateParams.id
         $scope.group = {}
+        $scope.isOwner = false
         $scope.getGroupDetails = () => {
             groupServices.getGroupDetails(groupId)
             .then(function(response){
-                console.log(response)
                 $scope.group = response
             }, function(err){
 

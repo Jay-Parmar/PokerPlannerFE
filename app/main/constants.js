@@ -14,7 +14,7 @@
             CHANGE_PASSWORD: 'users/changepassword/',
             ACCOUNT_ACTIVATE: '',
             POKERBOARD: 'pokerboard/',   //HAVE TO FILL THIS
-            MEMBERS: '',    // fill the url here to invite users or group  
+            MEMBERS: 'pokerboard/members',    // fill the url here to invite users or group  
             INVITE: 'users/invite/',
             JIRA_CREDENTIALS: 'pokerboard/manager',
         },

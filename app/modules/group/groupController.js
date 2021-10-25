@@ -1,8 +1,7 @@
 app.controller('groupCtrl', [
-    '$scope', '$state', 'groupServices', '$stateParams',
-
+    '$scope', '$state', 'groupServices',
     function (
-        $scope, $state, groupServices, $stateParams
+        $scope, $state, groupServices,
     ) {
         $scope.groups = []
         $scope.getGroupsList = () => {
@@ -10,7 +9,7 @@ app.controller('groupCtrl', [
             then(function(response){
                 $scope.groups = response
             },function(errors){
-                
+                console.log(errors)
             })
         }   
 
@@ -19,13 +18,15 @@ app.controller('groupCtrl', [
             then(function(response){
                 $state.reload()
             }, function(errors){
-
+                console.log(errors)
             })
         }
 
-        $scope.goToGroup = id => {
+        $scope.goToGroup = (id) => {
             console.log(id)
-            $state.go('group', { "id": id });
+            $state.go('group_detail', { "id": id });
         }
+
+        $scope.getGroupsList()
     }
 ]);

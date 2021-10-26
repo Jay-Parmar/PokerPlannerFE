@@ -25,6 +25,7 @@
     <script src="main/constants.js"></script>
     <script src="main/app.config.js"></script>
     <script src="main/app.run.js"></script>
+    <script src="modules/navbar/navdirective.js"></script>
     <script src="modules/navbar/navbar.js"></script>
     <script src="modules/signup/signupServices.js"></script>
     <script src="modules/signup/signup.controller.js"></script>
@@ -55,22 +56,10 @@
 </head>
 
 <body ng-app="app">
-    <nav class="navbar navbar-light bg-light">
-        <span class="navbar-brand mb-0 h1">PokerPlanner</span>
-        <ul ng-controller="navigationCtrl">
-            <li class="nav-item"><a class="nav-link" ng-click="back()">Back</a></li>
-            <li class="nav-item" ng-hide="isAuth"><a class="nav-link" ng-click="signup()">Sign Up</a></li>
-            <li class="nav-item" ng-hide="isAuth"><a class="nav-link" ng-click="login()">Login</a></li>
-            <li class="nav-item" ng-show="isAuth"><a class="nav-link" ng-click="toPokerList()">Home</a></li>
-            <li class="nav-item" ng-show="isAuth"><a class="nav-link" ng-click="toCreateBoard()">Create Pokerboard</a></li>
-            <li class="nav-item" ng-show="isAuth"><a class="nav-link" ng-click="toGroup()">Group</a></li>
-            <li class="nav-item" ng-show="isAuth"><a class="nav-link" ng-click="invites()">My Invites</a></li>
-            <li class="nav-item" ng-show="isAuth"><a class="nav-link" ng-click="profile()">Profile</a></li>
-            <li class="nav-item" ng-show="isAuth"><a class="nav-link" ng-click="logout()">Logout</a></li>
-        </ul>
-    </nav>
 
+    <div navigation-bar></div>
     <div ui-view></div>
+
 </body>
 
 </html>

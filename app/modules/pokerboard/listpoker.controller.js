@@ -1,6 +1,6 @@
 app.controller('pokerboardCtrl', [
-    '$state', '$scope', 'pokerboardService',
-    function($state, $scope, pokerboardService){
+    '$state', '$scope', 'pokerboardService', 'Restangular', '$cookies',
+    function($state, $scope, pokerboardService, Restangular, $cookies){
         
         $scope.goToPokerboard = id => {
             $state.go('pokerboard', { "id": id });
@@ -8,7 +8,6 @@ app.controller('pokerboardCtrl', [
 
         pokerboardService.getPokerboards().then(response => {
             $scope.boardList = [];
-            console.log(response)
             const parse = ele => {
                 $scope.boardList.push({
                     id: ele.id,
@@ -21,8 +20,7 @@ app.controller('pokerboardCtrl', [
             };
             response.forEach(parse);
         }, error => {
-            console.log(error);
-            alert("Get request failed!");
+            $state.go(APP_CONSTANTS.NAME.PAGE_404)
         });
     }
 ]);

@@ -67,7 +67,7 @@ app.controller('pokerboardDetailsCtrl', [
 
         $scope.inviteUser = () => {
             let user = {}
-            if($scope.email==null){
+            if($scope.email==''){
                 user = {
                     group_id: $scope.group,
                     role: $scope.role

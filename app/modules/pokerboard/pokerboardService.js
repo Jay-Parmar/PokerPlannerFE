@@ -24,7 +24,6 @@ app.service('pokerboardService', [
 
         this.inviteUser = function(user,pokerboardId){
             url = pokerboardId+"/invite/"
-            console.log(url)
             return Restangular.all(APP_CONSTANTS.API_ENDPOINT.POKERBOARD+url).post(user)
         }
 

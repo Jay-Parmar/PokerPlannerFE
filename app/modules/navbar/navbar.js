@@ -1,8 +1,12 @@
 app.controller('navigationCtrl',[
     '$scope', '$state', '$cookies', '$rootScope', '$window', 'APP_CONSTANTS', 'navbarService', 'Restangular', 
     function($scope, $state, $cookies, $rootScope, $window, APP_CONSTANTS, navbarService, Restangular){
-        
+
         $rootScope.$watch('user', function(newValue, oldValue){
+            if($cookies.get('user')){
+                let user_obj = JSON.parse($cookies.get('user'))
+                $rootScope.user = user_obj
+            }
             if($cookies.get('token')) {
                 $rootScope.isAuth = true;
             }else{
@@ -13,6 +17,7 @@ app.controller('navigationCtrl',[
         $scope.logout = function(){
             navbarService.logout();
             $cookies.remove('token');
+            $cookies.remove('user');
             $rootScope.user = undefined
             Restangular.setDefaultHeaders({})
             $state.go(APP_CONSTANTS.NAME.LOGIN);

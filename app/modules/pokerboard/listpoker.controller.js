@@ -1,6 +1,6 @@
 app.controller('pokerboardCtrl', [
-    '$state', '$scope', 'pokerboardService', 'Restangular', '$cookies',
-    function($state, $scope, pokerboardService, Restangular, $cookies){
+    '$state', '$scope', 'pokerboardService', 'Restangular', '$cookies', '$rootScope',
+    function($state, $scope, pokerboardService, Restangular, $cookies, $rootScope){
         
         $scope.goToPokerboard = id => {
             $state.go('pokerboard', { "id": id });
@@ -18,6 +18,7 @@ app.controller('pokerboardCtrl', [
                     manager: ele.manager,
                 });
             };
+
             response.forEach(parse);
         }, error => {
             $state.go(APP_CONSTANTS.NAME.PAGE_404)

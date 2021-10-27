@@ -22,6 +22,8 @@ app.controller('LoginController',
                     email: response.email,
                     hasJiraCreds: false,
                 }
+                console.log("root useer", $rootScope.user)
+                $cookies.put('user', JSON.stringify($rootScope.user))
                 $cookies.put('token', response.token)
                 $state.go('pokerboards');
             }, function (response) {

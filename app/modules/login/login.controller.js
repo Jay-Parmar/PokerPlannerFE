@@ -13,14 +13,17 @@ app.controller('LoginController',
                 "email": $scope.email,
                 "password": $scope.password
             };
-            loginService.login(user).then(function (response) {
+            loginService.login(user).then(function(response){
                 $rootScope.user = {
                     token: response.token,
-                    id: response.user_id,
+                    id: response.id,
                     first_name: response.first_name,
                     last_name: response.last_name,
-                    email: response.email
+                    email: response.email,
+                    hasJiraCreds: false,
                 }
+                console.log("root useer", $rootScope.user)
+                $cookies.put('user', JSON.stringify($rootScope.user))
                 $cookies.put('token', response.token)
                 $state.go('pokerboards');
             }, function (response) {

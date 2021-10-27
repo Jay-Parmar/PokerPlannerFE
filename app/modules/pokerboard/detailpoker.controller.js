@@ -1,12 +1,14 @@
 app.controller('pokerboardDetailsCtrl', [
-    '$state', '$scope', '$stateParams', 'pokerboardService', 'APP_CONSTANTS',
-    function ($state, $scope, $stateParams, pokerboardService, APP_CONSTANTS) {
+    '$state', '$scope', '$rootScope', '$stateParams', 'pokerboardService', 'APP_CONSTANTS',
+    function ($state, $scope, $rootScope, $stateParams, pokerboardService, APP_CONSTANTS) {
         
         $scope.pokerboard = {};
         const pokerboardId = $stateParams.id;  //send id with detail request
         $scope.email = "";
         $scope.isEditing = false;
         $scope.emailInviteForm = true;
+
+        $scope.user = $rootScope.user
 
         $scope.showEmailForm = () => {
             $scope.emailInviteForm = true;
@@ -57,8 +59,8 @@ app.controller('pokerboardDetailsCtrl', [
 
         pokerboardService.getPokerboardDetails(pokerboardId).then(response => {
             $scope.pokerboard = response;
-            $scope.pokerboard.estimated = $scope.pokerboard.tickets.filter(obj=>obj.estimate);
-            $scope.pokerboard.tickets = $scope.pokerboard.tickets
+            $scope.pokerboard.estimated = $scope.pokerboard.ticket.filter(obj=>obj.estimate);
+            $scope.pokerboard.tickets = $scope.pokerboard.ticket
                                         .filter(obj=>!obj.estimate).sort((a,b)=>a.order-b.order);
         }, error => {
             alert("Something went wrong!");

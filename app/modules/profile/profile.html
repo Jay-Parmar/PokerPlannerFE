@@ -7,26 +7,26 @@
                     <h1 style="text-align: center;">View Profile</h1>
                     <!-- First name input -->
                     <div class="form-outline mb-4">
+                        <label class="form-label " for="form3Example1">First name </label>
                         <input type="text" id="form3Example1" name="first_name" ng-model="first_name"
                             class="form-control form-control-lg" placeholder="Enter first name" required novalidate />
                         <span class="error_msg" ng-show="myForm.first_name.$invalid && myForm.first_name.$dirty">
                             first name is required
                         </span>
-                        <label class="form-label " for="form3Example1">First name </label>
                     </div>
 
                     <!-- Last name input -->
                     <div class="form-outline mb-4">
+                        <label class="form-label " for="form3Example2">Last name</label>
                         <input type="text" id="form3Example2" ng-model="last_name" class="form-control form-control-lg"
                             placeholder="Enter last name" novalidate />
-                        <label class="form-label " for="form3Example2">Last name</label>
                     </div>
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
+                        <label class="form-label " for="form3Example3">Email address</label>
                         <input type="email" id="form3Example3" name="email" ng-model="email"
                             class="form-control form-control-lg" readonly/>
-                        <label class="form-label " for="form3Example3">Email address</label>
                     </div>
 
                     <div class="text-center text-lg-start mt-4 pt-2">

@@ -14,7 +14,7 @@
             <label class="form-label reqd" for="form3Example1">First name </label>
             <input type="text" id="form3Example1" name="first_name" ng-model="first_name"
               class="form-control form-control-lg" placeholder="Enter first name" required novalidate />
-            <span class="error_msg" ng-show="myForm.first_name.$invalid && myForm.first_name.$dirty">
+            <span class="error_msg" ng-show="myForm.first_name.$invalid && myForm.first_name.$touched">
               first name is required
             </span>
           </div>
@@ -24,7 +24,7 @@
             <label class="form-label reqd" for="form3Example1">Last name </label>          
             <input type="text" id="form3Example2" name="last_name" ng-model="last_name"
               class="form-control form-control-lg" placeholder="Enter Last name" required novalidate />
-            <span class="error_msg" ng-show="myForm.last_name.$invalid && myForm.last_name.$dirty">
+            <span class="error_msg" ng-show="myForm.last_name.$invalid && myForm.last_name.$touched">
               last name is required
             </span>
           </div>
@@ -35,7 +35,7 @@
             <input type="email" id="form3Example3" name="email" ng-model="email" class="form-control form-control-lg"
               placeholder="Enter email address" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required
               novalidate />
-            <span class="error_msg" ng-show="myForm.email.$invalid && myForm.email.$dirty">
+            <span class="error_msg" ng-show="myForm.email.$invalid && myForm.email.$touched">
               <span ng-show="myForm.email.$error.required">Email is required.</span>
               <span ng-show="myForm.email.$error.pattern">Invalid email address.</span>
             </span>
@@ -48,7 +48,7 @@
               ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/" name="password"
               ng-model="password" class="form-control form-control-lg" placeholder="Enter password" required
               novalidate />
-            <span class="error_msg" ng-show="myForm.password.$invalid && myForm.password.$dirty">
+            <span class="error_msg" ng-show="myForm.password.$invalid && myForm.password.$touched">
               <span ng-show="myForm.password.$error.required">Password is required.</span>
               <span ng-show="myForm.password.$error.pattern">Password should be atleast 8 characters long and should
                 contain one number,one character and one special character</span>
@@ -60,7 +60,7 @@
             <label class="form-label reqd" for="form3Example5">Confirm Password</label>
             <input type="password" id="form3Example5" name="password2" ng-model="password2"
               class="form-control form-control-lg" placeholder="Confirm password" required />
-            <span class="error_msg" ng-show="myForm.password2.$dirty && password != password2">Your passwords must
+            <span class="error_msg" ng-show="myForm.password2.$touched && password != password2">Your passwords must
               match.</span>
           </div>
           <ul class="backend-errors">

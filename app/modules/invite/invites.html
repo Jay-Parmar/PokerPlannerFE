@@ -13,9 +13,9 @@
           <td > {{invite.email}} </td>
           <td > {{invite.pokerboard}} </td>
           <td > {{invite.group}} </td>
-          <td ng-show="!invite.is_accepted"><button ng-click="accept(invite)">Accept</button></td>
-          <td ng-show="!invite.is_accepted"><button ng-click="decline(invite)">Decline</button></td>
-          <td colspan="2" style="text-align: center;" ng-show="invite.is_accepted">{{message}}</td>
+          <td ng-show="invite.status == 0"><button ng-click="accept(invite)">Accept</button></td>
+          <td ng-show="invite.status ==0"><button ng-click="decline(invite)">Decline</button></td>
+          <td colspan="2" style="text-align: center;" ng-show="invite.status != 0">{{message}}</td>
         </tr>
         
       </table>

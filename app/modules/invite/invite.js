@@ -4,16 +4,16 @@ app.controller('inviteCtrl',function ($scope, data, inviteService) {
         inviteService.acceptInvite(invite.pokerboard).then(function(){
             $scope.show = true
             $scope.message = "Accepted"
-            invite.is_accepted = true
+            invite.status = 1
         }, function(){
             
         })
     }
-    $scope.decline = function(y){
+    $scope.decline = function(invite){
         inviteService.deleteInvite(invite.id).then(function(){
         $scope.show = true
         $scope.message = "Declined"
-        invite.is_accepted = true
+        invite.status = 2
         }, function(){
 
         })

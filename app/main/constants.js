@@ -17,6 +17,8 @@
             MEMBERS: 'pokerboard/members',    // fill the url here to invite users or group  
             INVITE: 'users/invite/',
             JIRA_CREDENTIALS: 'pokerboard/manager',
+            COMMENT: 'pokerboard/comment',
+            VOTE: 'pokerboard/vote'
         },
         TEMPLATE_URL: {
             SIGNUP: 'modules/signup/signup.html',

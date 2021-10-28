@@ -34,6 +34,12 @@ app.config(
           controller: APP_CONSTANTS.CONTROLLERS.VERIFY,
         })
         .state({
+          name: APP_CONSTANTS.NAME.ACCOUNT_ACTIVATE,
+          url: APP_CONSTANTS.URLS.ACCOUNT_ACTIVATE,
+          templateUrl: APP_CONSTANTS.TEMPLATE_URL.ACCOUNT_ACTIVATE,
+          controller: APP_CONSTANTS.CONTROLLERS.ACCOUNT_ACTIVATE,
+        })
+        .state({
           name: APP_CONSTANTS.NAME.GROUP,
           url: APP_CONSTANTS.URLS.GROUP,
           templateUrl: APP_CONSTANTS.TEMPLATE_URL.GROUP,

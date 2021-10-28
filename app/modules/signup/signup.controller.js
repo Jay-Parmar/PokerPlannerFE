@@ -16,7 +16,7 @@ app.controller('SignupController', function ($scope, $state, signUpService) {
       };
     signUpService.signup(user)
       .then(function (response) {
-        $state.go("login");
+        $state.go('verifyemail', {"uid": response.id});
       },
         function (response) {
           $scope.errors = response.data.email

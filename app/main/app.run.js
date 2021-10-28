@@ -1,13 +1,17 @@
 app.run(function ($transitions, $cookies, APP_CONSTANTS, Restangular){
 
     $transitions.onBefore({from: APP_CONSTANTS.NAME.SIGNUP, to: '*'}, function(transition){
-        if(!$cookies.get('token') && transition.to().name != APP_CONSTANTS.NAME.LOGIN){
+        if(!$cookies.get('token') && transition.to().name != APP_CONSTANTS.NAME.LOGIN
+        && transition.to().name != APP_CONSTANTS.NAME.VERIFY
+        && transition.to().name != APP_CONSTANTS.NAME.ACCOUNT_ACTIVATE){
             return false;
         }
     });
     
     $transitions.onBefore({from: APP_CONSTANTS.NAME.LOGIN, to: '*'}, function(transition){
-        if(!$cookies.get('token') && transition.to().name != APP_CONSTANTS.NAME.SIGNUP){
+        if(!$cookies.get('token') && transition.to().name != APP_CONSTANTS.NAME.SIGNUP
+        && transition.to().name != APP_CONSTANTS.NAME.VERIFY 
+        && transition.to().name != APP_CONSTANTS.NAME.ACCOUNT_ACTIVATE){
             return false;
         }
     });

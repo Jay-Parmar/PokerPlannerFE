@@ -5,26 +5,26 @@
             SIGNUP: 'users/',
             LOGIN: 'users/login/',
             LOGOUT: 'users/logout/',
-            ACCOUNT_ACTIVATE: 'users/activate/:uid/:token',
+            ACCOUNT_ACTIVATE: 'users/activate/',
             GROUP: 'groups/',
             GROUP_DETAIL:'groups/:id',
             BOARD: 'board/',
             GROUP_MEMBER: 'groups/members',
             GET_USER_DETAILS: 'users/',
             CHANGE_PASSWORD: 'users/changepassword/',
-            ACCOUNT_ACTIVATE: '',
             POKERBOARD: 'pokerboard/',   //HAVE TO FILL THIS
             MEMBERS: 'pokerboard/members',    // fill the url here to invite users or group  
             INVITE: 'users/invite/',
             JIRA_CREDENTIALS: 'pokerboard/manager',
             COMMENT: 'pokerboard/comment',
-            VOTE: 'pokerboard/vote'
+            VOTE: 'pokerboard/vote',
+            VERIFY:'users/resend'
         },
         TEMPLATE_URL: {
             SIGNUP: 'modules/signup/signup.html',
             LOGIN: 'modules/login/login.html',
             PROFILE: 'modules/profile/profile.html',
-            VERIFY: 'modules/email verification/emailverification.html',
+            VERIFY: 'modules/email verification/verifyMessage.html',
             GROUP: 'modules/group/create_group.html',
             GROUP_DETAIL:'modules/group/group_detail.html',
             BOARD: 'modules/voting-board/voting-board.html',
@@ -35,13 +35,14 @@
             MEMBERS: 'modules/poker-members/poker_members.html',
             JIRA_CREDENTIALS: 'modules/pokerboard/jiraCredentials.html',
             INVITE: 'modules/invite/invites.html',
-            PAGE_404: 'modules/error_pages/404-page-not-found.html'
+            PAGE_404: 'modules/error_pages/404-page-not-found.html',
+            ACCOUNT_ACTIVATE: 'modules/email verification/emailverification.html'
         },
         CONTROLLERS: {
             SIGNUP: 'SignupController',
             LOGIN: 'LoginController',
             PROFILE: 'ProfileController',
-            VERIFY: 'emailVerificationCtrl',
+            VERIFY: 'verifyMessageController',
             GROUP: 'groupCtrl',
             GROUP_DETAIL:'groupDetailController',
             BOARD: 'votingController',
@@ -51,13 +52,14 @@
             POKER_DETAIL: 'pokerboardDetailsCtrl',
             MEMBERS: 'pokerboardMembersCtrl',
             JIRA_CREDENTIALS: 'jiraCredentialsCtrl',
-            INVITE: 'inviteCtrl'
+            INVITE: 'inviteCtrl',
+            ACCOUNT_ACTIVATE: 'emailVerificationCtrl'
         },
         URLS: {
             SIGNUP: '/',
             LOGIN: '/login',
             PROFILE: '/profile',
-            VERIFY: '/activate/:uid/:token',
+            ACCOUNT_ACTIVATE: '/activate/:uid/:token',
             GROUP:'/group',
             GROUP_DETAIL:'/group/:id',
             BOARD: '/board',
@@ -68,13 +70,14 @@
             MEMBERS: '/pokerboard/:pid/members',
             JIRA_CREDENTIALS: '/jiraCredentials',
             INVITE: '/invites',
-            PAGE_404:'/404'
+            PAGE_404:'/404',
+            VERIFY: '/verifyemail/:uid'
         },
         NAME: {
             SIGNUP: 'signup',
             LOGIN: 'login',
             PROFILE: 'profile',
-            VERIFY: 'verify',
+            VERIFY: 'verifyemail',
             GROUP: 'group',
             GROUP_DETAIL:'group_detail',
             BOARD: 'board',
@@ -85,7 +88,8 @@
             MEMBERS: 'members',
             JIRA_CREDENTIALS: 'jiraCredentials',
             INVITE: 'invite',
-            PAGE_404: 'PAGE_404'
+            PAGE_404: 'PAGE_404',
+            ACCOUNT_ACTIVATE:'activate_account'
         },
         DECK_NAME: {
             1: 'Serial',

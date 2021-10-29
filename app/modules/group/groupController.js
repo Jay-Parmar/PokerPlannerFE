@@ -1,7 +1,7 @@
 app.controller('groupCtrl', [
-    '$scope', '$state', 'groupServices',
+    '$scope', '$state', 'groupServices', 'APP_CONSTANTS',
     function (
-        $scope, $state, groupServices,
+        $scope, $state, groupServices, APP_CONSTANTS
     ) {
         $scope.groups = []
         $scope.getGroupsList = () => {
@@ -9,14 +9,14 @@ app.controller('groupCtrl', [
             then(function(response){
                 $scope.groups = response
             },function(errors){
-                console.log(errors)
+                
             })
         }   
 
         $scope.createGroup = () => {
             groupServices.createGroup({name: $scope.groupName}).
             then(function(response){
-                $state.reload()
+                $state.go('group_detail', { "id": response.id });
             }, function(errors){
                 console.log(errors)
             })

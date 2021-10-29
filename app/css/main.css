@@ -304,7 +304,33 @@ table, th, td {
   font-weight: 600;
 }
 
+.backend-message {
+  color: crimson;
+  font-size: 16px;
+  font-weight: 600;
+}
+
 /* Pokerboard Members*/
 .poker-members {
   padding: 0px 15px 0px 15px;
+}
+
+.email-verify-container{
+  margin: 30px;
+}
+
+.verify-btn-container{
+  margin-top: 50px;
+  justify-content: space-evenly;
+  display: flex;
+}
+
+.verify-email-btn{
+  justify-content: center;
+  display: flex;
+}
+
+.email-img{
+  margin: auto;
+  display: block;
 }

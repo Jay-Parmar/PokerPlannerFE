@@ -1,6 +1,6 @@
 app.config(
-  ['$stateProvider', '$urlRouterProvider', 'RestangularProvider', 'APP_CONSTANTS', 
-    function ($stateProvider, $urlRouterProvider, RestangularProvider, APP_CONSTANTS) {
+  ['$stateProvider', '$urlRouterProvider', 'RestangularProvider', 'APP_CONSTANTS',
+    function ($stateProvider, $urlRouterProvider, RestangularProvider, APP_CONSTANTS, $stateParams) {
 
       RestangularProvider.setBaseUrl(APP_CONSTANTS.BASE_URL);
       $stateProvider
@@ -74,6 +74,10 @@ app.config(
           url: APP_CONSTANTS.URLS.POKER_DETAIL,
           templateUrl: APP_CONSTANTS.TEMPLATE_URL.POKER_DETAIL,
           controller: APP_CONSTANTS.CONTROLLERS.POKER_DETAIL,
+          params: {
+            'id':'',
+            'mid':''
+        } 
         })
         .state({
           name: APP_CONSTANTS.NAME.MEMBERS,
@@ -102,6 +106,12 @@ app.config(
               return inviteService.getUserInvites()
             }
           },
+        })
+        .state({
+          name: APP_CONSTANTS.NAME.MANAGER_INVITES,
+          url: APP_CONSTANTS.URLS.MANAGER_INVITES,
+          templateUrl: APP_CONSTANTS.TEMPLATE_URL.MANAGER_INVITES,
+          controller: APP_CONSTANTS.CONTROLLERS.MANAGER_INVITES,
         });
       $urlRouterProvider.otherwise("/");
     }]);

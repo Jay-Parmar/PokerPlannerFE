@@ -3,11 +3,13 @@ app.service('memberService', [
     function(Restangular, APP_CONSTANTS){
 
         this.getMembers = pokerboardId => {
-            return Restangular.one(APP_CONSTANTS.API_ENDPOINT.MEMBERS, pokerboardId).get();
+            url = APP_CONSTANTS.API_ENDPOINT.MEMBERS + '/' + pokerboardId + '/'
+            return Restangular.one(url).get();
         }
 
         this.removeMember = pokerboardMemberId => {
-            return Restangular.one(APP_CONSTANTS.API_ENDPOINT.MEMBERS, pokerboardMemberId).remove();
+            url = APP_CONSTANTS.API_ENDPOINT.MEMBERS + pokerboardMemberId + '/'
+            return Restangular.all(url).remove();
         }
     }
 ]);

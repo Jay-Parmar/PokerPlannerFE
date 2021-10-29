@@ -4,7 +4,8 @@
         <div>
             <h2>{{ pokerboard.title }}</h2>
         </div>
-        <div>
+        <div ng-show="show">
+            <button class="btn btn-secondary" ng-click="managerinvites()">Invites Sent</button>
             <button class="btn btn-secondary bg-dark" ng-click="goToMembers()">Members</button>
             <button data-bs-toggle="modal" data-bs-target="#inviteUserModal" 
                 class="btn btn-success">Invite user</button>

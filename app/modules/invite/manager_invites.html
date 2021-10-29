@@ -1,5 +1,5 @@
 <div ng-show="invites.length==0">
-  <h2 class="main-heading">You have no pending invites</h2>
+  <h2 class="main-heading">You have no invites yet</h2>
 </div>
 <div ng-show="invites.length!=0">
   <h2 class="main-heading">List of Invites</h2>
@@ -7,16 +7,16 @@
     <p><span class='group-name'> </span>EMAIL</p>
     <p><span class='group-name'> </span>POKERBOARD </p>
     <p><span class='group-name'> </span>GROUP </p>
-    <p><span class='group-name'></span>ACTION</p>
+    <p><span class='group-name'></span>STATUS</p>
   </div>
   <div ng-repeat="invite in invites">
     <div class="group-item">
       <p><span class='group-name'> </span>{{invite.email}} </p>
       <p><span class='group-name'> </span>{{invite.pokerboard}} </p>
       <p><span class='group-name'> </span>{{invite.group}} </p>
-      <p ng-show="invite.status == 0"><button class="btn-success" ng-click="accept(invite)">Accept</button>
-      <button class="btn-danger" ng-click="decline(invite)">Decline</button></p>
-      <p ng-show="invite.status != 0">{{message}}</p>
+      <p ng-show="invite.status == 0">Pending</p>
+      <p ng-show="invite.status == 1">Accepted</p>
+      <p ng-show="invite.status == 2">Declined</p>
     </div>
   </div>
 </div>

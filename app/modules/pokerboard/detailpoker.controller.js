@@ -1,8 +1,11 @@
 app.controller('pokerboardDetailsCtrl', [
-    '$state', '$scope', '$rootScope', '$stateParams', 'pokerboardService', 'APP_CONSTANTS',
-    function ($state, $scope, $rootScope, $stateParams, pokerboardService, APP_CONSTANTS) {
+    '$state', '$scope', '$rootScope', '$stateParams', 'pokerboardService', 'APP_CONSTANTS', '$cookies',
+    function ($state, $scope, $rootScope, $stateParams, pokerboardService, APP_CONSTANTS, $cookies) {
         
         $scope.pokerboard = {};
+        const manager_id = $stateParams.mid
+        $scope.show = $cookies.get("id") == manager_id
+        console.log($scope.show)
         const pokerboardId = $stateParams.id;  //send id with detail request
         $scope.email = "";
         $scope.isEditing = false;
@@ -72,22 +75,28 @@ app.controller('pokerboardDetailsCtrl', [
             if($scope.email==''){
                 user = {
                     group_id: $scope.group,
-                    role: $scope.role
+                    role: $scope.role,
+                    pokerboard: pokerboardId
                 }
             }
             else{
                 user = {
                     email: $scope.email,
-                    role: $scope.role
+                    role: $scope.role,
+                    pokerboard: pokerboardId
                 }
             }
-            pokerboardService.inviteUser(user, $scope.pokerboard.id).then(response => {
+            pokerboardService.inviteUser(user).then(response => {
                 alert("User/Group invited");
                 console.log(response);
             }, error => {
                 console.log(error);
                 alert("Error while inviting user");
             });
+        }
+        $scope.managerinvites = function(){
+            console.log("hi")
+            $state.go('manager_invites', {"pid": pokerboardId});
         }
     }
 ]);

@@ -15,10 +15,11 @@
             ACCOUNT_ACTIVATE: '',
             POKERBOARD: 'pokerboard/',   //HAVE TO FILL THIS
             MEMBERS: 'pokerboard/members',    // fill the url here to invite users or group  
-            INVITE: 'users/invite/',
+            INVITE: 'invite/',
             JIRA_CREDENTIALS: 'pokerboard/manager',
             COMMENT: 'pokerboard/comment',
-            VOTE: 'pokerboard/vote'
+            VOTE: 'pokerboard/vote',
+            MANAGER_INVITES: 'invite/managerinvites/'
         },
         TEMPLATE_URL: {
             SIGNUP: 'modules/signup/signup.html',
@@ -35,7 +36,8 @@
             MEMBERS: 'modules/poker-members/poker_members.html',
             JIRA_CREDENTIALS: 'modules/pokerboard/jiraCredentials.html',
             INVITE: 'modules/invite/invites.html',
-            PAGE_404: 'modules/error_pages/404-page-not-found.html'
+            PAGE_404: 'modules/error_pages/404-page-not-found.html',
+            MANAGER_INVITES: 'modules/invite/manager_invites.html'
         },
         CONTROLLERS: {
             SIGNUP: 'SignupController',
@@ -51,7 +53,8 @@
             POKER_DETAIL: 'pokerboardDetailsCtrl',
             MEMBERS: 'pokerboardMembersCtrl',
             JIRA_CREDENTIALS: 'jiraCredentialsCtrl',
-            INVITE: 'inviteCtrl'
+            INVITE: 'inviteCtrl',
+            MANAGER_INVITES: 'managerCtrl'
         },
         URLS: {
             SIGNUP: '/',
@@ -64,11 +67,12 @@
             EDIT_PASSWORD: '/editPassword',
             POKER_CREATE: '/pokerboard',
             POKER_LIST: '/pokerboards',
-            POKER_DETAIL: '/pokerboard/:id',
+            POKER_DETAIL: '/pokerboard/:id/manager/:mid',
             MEMBERS: '/pokerboard/:pid/members',
             JIRA_CREDENTIALS: '/jiraCredentials',
             INVITE: '/invites',
-            PAGE_404:'/404'
+            PAGE_404:'/404',
+            MANAGER_INVITES: '/pokerboard/:pid/invites'
         },
         NAME: {
             SIGNUP: 'signup',
@@ -85,7 +89,8 @@
             MEMBERS: 'members',
             JIRA_CREDENTIALS: 'jiraCredentials',
             INVITE: 'invite',
-            PAGE_404: 'PAGE_404'
+            PAGE_404: 'PAGE_404',
+            MANAGER_INVITES: 'manager_invites'
         },
         DECK_NAME: {
             1: 'Serial',

@@ -1,4 +1,4 @@
-app.run(function ($transitions, $cookies, APP_CONSTANTS, Restangular){
+app.run(function ($transitions, $cookies, APP_CONSTANTS, Restangular, $state){
 
     $transitions.onBefore({from: APP_CONSTANTS.NAME.SIGNUP, to: '*'}, function(transition){
         if(!$cookies.get('token') && transition.to().name != APP_CONSTANTS.NAME.LOGIN){

@@ -20,7 +20,8 @@ app.service('groupServices', ['Restangular', 'APP_CONSTANTS','$cookies',
         }
 
         this.getGroupDetails = function(groupId){
-            return Restangular.one(APP_CONSTANTS.API_ENDPOINT.GROUP, groupId).get();
+            url = APP_CONSTANTS.API_ENDPOINT.GROUP + '/' + groupId + '/'
+            return Restangular.one(url).get();
         }
 
         this.getGroups = function(){

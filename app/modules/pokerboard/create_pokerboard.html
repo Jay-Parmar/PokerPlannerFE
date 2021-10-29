@@ -54,6 +54,11 @@
                         id="duration" ng-model="board.duration" placeholder="Enter Duration in seconds">
                     </div>
 
+                    <!-- Error Messages -->
+                    <div class="error_msg">
+                        {{errmsg}}
+                    </div>
+
                     <div class="mt-4 btn-create">
                         <button ng-disabled="myForm.$invalid || 
                         (!myForm.ticketid.$dirty && !myForm.sprintid.$dirty)" 

@@ -1,10 +1,16 @@
 app.controller('jiraCredentialsCtrl', [
-    '$scope', '$state', '$rootScope', 'APP_CONSTANTS', 'pokerboardService', '$cookies',
-    function($scope, $state, $rootScope, APP_CONSTANTS, pokerboardService, $cookies){
+    '$scope', '$state', '$rootScope', 'APP_CONSTANTS', 'pokerboardService', '$cookies', 'data',
+    function($scope, $state, $rootScope, APP_CONSTANTS, pokerboardService, $cookies, data){
         $scope.errmsg = null
+        // $scope.hasJiraCreds = false
 
-        if(JSON.parse($cookies.get('user')).hasJiraCreds){  // have to connect with backend
+        if(data[0]){
+            // $scope.hasJiraCreds = true
+
             $state.go(APP_CONSTANTS.NAME.POKER_CREATE)
+            $scope.username = data[0].username
+            $scope.url = data[0].url
+            $scope.password = data[0].password
         }
 
         $scope.createPokerboard = function(){

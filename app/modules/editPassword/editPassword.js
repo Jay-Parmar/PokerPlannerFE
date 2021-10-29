@@ -6,11 +6,10 @@ app.controller("editPassword", function ($scope, $state, profileService, $rootSc
             "old_password": $scope.oldpassword,
         }
         profileService.changePassword(data, $rootScope.id).then(function(response){
-            alert("Change Successfull")
+            $scope.message = "Password changed"
             $state.go('profile')
         },function(response){
-            console.log(response)
-            alert("save unsuccessfull")
+            $scope.message = response.data.old_password.old_password
         })
     }
 

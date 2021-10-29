@@ -304,6 +304,12 @@ table, th, td {
   font-weight: 600;
 }
 
+.backend-message {
+  color: crimson;
+  font-size: 16px;
+  font-weight: 600;
+}
+
 /* Pokerboard Members*/
 .poker-members {
   padding: 0px 15px 0px 15px;

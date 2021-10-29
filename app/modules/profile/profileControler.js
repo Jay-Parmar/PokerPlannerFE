@@ -46,10 +46,10 @@ app.controller('ProfileController', function ($scope, $state, profileService, da
         };
         profileService.save(user)
             .then(function (response) {
-                alert("Save Successfull");
+                $scope.message = "Profile Updated Successfully"
             },
                 function (response) {
-                    alert("Save Failed");
+                    $scope.message = "Error occoured"
                 }
             );
     };

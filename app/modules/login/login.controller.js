@@ -17,6 +17,13 @@ app.controller('LoginController',
                 if(!response.is_verified){
                     $state.go('verifyemail', {"uid": response.id});
                 }else{
+                    $rootScope.user = {
+                        token: response.token,
+                        id: response.id,
+                        first_name: response.first_name,
+                        last_name: response.last_name,
+                        email: response.email,
+                    }
                     $cookies.put('user', JSON.stringify($rootScope.user))
                     $cookies.put('token', response.token)
                     $state.go('pokerboards');

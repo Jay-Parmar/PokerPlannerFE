@@ -71,16 +71,16 @@
         <div ng-repeat="ticket in pokerboard.tickets">
             <div class="tab-content">
                 <p>{{ticket.ticket_id}}</p>
-                <p class="w-50">{{ticket.summary}}</p>
-                <button ng-show="user.id==pokerboard.manager.id" ng-click="createSession(ticket.id)" class="join-btn bg-dark">Estimate</button>
-                <button ng-show="user.id==pokerboard.manager.id" ng-click="moveUp($index)" class="btn-delete bg-dark mx-1"><i class="bi bi-arrow-up"></i></button>
-                <button ng-show="user.id==pokerboard.manager.id" ng-click="moveDown($index)" class="btn-delete bg-dark mx-1"><i class="bi bi-arrow-down"></i></button>
+                <p class="w-50">{{ticket.title}}</p>
+                <button ng-show="user.id==pokerboard.manager.id" ng-click="createSession(ticket.id)" class="bg-primary bg-light">Estimate</button>
+                <!-- <button ng-show="user.id==pokerboard.manager.id" ng-click="moveUp($index)" class="btn-delete bg-dark mx-1"><i class="bi bi-arrow-up"></i></button> -->
+                <!-- <button ng-show="user.id==pokerboard.manager.id" ng-click="moveDown($index)" class="btn-delete bg-dark mx-1"><i class="bi bi-arrow-down"></i></button> -->
             </div>
             <hr>
         </div>
-        <div ng-show="isEditing" class="my-3 d-flex justify-content-end">
+        <!-- <div ng-show="isEditing" class="my-3 d-flex justify-content-end">
             <button class="m-1 btn btn-success" ng-click="saveOrder()">Save</button>
-        </div>
+        </div> -->
         <div class="my-4">
             <div class="tab-head">
                 <p>ESTIMATED TICKETS</p>

@@ -15,7 +15,12 @@ app.service('pokerboardService', [
         };
         
         this.getPokerboardDetails = pokerboardId => {
-            return Restangular.one(APP_CONSTANTS.API_ENDPOINT.POKERBOARD, pokerboardId).get();
+            let url = APP_CONSTANTS.API_ENDPOINT.POKERBOARD + pokerboardId + '/'
+            return Restangular.one(url).get();
+        };
+
+        this.getJiraDetails = pokerboardId => {
+            return Restangular.one(APP_CONSTANTS.API_ENDPOINT.JIRA_CREDENTIALS).get();
         };
 
         this.orderTickets = (tickets, pokerboardId) => {

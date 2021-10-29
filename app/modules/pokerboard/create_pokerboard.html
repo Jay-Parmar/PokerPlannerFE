@@ -43,9 +43,15 @@
                     </div>
 
                     <div class="form-outline mb-4 flex">
-                        <label class="form-label" for="sprintid">JIRA Sprint ids: Separated by ',' with no spaces</label>
+                        <label class="form-label" for="sprintid">Sprint id</label>
                         <textarea type="text" class="form-control" name="sprintid"
                             id="sprintid" ng-model="board.sprintid" placeholder="Enter Board sprintids"></textarea>
+                    </div>
+
+                    <div class="form-outline mb-4 flex">
+                        <label class="form-label" for="jql">Jql</label>
+                        <textarea type="text" class="form-control" name="jql"
+                            id="jql" ng-model="board.jql" placeholder="Enter Board jql"></textarea>
                     </div>
 
                     <div class="form-outline mb-4 flex">
@@ -61,7 +67,7 @@
 
                     <div class="mt-4 btn-create">
                         <button ng-disabled="myForm.$invalid || 
-                        (!myForm.ticketid.$dirty && !myForm.sprintid.$dirty)" 
+                        (!myForm.ticketid.$dirty && !myForm.sprintid.$dirty && !myForm.jql.$dirty)" 
                         ng-click="submit()" class="btn btn-dark">
                             Create Board
                         </button>

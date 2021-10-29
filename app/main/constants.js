@@ -14,11 +14,12 @@
             CHANGE_PASSWORD: 'users/changepassword/',
             POKERBOARD: 'pokerboard/',   //HAVE TO FILL THIS
             MEMBERS: 'pokerboard/members',    // fill the url here to invite users or group  
-            INVITE: 'users/invite/',
+            INVITE: 'invite/',
             JIRA_CREDENTIALS: 'pokerboard/manager',
             COMMENT: 'pokerboard/comment',
             VOTE: 'pokerboard/vote',
-            VERIFY:'users/resend'
+            VERIFY:'users/resend',
+            MANAGER_INVITES: 'invite/managerinvites/'
         },
         TEMPLATE_URL: {
             SIGNUP: 'modules/signup/signup.html',
@@ -36,7 +37,8 @@
             JIRA_CREDENTIALS: 'modules/pokerboard/jiraCredentials.html',
             INVITE: 'modules/invite/invites.html',
             PAGE_404: 'modules/error_pages/404-page-not-found.html',
-            ACCOUNT_ACTIVATE: 'modules/email verification/emailverification.html'
+            ACCOUNT_ACTIVATE: 'modules/email verification/emailverification.html',
+            MANAGER_INVITES: 'modules/invite/manager_invites.html'
         },
         CONTROLLERS: {
             SIGNUP: 'SignupController',
@@ -53,7 +55,8 @@
             MEMBERS: 'pokerboardMembersCtrl',
             JIRA_CREDENTIALS: 'jiraCredentialsCtrl',
             INVITE: 'inviteCtrl',
-            ACCOUNT_ACTIVATE: 'emailVerificationCtrl'
+            ACCOUNT_ACTIVATE: 'emailVerificationCtrl',
+            MANAGER_INVITES: 'managerCtrl'
         },
         URLS: {
             SIGNUP: '/',
@@ -66,12 +69,13 @@
             EDIT_PASSWORD: '/editPassword',
             POKER_CREATE: '/pokerboard',
             POKER_LIST: '/pokerboards',
-            POKER_DETAIL: '/pokerboard/:id',
+            POKER_DETAIL: '/pokerboard/:id/manager/:mid',
             MEMBERS: '/pokerboard/:pid/members',
             JIRA_CREDENTIALS: '/jiraCredentials',
             INVITE: '/invites',
             PAGE_404:'/404',
-            VERIFY: '/verifyemail/:uid'
+            VERIFY: '/verifyemail/:uid',
+            MANAGER_INVITES: '/pokerboard/:pid/invites'
         },
         NAME: {
             SIGNUP: 'signup',
@@ -89,7 +93,8 @@
             JIRA_CREDENTIALS: 'jiraCredentials',
             INVITE: 'invite',
             PAGE_404: 'PAGE_404',
-            ACCOUNT_ACTIVATE:'activate_account'
+            ACCOUNT_ACTIVATE:'activate_account',
+            MANAGER_INVITES: 'manager_invites'
         },
         DECK_NAME: {
             1: 'Serial',

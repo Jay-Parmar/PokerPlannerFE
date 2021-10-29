@@ -1,16 +1,17 @@
 app.controller('groupDetailController', [
-    '$scope', '$state', 'groupServices', '$stateParams',
+    '$scope', '$state', 'groupServices', '$stateParams', '$cookies',
 
     function (
-        $scope, $state, groupServices, $stateParams
+        $scope, $state, groupServices, $stateParams, $cookies
     ) {
         const groupId = $stateParams.id
         $scope.group = {}
-        $scope.isOwner = false
+        $scope.user = $cookies.get('id')
         $scope.getGroupDetails = () => {
             groupServices.getGroupDetails(groupId)
             .then(function(response){
                 $scope.group = response
+                console.log(response)
             }, function(err){
 
             })
@@ -19,9 +20,9 @@ app.controller('groupDetailController', [
         $scope.addMember = () => {
             groupServices.addMember($scope.email, groupId)
             .then(function(response){
-
+                $state.go('group')
             }, function(err){
-
+                
             })
         }
 

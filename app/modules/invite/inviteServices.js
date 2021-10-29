@@ -9,10 +9,17 @@ app.service("inviteService",function(Restangular, $cookies, APP_CONSTANTS){
     }
 
     this.acceptInvite = function(id){
-        return Restangular.one(APP_CONSTANTS.API_ENDPOINT.POKERBOARD, `${id}/invite/`).patch();
+        url = APP_CONSTANTS.API_ENDPOINT.INVITE + id + "/"
+        return Restangular.all(url).patch();
     }
 
     this.deleteInvite = function(id){
-        return Restangular.one(APP_CONSTANTS.API_ENDPOINT.INVITE, id).remove();
+        url = APP_CONSTANTS.API_ENDPOINT.INVITE + id + "/"
+        return Restangular.one(url).remove();
+    }
+
+    this.getManagerInvites = function(data){
+        url = "?pokerboard="+data
+        return Restangular.one(APP_CONSTANTS.API_ENDPOINT.MANAGER_INVITES+url).get();
     }
 })

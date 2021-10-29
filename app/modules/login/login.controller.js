@@ -26,6 +26,7 @@ app.controller('LoginController',
                     }
                     $cookies.put('user', JSON.stringify($rootScope.user))
                     $cookies.put('token', response.token)
+                    $cookies.put('id', response.id)
                     $state.go('pokerboards');
                 }
             }, function (response) {

@@ -23,8 +23,10 @@ app.controller('createBoardCtrl', [
             // Creating the pokerboard from desired data
             $scope.estimation_cards = ($scope.selectedType!==5) ? APP_CONSTANTS.DECK_TYPE[$scope.selectedType] : 
                                        $scope.deckValue.split(',');
-            ticketid = $scope.board.ticketid!=undefined && $scope.board.ticketid.split(',')
-            sprintid = $scope.board.sprintid!=undefined && $scope.board.sprintid
+            let ticketid = $scope.board.ticketid!=undefined && $scope.board.ticketid.length != 0 && $scope.board.ticketid.split(',')
+            let sprintid = $scope.board.sprintid!=undefined && $scope.board.sprintid
+            let jql = $scope.board.jql!=undefined && $scope.board.jql
+
             const data = {
                 title: $scope.board.title,
                 description: $scope.board.description,
@@ -32,11 +34,15 @@ app.controller('createBoardCtrl', [
                 timer: $scope.board.duration,
                 estimation_cards: $scope.deckValue,
             };
+            console.log(ticketid)
             if(ticketid){
                 data.tickets = ticketid
             }
             if(sprintid){
                 data.sprint_id = sprintid
+            }
+            if(jql){
+                data.jql = jql
             }
             pokerboardService.createBoard(data).then(response => {
                 console.log(response);

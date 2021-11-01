@@ -1,10 +1,6 @@
 <section class="vh-100" style="overflow-x:hidden;">
   <div class="container-fluid h-custom">
     <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-md-9 col-lg-6 col-xl-4">
-        <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid"
-          alt="Sample image">
-      </div>
 
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
         <form name="myForm">
@@ -24,8 +20,9 @@
           <!-- Password input -->
           <div class="form-outline mb-3">
             <label class="form-label reqd" for="form3Example4">Password</label>
-            <input type="password" id="form3Example4" name="password" ng-model="password"
+            <input ng-attr-type="{{ showpassword ? 'text' : 'password' }}" id="form3Example4" name="password" ng-model="password"
               class="form-control form-control-lg" placeholder="Enter password" required novalidate />
+              <i class="far fa-eye" id="togglePassword" ng-click="togglePassword()"></i>
             <span class="error_msg" ng-show="myForm.password.$invalid && myForm.password.$touched">
               <span ng-show="myForm.password.$error.required">Password is required.</span>
             </span>

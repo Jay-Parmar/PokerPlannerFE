@@ -1,7 +1,8 @@
 app.controller('inviteCtrl',function ($scope, data, inviteService) {
     $scope.invites = data
+    console.log(data)
     $scope.accept = function(invite){
-        inviteService.acceptInvite(invite.pokerboard).then(function(){
+        inviteService.acceptInvite(invite.id).then(function(){
             $scope.show = true
             $scope.message = "Accepted"
             invite.status = 1

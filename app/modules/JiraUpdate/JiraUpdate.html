@@ -6,7 +6,7 @@
     
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
           <form name="myForm">
-            <h1 style="text-align: center;">Jira Credentials</h1>
+            <h1 style="text-align: center;">Jira Credentials Update</h1>
             <!-- URL input -->
             <div class="form-outline mb-4">
               <label class="form-label reqd" for="form3Example1">URL </label>
@@ -32,10 +32,11 @@
             <!-- Password input -->
             <div class="form-outline mb-3">
               <label class="form-label reqd" for="form3Example4">Password</label>
-              <input type="password" id="form3Example4"
+              <input ng-attr-type="{{ showpassword ? 'text' : 'password' }}" id="form3Example4"
                 name="password"
                 ng-model="password" class="form-control form-control-lg" placeholder="Enter password" required
                 novalidate />
+                <i class="far fa-eye" id="togglePassword" ng-click="togglePassword()"></i>
               <span class="error_msg" ng-show="myForm.password.$invalid && myForm.password.$touched">
                 <span ng-show="myForm.password.$error.required">Password is required.</span>
               </span>
@@ -47,9 +48,12 @@
             </div>
   
             <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="button" class="btn btn-primary btn-lg" ng-click="createPokerboard()"
+                <button type="button" class="btn btn-primary btn-lg" ng-click="cancel()"
                 ng-disabled="myForm.$invalid"
-                style="padding-left: 2.5rem; padding-right: 2.5rem; margin-left:95px;">Continue</button>
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">Cancel</button>
+               <button type="button" class="btn btn-primary btn-lg" ng-click="save()"
+                ng-disabled="myForm.$invalid"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">Save</button>
             </div>
   
           </form>

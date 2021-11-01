@@ -28,7 +28,11 @@ app.service('pokerboardService', [
         }
 
         this.saveCredentials = function(details){
-            return Restangular.all(APP_CONSTANTS.API_ENDPOINT.JIRA_CREDENTIALS).post(details);
+            return Restangular.all(APP_CONSTANTS.API_ENDPOINT.POST_JIRA_CREDENTIALS).post(details);
+        }
+
+        this.updateCredentials = function(details){
+            return Restangular.all(APP_CONSTANTS.API_ENDPOINT.UPDATE_JIRA_CREDENTIALS).patch(details);
         }
     }
 ]);

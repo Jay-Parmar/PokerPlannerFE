@@ -1,6 +1,12 @@
 app.controller('LoginController', 
     function ($scope, $state, loginService, $cookies, $rootScope) {
 
+        $scope.showpassword = false
+
+        $scope.togglePassword = function(){
+            $scope.showpassword = !$scope.showpassword;
+        }
+
         $scope.toSignUp = function () {
             $state.go("signup");
         }

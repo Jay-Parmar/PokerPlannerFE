@@ -1,4 +1,4 @@
-app.controller('ProfileController', function ($scope, $state, profileService, data) {
+app.controller('ProfileController', function ($scope, $state, profileService, data, $cookies) {
 
     $scope.first_name = data.first_name
     $scope.last_name = data.last_name
@@ -55,5 +55,15 @@ app.controller('ProfileController', function ($scope, $state, profileService, da
     };
     $scope.editPassword = function(){
         $state.go("editPassword")
+    }
+
+    profileService.getJiraCredentials($cookies.get('id')).then(function(){
+        $scope.updatejira = true
+    }, function(){
+        $scope.updatejira = false
+    })
+
+    $scope.updateCredentials = function(){
+        $state.go('jiraupdate')
     }
 });

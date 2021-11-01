@@ -97,6 +97,12 @@ app.config(
           templateUrl: APP_CONSTANTS.TEMPLATE_URL.PAGE_404,
         })
         .state({
+          name: APP_CONSTANTS.NAME.JIRAUPDATE,
+          url: APP_CONSTANTS.URLS.JIRAUPDATE,
+          templateUrl: APP_CONSTANTS.TEMPLATE_URL.JIRAUPDATE,
+          controller: APP_CONSTANTS.CONTROLLERS.JIRAUPDATE,
+        })
+        .state({
           name: APP_CONSTANTS.NAME.INVITE,
           url: APP_CONSTANTS.URLS.INVITE,
           templateUrl: APP_CONSTANTS.TEMPLATE_URL.INVITE,

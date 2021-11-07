@@ -5,20 +5,19 @@
 </div>
 <div ng-show="invites.length!=0">
   <h2 class="main-heading">List of Invites</h2>
-  <div class="group-item">
-    <p><span class='group-name'> </span>EMAIL</p>
-    <p><span class='group-name'> </span>POKERBOARD </p>
-    <p><span class='group-name'> </span>GROUP </p>
-    <p><span class='group-name'></span>STATUS</p>
+  <div class="row row-container row-head">
+      <div class="col-sm "><p>EMAIL</p></div>
+      <div class="col-sm row-item"><p>POKERBOARD</p></div>
+      <div class="col-sm row-item"><p>GROUP</p></div>
+      <div class="col-sm row-item"><p>STATUS</p></div>
   </div>
-  <div ng-repeat="invite in invites">
-    <div class="group-item">
-      <p><span class='group-name'> </span>{{invite.email}} </p>
-      <p><span class='group-name'> </span>{{invite.pokerboard}} </p>
-      <p><span class='group-name'> </span>{{invite.group}} </p>
-      <p ng-show="invite.status == 0">Pending</p>
-      <p ng-show="invite.status == 1">Accepted</p>
-      <p ng-show="invite.status == 2">Declined</p>
-    </div>
+  <div class="row row-container" ng-repeat="invite in invites">
+          <div class="hor-rule"></div>
+          <p class='col-sm d-flex align-items-center'><span class='group-name'> </span>{{invite.email}} </p>
+          <p class='col-sm row-item'><span class='group-name'> </span>{{invite.pokerboard}} </p>
+          <p class='col-sm row-item'><span class='group-name'> </span>{{invite.group}} </p>
+          <p class='col-sm row-item' ng-show="invite.status == 0">Pending</p>
+          <p class='col-sm row-item' ng-show="invite.status == 1">Accepted</p>
+          <p class='col-sm row-item' ng-show="invite.status == 2">Declined</p>
   </div>
 </div>

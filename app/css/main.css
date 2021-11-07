@@ -378,6 +378,7 @@ form i{
   display: flex;
   padding-left: 10px;
   padding-right: 10px;
+  flex-direction: row;
 }
 
 .tab-head p{
@@ -430,4 +431,21 @@ form i{
 
 .ticket-btn-container{
   display: flex;
+}
+
+.row-container{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.row-head{
+  font-weight: 600;
+}
+
+.row-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 7px;
+  padding-bottom: 7px;
 }

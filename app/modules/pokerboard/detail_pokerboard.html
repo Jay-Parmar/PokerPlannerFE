@@ -6,11 +6,10 @@
         <div>
             <h2>{{ pokerboard.title }}</h2>
         </div>
-        <div ng-show="user.id==pokerboard.manager.id">
+        <div ng-show="isManager">
             <button class="btn btn-secondary" ng-click="managerinvites()">Invites Sent</button>
             <button class="btn btn-secondary bg-dark" ng-click="goToMembers()">Members</button>
-            <button data-bs-toggle="modal" data-bs-target="#inviteUserModal" 
-                class="btn btn-success">Invite user</button>
+            <button data-bs-toggle="modal" data-bs-target="#inviteUserModal" class="btn btn-success">Invite user</button>
         </div> 
     </div>
 
@@ -70,12 +69,10 @@
     <div class="main-outer">
         <h4 class="main-heading">Tickets</h4>
         <p class="mx-1" ng-show="pokerboard.tickets.length==0">There are no unestimated Tickets</p>
-        <div>
-            <div class="tab-head">
-                <p>TICKET ID</p>
-            </div>
-            <div class="hor-rule"></div>
+        <div class="tab-head">
+            <p>TICKET ID</p>
         </div>
+        <div class="hor-rule"></div>
         <div ng-repeat="ticket in pokerboard.tickets">
             <div class="tab-content">
                 <p>{{ ticket.ticket_id }}</p>

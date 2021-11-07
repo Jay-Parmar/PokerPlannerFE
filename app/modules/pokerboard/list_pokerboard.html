@@ -2,7 +2,7 @@
 
 <section class="vh-100" style="overflow-x:hidden;">
     <div class="container-fluid h-custom">
-        <div class="row d-flex justify-content-center h-100">
+        <div class="row d-flex justify-content-center">
             <h2 class="main-heading">Your Poker Boards</h2>
             <p class="mt-4 main-heading" ng-show="boardList.length==0">You have not created any pokerboards yet</p>
             <div class="filter-objects m-4">
@@ -13,15 +13,25 @@
                 <input type="text" name="title" ng-model="title" placeholder="Title">
             </div>
             <div>
-                <div class="board-list pokerboard-item" ng-repeat="board in boardList 
-                | filter : {title : title || undefined, manager_name : manager || undefined}">
-                    <div>
-                        <p><span>Title : </span>{{board.title}}</p>
-                        <p><span>Description : {{board.description}}</p>
-                        <p><span>Manager : {{board.manager_name}}</p>
-                        <button class="btn-primary" ng-click="goToPokerboard(board.id)">Details</button>
-                    </div>
+                <div class="hor-rule"></div>
+                <div class="tab-head">
+                    <p>TITLE</p>
+                    <p>DESCRIPTION</p>
+                    <p>MANAGER</p>
                 </div>
+                <div class="hor-rule"></div>
+            </div>
+            <div ng-repeat="board in boardList 
+            | filter : {title : title || undefined, manager_name : manager || undefined}">
+                <div class="tab-content">
+                    <p>{{board.title}}</p>
+                    <p>{{board.description}}</p>
+                    <p>{{board.manager_name}}</p>
+                    <button ng-click="goToPokerboard(board.id)" class="join-btn btn-primary">Details</button>
+                </div>
+                <div class="hor-rule"></div>
+            </div>
+            <div>
             </div>
         </div>
     </div>

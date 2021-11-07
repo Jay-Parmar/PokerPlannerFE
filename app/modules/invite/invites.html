@@ -4,21 +4,19 @@
   <h2 class="main-heading">You have no pending invites</h2>
 </div>
 <div ng-show="invites.length!=0">
-  <h2 class="main-heading">List of Invites</h2>
-  <div class="group-item">
-    <p><span class='group-name'> </span>INVITED BY</p>
-    <p><span class='group-name'> </span>INVITE FOR POKERBOARD</p>
-    <p><span class='group-name'> </span>GROUP</p>
-    <p><span class='group-name'></span>ACTION</p>
+  <div class="tab-head">
+      <p>INVITED BY</p>
+      <p>POKERBOARD</p>
   </div>
+  <div class="hor-rule"></div>
   <div ng-repeat="invite in invites">
-    <div class="group-item">
-      <p><span class='group-name'> </span>{{invite.pokerboard_manager}} </p>
-      <p><span class='group-name'> </span>{{invite.pokerboard_title}} </p>
-      <p><span class='group-name'> </span>{{invite.group}} </p>
-      <p ng-show="invite.status == 0"><button class="btn-success" ng-click="accept(invite)">Accept</button>
-      <button class="btn-danger" ng-click="decline(invite)">Decline</button></p>
-      <p ng-show="invite.status != 0">{{message}}</p>
-    </div>
+      <div class="tab-content">
+          <p>{{invite.pokerboard_manager}}</p>
+          <p>{{invite.pokerboard_title}}</p>
+          <button ng-show="invite.status == 0" ng-click="accept(invite)" class="join-btn btn-primary">Accept &amp; Join</button>
+          <button ng-show="invite.status == 0" ng-click="decline(invite)" class=" join-btn btn-danger mx-1">Decline</button>
+          <p ng-show="invite.status != 0">{{message}}</p>
+      </div>
+      <div class="hor-rule"></div>
   </div>
 </div>

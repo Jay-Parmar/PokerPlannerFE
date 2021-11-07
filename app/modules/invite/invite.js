@@ -1,11 +1,11 @@
-app.controller('inviteCtrl',function ($scope, data, inviteService) {
+app.controller('inviteCtrl',function ($scope, $state, data, inviteService, APP_CONSTANTS) {
     $scope.invites = data
-    console.log(data)
     $scope.accept = function(invite){
         inviteService.acceptInvite(invite.id).then(function(){
             $scope.show = true
             $scope.message = "Accepted"
             invite.status = 1
+            $state.go(APP_CONSTANTS.NAME.POKER_DETAIL, {id: invite.pokerboard})
         }, function(){
             
         })

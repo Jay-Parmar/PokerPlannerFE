@@ -71,7 +71,7 @@
             EDIT_PASSWORD: '/editPassword',
             POKER_CREATE: '/pokerboard',
             POKER_LIST: '/pokerboards',
-            POKER_DETAIL: '/pokerboard/:id/manager/:mid',
+            POKER_DETAIL: '/pokerboard/:id',
             MEMBERS: '/pokerboard/:pid/members',
             JIRA_CREDENTIALS: '/jiraCredentials',
             INVITE: '/invites',

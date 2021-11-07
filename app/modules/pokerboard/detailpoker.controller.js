@@ -3,14 +3,10 @@ app.controller('pokerboardDetailsCtrl', [
     function ($state, $scope, $rootScope, $stateParams, pokerboardService, APP_CONSTANTS, $cookies) {
         
         $scope.pokerboard = {};
-        const manager_id = $stateParams.mid
-        $scope.show = $cookies.get("id") == manager_id
-        console.log($scope.show)
-        const pokerboardId = $stateParams.id;  //send id with detail request
         $scope.email = "";
         $scope.isEditing = false;
         $scope.emailInviteForm = true;
-
+        const pokerboardId = $stateParams.id
         $scope.user = $rootScope.user
 
         $scope.showEmailForm = () => {
@@ -57,7 +53,7 @@ app.controller('pokerboardDetailsCtrl', [
         }
 
         $scope.goToMembers = () => {
-            $state.go('members', {"pid": pokerboardId});
+            $state.go(APP_CONSTANTS.NAME.MEMBERS, {"pid": pokerboardId});
         }
 
         pokerboardService.getPokerboardDetails(pokerboardId).then(response => {
@@ -66,8 +62,8 @@ app.controller('pokerboardDetailsCtrl', [
             $scope.pokerboard.tickets = $scope.pokerboard.ticket
                                         .filter(obj=>!obj.estimate).sort((a,b)=>a.order-b.order);
         }, error => {
-            alert("Something went wrong!");
-            console.log(error);
+            // alert("Something went wrong!");
+            // console.log(error);
         });
 
         $scope.inviteUser = () => {
@@ -88,15 +84,18 @@ app.controller('pokerboardDetailsCtrl', [
             }
             pokerboardService.inviteUser(user).then(response => {
                 alert("User/Group invited");
-                console.log(response);
             }, error => {
                 console.log(error);
                 alert("Error while inviting user");
             });
         }
+
         $scope.managerinvites = function(){
-            console.log("hi")
-            $state.go('manager_invites', {"pid": pokerboardId});
+            $state.go(APP_CONSTANTS.NAME.MANAGER_INVITES, {"pid": pokerboardId});
+        }
+
+        $scope.createSession = function(ticketId){
+            $state.go(APP_CONSTANTS.NAME.BOARD, {pid: pokerboardId, id, ticketId})
         }
     }
 ]);

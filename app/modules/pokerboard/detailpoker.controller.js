@@ -1,6 +1,6 @@
 app.controller('pokerboardDetailsCtrl', [
-    '$state', '$scope', '$rootScope', '$stateParams', 'pokerboardService', 'APP_CONSTANTS', '$cookies',
-    function ($state, $scope, $rootScope, $stateParams, pokerboardService, APP_CONSTANTS, $cookies) {
+    '$state', '$scope', '$rootScope', '$stateParams', 'pokerboardService', 'APP_CONSTANTS', '$cookies', '$mdToast',
+    function ($state, $scope, $rootScope, $stateParams, pokerboardService, APP_CONSTANTS, $cookies, $mdToast) {
         
         $scope.pokerboard = {};
         const manager_id = $stateParams.mid
@@ -66,7 +66,15 @@ app.controller('pokerboardDetailsCtrl', [
             $scope.pokerboard.tickets = $scope.pokerboard.ticket
                                         .filter(obj=>!obj.estimate).sort((a,b)=>a.order-b.order);
         }, error => {
-            alert("Something went wrong!");
+            $mdToast.show({
+                template: '<md-toast>' +
+                '<div class="md-toast-content" id="toaster">' +
+                  'Oops! Something went wrong' +
+                '</div>' +
+              '</md-toast>',
+                hideDelay: 4000,
+                position: 'bottom'
+            })
             console.log(error);
         });
 
@@ -87,15 +95,31 @@ app.controller('pokerboardDetailsCtrl', [
                 }
             }
             pokerboardService.inviteUser(user).then(response => {
-                alert("User/Group invited");
+                $mdToast.show({
+                    template: '<md-toast>' +
+                    '<div class="md-toast-content" id="toaster">' +
+                      'User/Group Invited Successfully' +
+                    '</div>' +
+                  '</md-toast>',
+                    hideDelay: 4000,
+                    position: 'bottom'
+                })
                 console.log(response);
             }, error => {
-                console.log(error);
-                alert("Error while inviting user");
+                console.log(error)
+                msg = error.data[0];
+                $mdToast.show({
+                    template: '<md-toast>' +
+                    '<div class="md-toast-content" id="toaster">' +
+                      msg+
+                    '</div>' +
+                  '</md-toast>',
+                    hideDelay: 4000,
+                    position: 'bottom'
+                })
             });
         }
         $scope.managerinvites = function(){
-            console.log("hi")
             $state.go('manager_invites', {"pid": pokerboardId});
         }
     }

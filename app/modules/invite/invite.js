@@ -1,5 +1,6 @@
 app.controller('inviteCtrl',function ($scope, data, inviteService) {
     $scope.invites = data
+    console.log(data)
     $scope.accept = function(invite){
         inviteService.acceptInvite(invite.id).then(function(){
             $scope.show = true

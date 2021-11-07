@@ -1,18 +1,20 @@
+<nav-bar></nav-bar>
+
 <div ng-show="invites.length==0">
   <h2 class="main-heading">You have no pending invites</h2>
 </div>
 <div ng-show="invites.length!=0">
   <h2 class="main-heading">List of Invites</h2>
   <div class="group-item">
-    <p><span class='group-name'> </span>EMAIL</p>
-    <p><span class='group-name'> </span>POKERBOARD </p>
-    <p><span class='group-name'> </span>GROUP </p>
+    <p><span class='group-name'> </span>INVITED BY</p>
+    <p><span class='group-name'> </span>INVITE FOR POKERBOARD</p>
+    <p><span class='group-name'> </span>GROUP</p>
     <p><span class='group-name'></span>ACTION</p>
   </div>
   <div ng-repeat="invite in invites">
     <div class="group-item">
-      <p><span class='group-name'> </span>{{invite.email}} </p>
-      <p><span class='group-name'> </span>{{invite.pokerboard}} </p>
+      <p><span class='group-name'> </span>{{invite.pokerboard_manager}} </p>
+      <p><span class='group-name'> </span>{{invite.pokerboard_title}} </p>
       <p><span class='group-name'> </span>{{invite.group}} </p>
       <p ng-show="invite.status == 0"><button class="btn-success" ng-click="accept(invite)">Accept</button>
       <button class="btn-danger" ng-click="decline(invite)">Decline</button></p>

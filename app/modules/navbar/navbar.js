@@ -1,58 +1,37 @@
-app.controller('navigationCtrl',[
-    '$scope', '$state', '$cookies', '$rootScope', '$window', 'APP_CONSTANTS', 'navbarService', 'Restangular', 
-    function($scope, $state, $cookies, $rootScope, $window, APP_CONSTANTS, navbarService, Restangular){
-
-        $rootScope.$watch('user', function(newValue, oldValue){
-            if($cookies.get('user')){
-                let user_obj = JSON.parse($cookies.get('user'))
-                $rootScope.user = user_obj
-            }
-            if($cookies.get('token')) {
-                $rootScope.isAuth = true;
-            }else{
-                $rootScope.isAuth = false;
-            }
-        }, true);
-
-        $scope.logout = function(){
-            navbarService.logout();
-            $cookies.remove('token');
-            $cookies.remove('user');
-            $rootScope.user = undefined
-            Restangular.setDefaultHeaders({})
-            $state.go(APP_CONSTANTS.NAME.LOGIN);
-        };
-
-        $scope.toPokerList = function(){
-            $state.go(APP_CONSTANTS.NAME.POKER_LIST);
-        };
-
-        $scope.back = function(){
-            $window.history.back();
-        };
-
-        $scope.toCreateBoard = function(){
-            $state.go(APP_CONSTANTS.NAME.JIRA_CREDENTIALS);
-        };
-
-        $scope.toGroup = function(){
-            $state.go(APP_CONSTANTS.NAME.GROUP);
-        };
-
-        $scope.profile = function(){
-            $state.go(APP_CONSTANTS.NAME.PROFILE);
-        };
-
-        $scope.signup = function(){
-            $state.go(APP_CONSTANTS.NAME.SIGNUP);
-        };
-
-        $scope.login = function(){
-            $state.go(APP_CONSTANTS.NAME.LOGIN);
-        };
-
-        $scope.invites = function(){
-            $state.go(APP_CONSTANTS.NAME.INVITE)
-        }
-    }
-]);
+app.directive('navBar', function($state, $cookies, APP_CONSTANTS) {
+    return {
+      scope: {},
+      link: function(scope) {
+          scope.logout = function() {
+              $cookies.remove("token");
+              $cookies.remove("id");
+              $cookies.remove("user");
+              $state.go("login");
+          }
+  
+          scope.navLinks = {
+              HOME:{
+                  'ui-sref': APP_CONSTANTS.NAME.POKER_LIST,
+                  'link': 'Home'
+              },
+              CREATEPOKERBOARD:{
+                'ui-sref': APP_CONSTANTS.NAME.JIRA_CREDENTIALS,
+                'link': 'CreatePokerboard'
+              },
+              GROUPS: {
+                  'ui-sref': APP_CONSTANTS.NAME.GROUP,
+                  'link': 'Groups'
+              },
+              MYINVITES: {
+                  'ui-sref': APP_CONSTANTS.NAME.INVITE,
+                  'link': 'MyInvites'
+              },
+              PROFILE: {
+                  'ui-sref': APP_CONSTANTS.NAME.PROFILE,
+                  'link': 'Profile'
+              },
+          }
+      },
+      templateUrl:'modules/navbar/navbar.html'
+    };
+  });

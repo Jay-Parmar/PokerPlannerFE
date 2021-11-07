@@ -15,11 +15,13 @@
             POKERBOARD: 'pokerboard/',   //HAVE TO FILL THIS
             MEMBERS: 'pokerboard/members',    // fill the url here to invite users or group  
             INVITE: 'invite/',
-            JIRA_CREDENTIALS: 'pokerboard/manager',
             COMMENT: 'pokerboard/comment',
             VOTE: 'pokerboard/vote',
             VERIFY:'users/resend',
-            MANAGER_INVITES: 'invite/managerinvites/'
+            MANAGER_INVITES: 'invite/managerinvites/',
+            POST_JIRA_CREDENTIALS: 'pokerboard/manager',
+            GET_JIRA_CREDENTIALS: 'pokerboard/managercredentials',
+            UPDATE_JIRA_CREDENTIALS: 'pokerboard/managercredentials/update' 
         },
         TEMPLATE_URL: {
             SIGNUP: 'modules/signup/signup.html',
@@ -38,7 +40,8 @@
             INVITE: 'modules/invite/invites.html',
             PAGE_404: 'modules/error_pages/404-page-not-found.html',
             ACCOUNT_ACTIVATE: 'modules/email verification/emailverification.html',
-            MANAGER_INVITES: 'modules/invite/manager_invites.html'
+            MANAGER_INVITES: 'modules/invite/manager_invites.html',
+            JIRAUPDATE: 'modules/JiraUpdate/JiraUpdate.html',
         },
         CONTROLLERS: {
             SIGNUP: 'SignupController',
@@ -56,7 +59,9 @@
             JIRA_CREDENTIALS: 'jiraCredentialsCtrl',
             INVITE: 'inviteCtrl',
             ACCOUNT_ACTIVATE: 'emailVerificationCtrl',
-            MANAGER_INVITES: 'managerCtrl'
+            MANAGER_INVITES: 'managerCtrl',
+            JIRAUPDATE: 'jiraUpdateCtrl',
+            PAGE_404:'404Ctrl'
         },
         URLS: {
             SIGNUP: '/',
@@ -75,7 +80,8 @@
             INVITE: '/invites',
             PAGE_404:'/404',
             VERIFY: '/verifyemail/:uid',
-            MANAGER_INVITES: '/pokerboard/:pid/invites'
+            MANAGER_INVITES: '/pokerboard/:pid/invites',
+            JIRAUPDATE: '/jiraupdate',
         },
         NAME: {
             SIGNUP: 'signup',
@@ -94,7 +100,8 @@
             INVITE: 'invite',
             PAGE_404: 'PAGE_404',
             ACCOUNT_ACTIVATE:'activate_account',
-            MANAGER_INVITES: 'manager_invites'
+            MANAGER_INVITES: 'manager_invites',
+            JIRAUPDATE: 'jiraupdate',
         },
         DECK_NAME: {
             1: 'Serial',

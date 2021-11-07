@@ -1,5 +1,11 @@
 app.controller('SignupController', function ($scope, $state, signUpService) {
 
+  $scope.showpassword = false
+
+  $scope.togglePassword = function(){
+    $scope.showpassword = !$scope.showpassword;
+  }
+
   $scope.toLogin = function () {
     $state.go("login");
   }
@@ -23,4 +29,11 @@ app.controller('SignupController', function ($scope, $state, signUpService) {
         }
       );
   };
+  $scope.params = {};
+  
+  $scope.showPassword = false;
+  
+  $scope.toggleShowPassword = function() {
+    $scope.showPassword = !$scope.showPassword;
+  }
 });

@@ -1,4 +1,4 @@
-.navbar{
+/* .navbar{
   padding: 1rem;
 }
 .navbar ul{
@@ -17,7 +17,7 @@
   height: 100%; 
   border: 1px solid aqua;
   cursor: pointer;
-}
+} */
 
 .divider:after,
 .divider:before {
@@ -95,9 +95,7 @@ form{
   font-size: 20px;
   color: #fff;
 }
-/* .aligncenter{
-  margin-left: 400px;
-} */
+
 .group-item{
   background-color: grey;
   display: flex;
@@ -183,7 +181,7 @@ form{
 
 .admin-container{
   text-align: center;
-  margin-top: 20px;
+  margin-top: 20px;          
 }
 
 .board-detail-container{
@@ -333,4 +331,26 @@ table, th, td {
 .email-img{
   margin: auto;
   display: block;
+}
+
+form i{
+  position: relative;
+  top: -34px;
+  left: 332px;
+  cursor: pointer;
+}
+
+.updatejira{
+  position: relative;
+  top: -47px;
+  left: 499px;
+}
+
+#toaster {
+  position: fixed;
+  bottom: 20px;
+  left: 11px;
+  width: 98%;
+  z-index: 10000;
+  text-align: center;
 }

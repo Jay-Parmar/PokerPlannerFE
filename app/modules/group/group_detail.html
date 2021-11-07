@@ -1,3 +1,5 @@
+<nav-bar></nav-bar>
+
 <div class='group-outer'>
   <div ng-init='getGroupDetails()'>
     <h4 class="main-heading">Group</h4>
@@ -49,7 +51,10 @@
     <hr>
       <div class="group-item" ng-repeat='user in group.members'>
               <span>{{user.email}}</span>
-              <button  class="user-btn btn-remove-user" data-bs-toggle="modal" data-bs-target="#deleteModal" ng-show='group.owner != user.id'>Remove</button>
+              <button  class="user-btn btn-remove-user" data-bs-toggle="modal" data-bs-target="#deleteModal" ng-show='group.owner == user_id'>Remove</button>
       </div>
   </div>
 </div>
+<md-toast>
+  
+</md-toast>

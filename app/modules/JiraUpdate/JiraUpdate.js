@@ -26,6 +26,7 @@ app.controller('jiraUpdateCtrl',
             pokerboardService.updateCredentials(details).then(function(response){
                 $state.go('profile')
             }, function(response){ 
+                $scope.errmsg = 'Invalid Credentials'
             })
         }
     }

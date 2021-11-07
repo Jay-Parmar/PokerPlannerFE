@@ -1,7 +1,7 @@
 app.controller('groupCtrl', [
-    '$scope', '$state', 'groupServices',
+    '$scope', '$state', 'groupServices', '$mdToast',
     function (
-        $scope, $state, groupServices,
+        $scope, $state, groupServices, $mdToast
     ) {
         $scope.groups = []
         $scope.getGroupsList = () => {
@@ -10,6 +10,15 @@ app.controller('groupCtrl', [
                 $scope.groups = response
             },function(errors){
                 console.log(errors)
+                $mdToast.show({
+                    template: '<md-toast>' +
+                    '<div class="md-toast-content" id="toaster">' +
+                      errors.data[0] +
+                    '</div>' +
+                  '</md-toast>',
+                    hideDelay: 4000,
+                    position: 'bottom'
+                })
             })
         }   
 
@@ -19,11 +28,19 @@ app.controller('groupCtrl', [
                 $state.reload()
             }, function(errors){
                 console.log(errors)
+                $mdToast.show({
+                    template: '<md-toast>' +
+                    '<div class="md-toast-content" id="toaster">' +
+                      errors.data.name[0] +
+                    '</div>' +
+                  '</md-toast>',
+                    hideDelay: 4000,
+                    position: 'bottom'
+                })
             })
         }
 
         $scope.goToGroup = (id) => {
-            console.log(id)
             $state.go('group_detail', { "id": id });
         }
 

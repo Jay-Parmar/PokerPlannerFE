@@ -95,6 +95,7 @@ app.config(
           name: APP_CONSTANTS.NAME.PAGE_404,
           url: APP_CONSTANTS.URLS.PAGE_404,
           templateUrl: APP_CONSTANTS.TEMPLATE_URL.PAGE_404,
+          controller: APP_CONSTANTS.CONTROLLERS.PAGE_404
         })
         .state({
           name: APP_CONSTANTS.NAME.JIRAUPDATE,

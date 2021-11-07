@@ -1,64 +1,61 @@
 <nav-bar></nav-bar>
 
 <section class="vh-100">
-    <div class="container-fluid h-custom">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-    
-        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form name="myForm">
-            <h1 style="text-align: center;">Jira Credentials Update</h1>
-            <!-- URL input -->
-            <div class="form-outline mb-4">
-              <label class="form-label reqd" for="form3Example1">URL </label>
-              <input type="text" id="form3Example1" name="url" ng-model="url"
-                class="form-control form-control-lg" placeholder="Enter Jira URL" required novalidate />
-              <span class="error_msg" ng-show="myForm.url.$invalid && myForm.url.$dirty">
-                url is required
-              </span>
-            </div>
-  
-            <!-- Username input -->
-            <div class="form-outline mb-4">
-              <label class="form-label reqd" for="form3Example3">Username</label>
-              <input type="email" id="form3Example3" name="username" ng-model="username" class="form-control form-control-lg"
-                placeholder="Enter email address" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required
-                novalidate />
-              <span class="error_msg" ng-show="myForm.username.$invalid && myForm.username.$touched">
-                <span ng-show="myForm.username.$error.required">username is required.</span>
-                <span ng-show="myForm.username.$error.pattern">Invalid username .</span>
-              </span>
-            </div>
-  
-            <!-- Password input -->
-            <div class="form-outline mb-3">
-              <label class="form-label reqd" for="form3Example4">Password</label>
-              <input ng-attr-type="{{ showpassword ? 'text' : 'password' }}" id="form3Example4"
-                name="password"
-                ng-model="password" class="form-control form-control-lg" placeholder="Enter password" required
-                novalidate />
-                <i class="far fa-eye" id="togglePassword" ng-click="togglePassword()"></i>
-              <span class="error_msg" ng-show="myForm.password.$invalid && myForm.password.$touched">
-                <span ng-show="myForm.password.$error.required">Password is required.</span>
-              </span>
-            </div>
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
 
-            <!-- Error Messages -->
-            <div class="error_msg">
-              {{errmsg}}
-            </div>
-  
-            <div class="text-center text-lg-start mt-4 pt-2">
-                <button type="button" class="btn btn-primary btn-lg" ng-click="cancel()"
-                ng-disabled="myForm.$invalid"
-                style="padding-left: 2.5rem; padding-right: 2.5rem;">Cancel</button>
-               <button type="button" class="btn btn-primary btn-lg" ng-click="save()"
-                ng-disabled="myForm.$invalid"
-                style="padding-left: 2.5rem; padding-right: 2.5rem;">Save</button>
-            </div>
-  
-          </form>
-        </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form name="myForm">
+          <h1 style="text-align: center;">Jira Credentials Update</h1>
+          <!-- URL input -->
+          <div class="form-outline mb-4">
+            <label class="form-label reqd" for="form3Example1">URL </label>
+            <input type="text" id="form3Example1" name="url" ng-model="url" class="form-control form-control-lg"
+              placeholder="Enter Jira URL" required novalidate />
+            <span class="error_msg" ng-show="myForm.url.$invalid && myForm.url.$dirty">
+              url is required
+            </span>
+          </div>
+
+          <!-- Username input -->
+          <div class="form-outline mb-4">
+            <label class="form-label reqd" for="form3Example3">Username</label>
+            <input type="email" id="form3Example3" name="username" ng-model="username"
+              class="form-control form-control-lg" placeholder="Enter email address"
+              ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required novalidate />
+            <span class="error_msg" ng-show="myForm.username.$invalid && myForm.username.$touched">
+              <span ng-show="myForm.username.$error.required">username is required.</span>
+              <span ng-show="myForm.username.$error.pattern">Invalid username .</span>
+            </span>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <label class="form-label reqd" for="form3Example4">Password</label>
+            <input ng-attr-type="{{ showpassword ? 'text' : 'password' }}" id="form3Example4" name="password"
+              ng-model="password" class="form-control form-control-lg" placeholder="Enter password" required
+              novalidate />
+            <i class="far fa-eye" id="togglePassword" ng-click="togglePassword()"></i>
+            <span class="error_msg" ng-show="myForm.password.$invalid && myForm.password.$touched">
+              <span ng-show="myForm.password.$error.required">Password is required.</span>
+            </span>
+          </div>
+
+          <!-- Error Messages -->
+          <div class="error_msg">
+            {{errmsg}}
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="button" class="btn btn-primary btn-lg" ng-click="cancel()" ng-disabled="myForm.$invalid"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Cancel</button>
+            <button type="button" class="btn btn-primary btn-lg" ng-click="save()" ng-disabled="myForm.$invalid"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Save</button>
+          </div>
+
+        </form>
       </div>
     </div>
-  
+  </div>
+
 </section>

@@ -95,9 +95,7 @@ form{
   font-size: 20px;
   color: #fff;
 }
-/* .aligncenter{
-  margin-left: 400px;
-} */
+
 .group-item{
   background-color: grey;
   display: flex;
@@ -320,4 +318,13 @@ form i{
   position: relative;
   top: -47px;
   left: 499px;
+}
+
+#toaster {
+  position: fixed;
+  bottom: 20px;
+  left: 11px;
+  width: 98%;
+  z-index: 10000;
+  text-align: center;
 }

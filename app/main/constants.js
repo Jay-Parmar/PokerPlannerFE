@@ -59,6 +59,7 @@
             INVITE: 'inviteCtrl',
             MANAGER_INVITES: 'managerCtrl',
             JIRAUPDATE: 'jiraUpdateCtrl',
+            PAGE_404:'404Ctrl'
         },
         URLS: {
             SIGNUP: '/',

@@ -1,6 +1,5 @@
 app.controller('LoginController', 
-    function ($scope, $state, loginService, $cookies, $rootScope) {
-
+    function ($scope, $state, loginService, $cookies, $rootScope, $mdToast) {
         $scope.showpassword = false
 
         $scope.togglePassword = function(){

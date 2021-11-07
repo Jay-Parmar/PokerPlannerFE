@@ -1,6 +1,7 @@
 (function () {
     app.constant("APP_CONSTANTS", {
         BASE_URL: "http://127.0.0.1:8000",
+        BASE_URL_WS:"ws://127.0.0.1:8000/ws/",
         API_ENDPOINT: {
             SIGNUP: 'users/',
             LOGIN: 'users/login/',
@@ -21,7 +22,8 @@
             MANAGER_INVITES: 'invite/managerinvites/',
             POST_JIRA_CREDENTIALS: 'pokerboard/manager',
             GET_JIRA_CREDENTIALS: 'pokerboard/managercredentials',
-            UPDATE_JIRA_CREDENTIALS: 'pokerboard/managercredentials/update' 
+            UPDATE_JIRA_CREDENTIALS: 'pokerboard/managercredentials/update', 
+            SESSION: 'pokerboard/ticket'
         },
         TEMPLATE_URL: {
             SIGNUP: 'modules/signup/signup.html',
@@ -70,11 +72,11 @@
             ACCOUNT_ACTIVATE: '/activate/:uid/:token',
             GROUP:'/group',
             GROUP_DETAIL:'/group/:id',
-            BOARD: '/board',
+            BOARD: '/pokerboard/:pid/session/:id',
             EDIT_PASSWORD: '/editPassword',
             POKER_CREATE: '/pokerboard',
             POKER_LIST: '/pokerboards',
-            POKER_DETAIL: '/pokerboard/:id/manager/:mid',
+            POKER_DETAIL: '/pokerboard/:id',
             MEMBERS: '/pokerboard/:pid/members',
             JIRA_CREDENTIALS: '/jiraCredentials',
             INVITE: '/invites',
@@ -119,6 +121,15 @@
             3: [0, 1, 3, 5, 7, 9, 11, 13, 15, 17],
             4: [0, 1, 2, 3, 5, 8, 13, 21, 34, 55],
             5: "",
+        },
+        MESSAGE_TYPE: {
+            INITIALIZE_GAME: 'initialise_game',
+            SKIP: 'skip',
+            VOTE: 'vote',
+            START_TIMER: 'start_timer',
+            JOIN: 'join',
+            LEAVE: 'leave',
+            ESTIMATE: 'estimate',
         },
     });
 })();

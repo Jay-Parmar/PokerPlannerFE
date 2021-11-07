@@ -6,7 +6,7 @@
         <div>
             <h2>{{ pokerboard.title }}</h2>
         </div>
-        <div ng-show="show">
+        <div ng-show="user.id==pokerboard.manager.id">
             <button class="btn btn-secondary" ng-click="managerinvites()">Invites Sent</button>
             <button class="btn btn-secondary bg-dark" ng-click="goToMembers()">Members</button>
             <button data-bs-toggle="modal" data-bs-target="#inviteUserModal" 
@@ -70,20 +70,24 @@
     <div class="main-outer">
         <h4 class="main-heading">Tickets</h4>
         <p class="mx-1" ng-show="pokerboard.tickets.length==0">There are no unestimated Tickets</p>
-        
+        <div>
+            <div class="tab-head">
+                <p>TICKET ID</p>
+            </div>
+            <div class="hor-rule"></div>
+        </div>
         <div ng-repeat="ticket in pokerboard.tickets">
             <div class="tab-content">
-                <p>{{ticket.ticket_id}}</p>
-                <p class="w-50">{{ticket.title}}</p>
-                <button ng-show="user.id==pokerboard.manager.id" ng-click="createSession(ticket.id)" class="bg-primary bg-light">Estimate</button>
-                <!-- <button ng-show="user.id==pokerboard.manager.id" ng-click="moveUp($index)" class="btn-delete bg-dark mx-1"><i class="bi bi-arrow-up"></i></button> -->
-                <!-- <button ng-show="user.id==pokerboard.manager.id" ng-click="moveDown($index)" class="btn-delete bg-dark mx-1"><i class="bi bi-arrow-down"></i></button> -->
+                <p>{{ ticket.ticket_id }}</p>
+                <div class="ticket-btn-container">
+                    <button ng-show="isManager && $index == 0" ng-click="createSession(ticket.id)" class="join-btn btn-primary">Estimate</button>
+                    <button ng-show="isManager" ng-click="moveUp($index)" class="btn-arrow bg-dark mx-1"><i class="bi bi-arrow-up"></i></button>
+                    <button ng-show="isManager" ng-click="moveDown($index)" class="btn-arrow bg-dark mx-1"><i class="bi bi-arrow-down"></i></button>
+                    <button ng-show="!isManager && $index == 0" ng-click="createSession(ticket.id)" class="join-btn btn-success">Join</button>
+                </div>
             </div>
-            <hr>
+            <div class="hor-rule"></div>
         </div>
-        <!-- <div ng-show="isEditing" class="my-3 d-flex justify-content-end">
-            <button class="m-1 btn btn-success" ng-click="saveOrder()">Save</button>
-        </div> -->
         <div class="my-4">
             <div class="tab-head">
                 <p>ESTIMATED TICKETS</p>

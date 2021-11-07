@@ -3,14 +3,10 @@ app.controller('pokerboardDetailsCtrl', [
     function ($state, $scope, $rootScope, $stateParams, pokerboardService, APP_CONSTANTS, $cookies, $mdToast) {
         
         $scope.pokerboard = {};
-        const manager_id = $stateParams.mid
-        $scope.show = $cookies.get("id") == manager_id
-        console.log($scope.show)
-        const pokerboardId = $stateParams.id;  //send id with detail request
         $scope.email = "";
         $scope.isEditing = false;
         $scope.emailInviteForm = true;
-
+        const pokerboardId = $stateParams.id
         $scope.user = $rootScope.user
 
         $scope.showEmailForm = () => {
@@ -57,11 +53,12 @@ app.controller('pokerboardDetailsCtrl', [
         }
 
         $scope.goToMembers = () => {
-            $state.go('members', {"pid": pokerboardId});
+            $state.go(APP_CONSTANTS.NAME.MEMBERS, {"pid": pokerboardId});
         }
 
         pokerboardService.getPokerboardDetails(pokerboardId).then(response => {
             $scope.pokerboard = response;
+            $scope.isManager = $cookies.get('id') == $scope.pokerboard.manager.id
             $scope.pokerboard.estimated = $scope.pokerboard.ticket.filter(obj=>obj.estimate);
             $scope.pokerboard.tickets = $scope.pokerboard.ticket
                                         .filter(obj=>!obj.estimate).sort((a,b)=>a.order-b.order);
@@ -119,8 +116,13 @@ app.controller('pokerboardDetailsCtrl', [
                 })
             });
         }
+
         $scope.managerinvites = function(){
-            $state.go('manager_invites', {"pid": pokerboardId});
+            $state.go(APP_CONSTANTS.NAME.MANAGER_INVITES, {"pid": pokerboardId});
+        }
+
+        $scope.createSession = function(ticketId){
+            $state.go(APP_CONSTANTS.NAME.BOARD, {pid: pokerboardId, id: ticketId})
         }
     }
 ]);

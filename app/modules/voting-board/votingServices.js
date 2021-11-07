@@ -1,4 +1,4 @@
-app.service('votingService', ['APP_CONSTANTS', 'Restangular', function (APP_CONSTANTS, Restangular) {
+app.service('votingService', ['APP_CONSTANTS', 'Restangular', '$websocket', function (APP_CONSTANTS, Restangular, $websocket) {
     this.signup = function (user) {
         return Restangular.all(APP_CONSTANTS.API_ENDPOINT.SIGNUP).post(user);
     }
@@ -11,6 +11,11 @@ app.service('votingService', ['APP_CONSTANTS', 'Restangular', function (APP_CONS
         return Restangular.all(APP_CONSTANTS.API_ENDPOINT.VOTE).post(vote)
     }
 
+    this.getSession = function(sessionId){
+        const sessionUrl = APP_CONSTANTS.API_ENDPOINT.SESSION + '/' +sessionId + '/' 
+        return Restangular.one(sessionUrl).get()
+    }
+
     // this.getComments = function(){
     //     return Restangular.all(APP_CONSTANTS.API_ENDPOINT.COMMENT).get()
     // }
@@ -18,4 +23,9 @@ app.service('votingService', ['APP_CONSTANTS', 'Restangular', function (APP_CONS
     // this.getVotes = function(){
     //     return Restangular.all(APP_CONSTANTS.API_ENDPOINT)
     // }
+
+    this.wsConnect = (sessionId, token, pokerboardId) => {
+        return $websocket(APP_CONSTANTS.BASE_URL_WS + "session/" + sessionId + "?token=" + token + "&pid=" + pokerboardId);
+    }
+
 }])

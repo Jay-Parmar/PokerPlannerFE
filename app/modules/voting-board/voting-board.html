@@ -43,16 +43,14 @@
     </div>
 
     <div class="board-detail-container">
-        <h3>Board title</h3>
-        <p>Board Description</p>
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
     </div>
 
     <div class="right-panel">
-        <h6>TICKETS</h6>
-        <div class="board-ticket-estimate-container">
-            <div class="ticket-estimate" ng-repeat='ticketEstimate in ticketEstimateList'>
-                Ticket  {{ticketEstimate}}
-            </div>
+        <h6>COUNTDOWN TIMER</h6>
+        <div class="timer-container">
+            <h2 class="btn-dark timer">{{ time }}</h2>
         </div>
         <h6>PARTICIPANTS</h6>
         <div class="board-participant-container">
@@ -84,25 +82,25 @@
     </div>
     <div class="vote-container">
         <div class="vote" ng-repeat='vote in voteList'>
-            <h6>username</h6>
-            <h6>estimate</h6>
+            <h6>{{vote.name}}</h6>
+            <h6 ng-show="isAdmin">{{vote.estimate}}</h6>
         </div>
     </div>
-    <div class="admin-container" ng-show='true'>
+    <div class="admin-container" ng-show='isAdmin'>
         <h6>Admin Actions</h6>
         <div class="admin-actions">
-            <button type="button" class="btn btn-primary btn-lg" >Start Countdown</button>
-            <div><h4>COUNTDOWN</h4></div>
-            <button type="button" class="btn btn-primary btn-lg" >Skip &amp; Postpone</button>
+            <button type="button" class="btn btn-primary btn-lg" ng-click='startCountdown()'>Start Countdown</button>
+            <button type="button" class="btn btn-primary btn-lg" ng-click='skipGame()'>Skip &amp; Postpone</button>
+            <div class="final-estimate-container" ng-show='estimated'>
+                <input type="number" placeholder="Final Estimate">
+                <button type="button" class="btn btn-primary btn-lg" >Set Estimate</button>
+            </div>
         </div>
     </div>
+    <hr>
     <div class="estimation-card-container" ng-show='true'>
-        <div class="estimation-card" ng-repeat='estimate in estimateList'>
-            <h3>{{estimate}}</h3>
+        <div  ng-click='setEstimate($index, estimate)' class="estimation-card" ng-repeat='estimate in cardList' id ='card{{$index}}'>
+            <p>{{estimate}}</p>
         </div>
     </div>
 </div>
-<!-- <div class="final-estimate-container">
-    <input type="number" placeholder="Final Estimate">
-    <button type="button" class="btn btn-primary btn-lg" >Start Countdown</button>
-</div> -->

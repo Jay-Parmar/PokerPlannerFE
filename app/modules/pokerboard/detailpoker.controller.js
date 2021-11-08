@@ -122,6 +122,7 @@ app.controller('pokerboardDetailsCtrl', [
         }
 
         $scope.createSession = function(ticketId){
+            console.log(ticketId)
             $state.go(APP_CONSTANTS.NAME.BOARD, {pid: pokerboardId, id: ticketId})
         }
     }

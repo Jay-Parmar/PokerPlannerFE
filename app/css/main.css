@@ -41,14 +41,21 @@
     color: red;
 }
 
-form{
+/* form{
     margin-top:40px;
     border: 1px solid grey;
     padding: 20px 20px 20px 20px;
     margin-bottom: 40px;
     box-shadow: 5px 5px 25px 15px lightgray;
-}
+} */
 
+.main-form{
+  margin-top:40px;
+  border: 1px solid grey;
+  padding: 20px 20px 20px 20px;
+  margin-bottom: 40px;
+  box-shadow: 5px 5px 25px 15px lightgray;
+}
 .modal-body form{
   border: none;
   box-shadow: none;

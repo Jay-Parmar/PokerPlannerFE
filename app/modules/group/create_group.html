@@ -10,7 +10,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
          </div>
          <div class="modal-body">
-            <form name="createGroupForm">
+            <form name="createGroupForm" class='main-form'>
                <input ng-model="groupName" name="groupName" placeholder="Enter group name" type="text" ng-required='true'>
                <div>
                   <span ng-show="createGroupForm.groupName.$touched && createGroupForm.groupName.$invalid" class='form-error'>Group name is required!</span>

@@ -12,7 +12,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form name="addMemberForm">
+              <form name="addMemberForm" class='main-form'>
                 <input ng-model="email" required name="email" placeholder="Enter email address" type="email">
                 <div class="form-error" ng-show='createGroupForm.groupName.$touched && createGroupForm.groupName.$invalid'>
                   <p>Please enter a valid email</p>

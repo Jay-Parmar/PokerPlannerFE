@@ -8,7 +8,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form name="commentForm" ng-submit="postComment()">
+                    <form name="commentForm" ng-submit="postComment()" class='main-form'>
                         <textarea type="text" name="comment" ng-model="comment" class="form-control grey-back"
                             id="comment" required placeholder="Enter Comment"></textarea>
                         <button type="submit" data-bs-dismiss="modal"
@@ -89,12 +89,12 @@
     <div class="admin-container" ng-show='isAdmin'>
         <h6>Admin Actions</h6>
         <div class="admin-actions">
-            <button type="button" class="btn btn-primary btn-lg" ng-click='startCountdown()'>Start Countdown</button>
-            <button type="button" class="btn btn-primary btn-lg" ng-click='skipGame()'>Skip &amp; Postpone</button>
-            <div class="final-estimate-container" ng-show='estimated'>
-                <input type="number" placeholder="Final Estimate">
-                <button type="button" class="btn btn-primary btn-lg" >Set Estimate</button>
-            </div>
+            <button type="button" class="btn btn-primary" ng-click='startCountdown()'>Start Countdown</button>
+            <button type="button" class="btn btn-primary" ng-click='skipGame()'>Skip &amp; Postpone</button>
+            <form name='estimateForm' class="final-estimate-container" ng-show='estimated'>
+                <input type="number" placeholder="Final Estimate" ng-modal='finalEstimate' name='finalEstimate' required novalidate/>
+                <button class="btn btn-primary" ng-disabled="estimateForm.$invalid" ng-click='setTicketEstimate()' type="button">Set Estimate</button>
+            </form>
         </div>
     </div>
     <hr>

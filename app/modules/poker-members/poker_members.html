@@ -5,21 +5,19 @@
     <div class="tab-content" class='manager-container'>
         <h5>Manager : <span>{{ pokerboard.manager.email }}</span></h5>
     </div>
-    <div ng-repeat="member in members" class="poker-members">
-        <hr>
+    <div class="tab-head">
+        <p>NAME</p>
+        <p>EMAIL</p>
+        <p>ROLE</p>
+    </div>
+    <div class="hor-rule"></div>
+    <div ng-repeat="member in members">
         <div class="tab-content">
-            <div class="d-flex justify-content-between">
-                <h5>{{member.user.first_name}} {{member.user.last_name}}</h5>
-                <h6 ng-if='member.group.name'> Group: {{member.group.name}}</h6>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h6>{{member.user.email}}</h6>
-                <h6>{{member.role}}</h6>
-            </div>
-            <div class="d-flex align-items-end flex-column">
-                <button type="button" class="btn btn-danger" ng-click='removeMember(member.id)' ng-show='isManager'>Delete</button>
-            </div>
+            <p>{{member.user.first_name}} {{member.user.last_name}}</p>
+            <p>{{member.user.email}}</p>
+            <p>{{member.role}}</p>
+            <button ng-click='removeMember(member.id)' ng-show='isManager' class="join-btn btn-danger">Remove</button>
         </div>
-        <hr>
+        <div class="hor-rule"></div>
     </div>
 </div>

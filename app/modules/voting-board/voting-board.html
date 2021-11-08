@@ -98,7 +98,8 @@
         </div>
     </div>
     <hr>
-    <div class="estimation-card-container" ng-show='true'>
+    <p class='d-flex justify-content-center' ng-show='time == 0'>You will be able to vote once the timer starts</p>
+    <div class="estimation-card-container" ng-class="{'disabled': time == 0}">
         <div  ng-click='setEstimate($index, estimate)' class="estimation-card" ng-repeat='estimate in cardList' id ='card{{$index}}'>
             <p>{{estimate}}</p>
         </div>

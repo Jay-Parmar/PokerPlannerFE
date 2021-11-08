@@ -45,13 +45,20 @@
         </div>
     </div>
     <div class=" m-2 d-flex justify-content-between">
-      <h2><span class='group-name'> Group Name : </span>{{ group.name }}</h2>
+      <h2><span class='group-name'></span>{{ group.name }}</h2>
       <button data-bs-toggle="modal" data-bs-target="#addMemberModal" class="user-btn btn-add-user">Add member</button>
     </div>
     <hr>
-      <div class="group-item" ng-repeat='user in group.members'>
-              <span>{{user.email}}</span>
-              <button  class="user-btn btn-remove-user" data-bs-toggle="modal" data-bs-target="#deleteModal" ng-show='group.owner == user_id'>Remove</button>
+      <div class="tab-head">
+          <p>USER</p>
+      </div>
+      <div class="hor-rule"></div>
+      <div ng-repeat="user in group.members">
+          <div class="tab-content">
+              <p>{{user.email}}</p>
+              <button data-bs-toggle="modal" data-bs-target="#deleteModal" ng-show='group.owner == user_id' class="join-btn btn-danger">Remove</button>
+          </div>
+          <div class="hor-rule"></div>
       </div>
   </div>
 </div>

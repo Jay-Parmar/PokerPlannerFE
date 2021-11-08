@@ -4,7 +4,8 @@ app.controller('votingController', function (APP_CONSTANTS, $scope, $state, voti
     const pokerboardId = $stateParams.pid
     $scope.participantList = []
     $scope.voteList = []
-    
+    $scope.isSpectator = false
+
     const setIssueDetails = ticketId => {
       // Fetching JIRA issue to be estimated
     }

@@ -145,7 +145,7 @@ form{
 .estimation-card-container{
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  margin-top:80px;
 }
 
 .estimation-card{
@@ -448,4 +448,11 @@ form i{
   align-items: center;
   padding-top: 7px;
   padding-bottom: 7px;
+}
+
+div.disabled
+{
+  pointer-events: none;
+  opacity: 0.6;
+  background: #CCC;
 }

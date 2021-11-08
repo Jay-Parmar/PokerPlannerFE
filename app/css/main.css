@@ -184,10 +184,11 @@
   transform: scale(1.5);
   cursor: pointer;
 }
+
 .admin-actions{
   display: flex;
-  justify-content: space-around;
-  margin-top: 30px;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .ticket-container{
@@ -197,16 +198,26 @@
 }
 
 .ticket{
-  background-color: lightslategrey;
+  border: 2px solid rgb(206, 206, 206);
   width: 40%;
   padding: 20px 20px 50px 20px;
   border-radius: 5px;
 }
 
+.ticket-head{
+  color: #0466d2;
+}
 
 .admin-container{
   text-align: center;
-  margin-top: 20px;          
+  margin-top: 30px;          
+}
+
+.admin-action-head{
+  border: 2px solid grey;
+  padding: 2px;
+  border-radius: 5px;
+  font-weight: 500;
 }
 
 .board-detail-container{

@@ -209,10 +209,9 @@ app.controller('votingController', function (APP_CONSTANTS, $scope, $state, voti
     }
     
     $scope.setTicketEstimate = () => {
-      console.log($scope.finalEstimate)
       const estimateData = {
           message: {
-              estimate: 10,
+              estimate: $scope.finalEstimate,
           },
           message_type: APP_CONSTANTS.MESSAGE_TYPE.ESTIMATE
       }

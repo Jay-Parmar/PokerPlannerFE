@@ -21,6 +21,7 @@
             VOTE: 'pokerboard/vote',
             VERIFY:'users/resend',
             MANAGER_INVITES: 'invite/managerinvites/',
+            JIRA_TICKET: 'pokerboard/jiraticket',
             POST_JIRA_CREDENTIALS: 'pokerboard/manager',
             GET_JIRA_CREDENTIALS: 'pokerboard/managercredentials',
             UPDATE_JIRA_CREDENTIALS: 'pokerboard/managercredentials/update', 

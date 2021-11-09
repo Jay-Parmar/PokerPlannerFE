@@ -6,8 +6,14 @@ app.controller('votingController', function (APP_CONSTANTS, $scope, $state, voti
     $scope.voteList = []
     $scope.isSpectator = false
 
-    const setIssueDetails = ticketId => {
+    const setIssueDetails = () => {
       // Fetching JIRA issue to be estimated
+      votingService.getIssue({"ticket_id": sessionId}).then(response => {
+        $scope.ticketTitle = response.title;
+        $scope.ticketDescription = response.description;
+      }, error => {
+
+      });
     }
 
     $scope.postComment = () => {
@@ -15,6 +21,20 @@ app.controller('votingController', function (APP_CONSTANTS, $scope, $state, voti
       /* Posting new comment on JIRA */
       votingService.postComment({"ticket_id": sessionId, "comment": $scope.comment}).then(response => {
 
+      }, error => {
+
+      });
+    };
+
+    $scope.getComments = () => {
+      votingService.getComments({"ticket_id": sessionId}).then(response => {
+        console.log("scope response::: ", response)
+        $scope.comments = response["comments"].map(obj => {
+          return {
+            body: obj
+          }
+        });
+        console.log("scope commentsa::: ",$scope.comments)
       }, error => {
 
       });
@@ -200,7 +220,7 @@ app.controller('votingController', function (APP_CONSTANTS, $scope, $state, voti
     const onSession = (response) => {
       // check if ticket status is ongoing or not
       setSocketConnection(response.id);
-      setIssueDetails(response);
+      setIssueDetails();
     }
 
     const setCards = type => {

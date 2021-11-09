@@ -1,6 +1,6 @@
 app.controller('pokerboardCtrl', [
-    '$state', '$scope', 'pokerboardService', 'Restangular', '$cookies', '$rootScope',
-    function($state, $scope, pokerboardService, Restangular, $cookies, $rootScope){
+    '$state', '$scope', 'pokerboardService', 'Restangular', '$cookies', '$rootScope', 'APP_CONSTANTS',
+    function($state, $scope, pokerboardService, Restangular, $cookies, $rootScope, APP_CONSTANTS){
         
         $scope.goToPokerboard = id => {
             $state.go('pokerboard', {'id': id});

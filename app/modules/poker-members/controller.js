@@ -1,10 +1,10 @@
 app.controller('pokerboardMembersCtrl', [
-    '$state', '$scope', '$rootScope', '$stateParams', 'memberService', 'pokerboardService', 'APP_CONSTANTS',
-    function($state, $scope, $rootScope, $stateParams, memberService, pokerboardService, APP_CONSTANTS){
+    '$state', '$scope', '$cookies', '$stateParams', 'memberService', 'pokerboardService', 'APP_CONSTANTS',
+    function($state, $scope, $cookies, $stateParams, memberService, pokerboardService, APP_CONSTANTS){
         
         $scope.pokerboard = {};
         const pokerboardId = $stateParams.pid;
-        $scope.isManager = true;
+        $scope.user_id = $cookies.get('id');
         $scope.members = [];
 
         pokerboardService.getPokerboardDetails(pokerboardId).then(response => {

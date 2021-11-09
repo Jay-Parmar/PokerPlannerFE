@@ -2,7 +2,7 @@ app.service('groupServices', ['Restangular', 'APP_CONSTANTS','$cookies',
     function (Restangular, APP_CONSTANTS, $cookies){
 
         Restangular.setDefaultHeaders({
-            Authorization: `Token ${$cookies.get('token')}`
+            Authorization: `Token ${$cookies.get('token')}`,
         });
         
         this.getUsers = function(){
@@ -27,9 +27,8 @@ app.service('groupServices', ['Restangular', 'APP_CONSTANTS','$cookies',
             return Restangular.all(APP_CONSTANTS.API_ENDPOINT.GROUP).getList();
         }
 
-        // this.removeMember = function(email, group){
-        //     const user = {email, group};
-        //     return Restangular.all(APP_CONSTANTS.API_ENDPOINT.GROUP_MEMBER).remove(user)
-        // }
+        this.removeMember = function(id, group){ 
+            return Restangular.one('groups',group).one('removemembers',id).remove();
+        }
     }
 ]); 

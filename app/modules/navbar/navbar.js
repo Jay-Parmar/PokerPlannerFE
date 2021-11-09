@@ -1,12 +1,16 @@
-app.directive('navBar', function($state, $cookies, APP_CONSTANTS) {
+app.directive('navBar', function($state, $cookies, APP_CONSTANTS, pokerboardService) {
     return {
       scope: {},
       link: function(scope) {
           scope.logout = function() {
-              $cookies.remove("token");
-              $cookies.remove("id");
-              $cookies.remove("user");
-              $state.go("login");
+            pokerboardService.logout().then(function(){
+                  $cookies.remove("token");
+                  $cookies.remove("id");
+                  $cookies.remove("user");
+                  $state.go("login");
+              },function(err){
+                  console.log(err)
+              });
           }
   
           scope.navLinks = {

@@ -56,7 +56,8 @@
       <div ng-repeat="user in group.members">
           <div class="tab-content">
               <p>{{user.email}}</p>
-              <button data-bs-toggle="modal" data-bs-target="#deleteModal" ng-show='group.owner == user_id' class="join-btn btn-danger">Remove</button>
+              <button ng-click="removeMember(user)" ng-show='group.owner == user_id && group.owner !=user.id' class="join-btn btn-danger">Remove</button>
+              <span ng-show='group.owner == user_id && group.owner ==user.id' style="margin-right: 20px;">OWNER</span>
           </div>
           <div class="hor-rule"></div>
       </div>

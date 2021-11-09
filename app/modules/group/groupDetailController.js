@@ -23,6 +23,7 @@ app.controller('groupDetailController', [
             .then(function(response){
                 $state.go('group')
             }, function(err){
+                console.log(err)
                 msg = err.data['non_field_errors'][0]
                 $mdToast.show({
                     template: '<md-toast>' +
@@ -36,12 +37,12 @@ app.controller('groupDetailController', [
             })
         }
 
-        $scope.removeMember = () => {
-            groupServices.removeMember($scope.deleteEmail, groupId)
+        $scope.removeMember = (user) => {
+            groupServices.removeMember(user.id, groupId)
             .then(function(response){
-
+                console.log(response)
             }, function(err){
-
+                console.log(err)
             })
         }
     }

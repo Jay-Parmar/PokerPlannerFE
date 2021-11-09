@@ -10,7 +10,8 @@
             GROUP: 'groups/',
             GROUP_DETAIL:'groups/:id',
             BOARD: 'board/',
-            GROUP_MEMBER: 'groups/members',
+            GROUP_MEMBER: 'groups/addmembers',
+            REMOVE_GROUP_MEMBER: 'group/:id/removemembers/',
             GET_USER_DETAILS: 'users/',
             CHANGE_PASSWORD: 'users/changepassword/',
             POKERBOARD: 'pokerboard/',   //HAVE TO FILL THIS

@@ -39,5 +39,9 @@ app.service('pokerboardService', [
         this.updateCredentials = function(details){
             return Restangular.all(APP_CONSTANTS.API_ENDPOINT.UPDATE_JIRA_CREDENTIALS).patch(details);
         }
+
+        this.logout = function(){
+            return Restangular.all(APP_CONSTANTS.API_ENDPOINT.LOGOUT).post();
+        }
     }
 ]);

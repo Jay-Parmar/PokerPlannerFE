@@ -27,5 +27,10 @@ app.service('groupServices', ['Restangular', 'APP_CONSTANTS','$cookies',
         this.getGroups = function(){
             return Restangular.all(APP_CONSTANTS.API_ENDPOINT.GROUP).getList();
         }
+
+        // this.removeMember = function(email, group){
+        //     const user = {email, group};
+        //     return Restangular.all(APP_CONSTANTS.API_ENDPOINT.GROUP_MEMBER).remove(user)
+        // }
     }
 ]); 

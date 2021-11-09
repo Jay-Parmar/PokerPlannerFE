@@ -11,8 +11,9 @@ app.controller('votingController', function (APP_CONSTANTS, $scope, $state, voti
     }
 
     $scope.postComment = () => {
+      console.log("Hey")
       /* Posting new comment on JIRA */
-      votingSessionService.postComment({"ticket_id": sessionId, "comment": $scope.comment}).then(response => {
+      votingService.postComment({"ticket_id": sessionId, "comment": $scope.comment}).then(response => {
 
       }, error => {
 

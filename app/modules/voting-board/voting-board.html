@@ -8,11 +8,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form name="commentForm" ng-submit="postComment()" class='main-form'>
+                    <form name="commentForm" class='main-form'>
                         <textarea type="text" name="comment" ng-model="comment" class="form-control grey-back"
                             id="comment" required placeholder="Enter Comment"></textarea>
                         <button type="submit" data-bs-dismiss="modal"
-                            class="btn btn-primary sub-btn mt-3">Submit</button>
+                            class="btn btn-primary sub-btn mt-3" ng-click="postComment()">Submit</button>
                     </form>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                 </div>
                 <a href="" class="link-dark" data-bs-toggle="modal" data-bs-target="#showCommentsModal" ng-if='comments.length > 1'>show more</a>
             </div>
-            <button type="button" class="btn btn-primary join-btn" data-bs-toggle="modal" data-bs-target="#postCommentsModal">Add Comment</button>
+            <button type="button" class="btn btn-primary join-btn" data-bs-toggle="modal" data-bs-target="#postCommentsModal" ng-show='isAdmin'>Add Comment</button>
         </div>
     </div>
     <div class="vote-container">

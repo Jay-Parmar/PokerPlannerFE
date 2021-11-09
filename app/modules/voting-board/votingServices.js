@@ -16,9 +16,13 @@ app.service('votingService', ['APP_CONSTANTS', 'Restangular', '$websocket', func
         return Restangular.one(sessionUrl).get()
     }
 
-    // this.getComments = function(){
-    //     return Restangular.all(APP_CONSTANTS.API_ENDPOINT.COMMENT).get()
-    // }
+    this.getComments = function(sessionId){
+        return Restangular.one(APP_CONSTANTS.API_ENDPOINT.COMMENT).get(sessionId);
+    }
+
+    this.getIssue = sessionId => {
+        return Restangular.one(APP_CONSTANTS.API_ENDPOINT.JIRA_TICKET).get(sessionId);
+    }
 
     // this.getVotes = function(){
     //     return Restangular.all(APP_CONSTANTS.API_ENDPOINT)

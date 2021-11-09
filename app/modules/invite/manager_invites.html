@@ -14,7 +14,7 @@
   <div class="row row-container" ng-repeat="invite in invites">
           <div class="hor-rule"></div>
           <p class='col-sm d-flex align-items-center'><span class='group-name'> </span>{{invite.email}} </p>
-          <p class='col-sm row-item'><span class='group-name'> </span>{{invite.pokerboard}} </p>
+          <p class='col-sm row-item'><span class='group-name'> </span>{{invite.pokerboard_title}} </p>
           <p class='col-sm row-item'><span class='group-name'> </span>{{invite.group}} </p>
           <p class='col-sm row-item' ng-show="invite.status == 0">Pending</p>
           <p class='col-sm row-item' ng-show="invite.status == 1">Accepted</p>

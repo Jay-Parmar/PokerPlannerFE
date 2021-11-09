@@ -29,15 +29,16 @@
                         <select class="form-select" ng-model="selectedType">
                             <option ng-repeat="deck in deckType" value="{{deck.val}}">{{ deck.name }}</option>
                         </select>
-                        <div class="deck-array" ng-show="selectedType==5">
-                            <input type="text" name="deckValue" ng-model="deckValue" placeholder="Enter Custom Deck" required>
-                            <span class="error_msg" ng-show="selectedType==5 && myForm.deckValue.$touched 
-                            && myForm.deckValue.$invalid">
-                                Custom array is required.
-                        </span>
-                        </div>
                     </div>
 
+                    <div class="deck-array" ng-show="selectedType==5">
+                        <label class="form-label reqd" for="deckValue">Add Deck Separated by ',' with no spaces</label>
+                        <input type="text" name="deckValue" ng-model="deckValue" class="form-control form-control-lg" placeholder="Enter Custom Deck" required>
+                        <span class="error_msg" ng-show="selectedType==5 && myForm.deckValue.$touched 
+                        && myForm.deckValue.$invalid">
+                            Custom array is required.
+                    </span>
+                    </div>
                     <div class="form-outline mb-4 flex">
                         <label class="form-label" for="ticketid">JIRA Ticket ids: Separated by ',' with no spaces</label>
                         <textarea type="text" class="form-control" name="ticketid"
@@ -59,7 +60,7 @@
                     <div class="form-outline mb-4 flex">
                         <label class="form-label reqd" for="duration">Board duration</label>
                         <input type="number" class="form-control form-control-lg" required name="duration" 
-                        id="duration" ng-model="board.duration" placeholder="Enter Duration in seconds">
+                        id="duration" ng-model="board.duration" placeholder="Enter Duration in seconds" min=1>
                     </div>
 
                     <!-- Error Messages -->

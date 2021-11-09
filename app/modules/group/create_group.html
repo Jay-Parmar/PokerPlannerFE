@@ -32,11 +32,13 @@
    <p class="main-heading" ng-show="!(groups.length)">No Group Available</p>
    <div ng-show="invites.length!=0">
       <div class="tab-head">
+         <p>GroupId</p>
          <p>Name</p>
       </div>
       <div class="hor-rule"></div>
       <div ng-repeat="group in groups">
          <div class="tab-content">
+            <p>{{ group.id }}</p>
             <p>{{ group.name }}</p>
             <button ng-click="goToGroup(group.id)" class="join-btn btn-primary">View</button>
          </div>

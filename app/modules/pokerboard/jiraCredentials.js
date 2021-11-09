@@ -1,16 +1,12 @@
 app.controller('jiraCredentialsCtrl', [
-    '$scope', '$state', '$rootScope', 'APP_CONSTANTS', 'pokerboardService', '$cookies', 'data',
-    function($scope, $state, $rootScope, APP_CONSTANTS, pokerboardService, $cookies, data){
+    '$scope', '$state', 'APP_CONSTANTS', 'pokerboardService', '$cookies',
+    function($scope, $state, APP_CONSTANTS, pokerboardService, $cookies){
         $scope.errmsg = null
-        console.log(data)
-        if(data[0]){
-            // $scope.hasJiraCreds = true
-
+        
+        pokerboardService.getJiraDetails().then(function(){
             $state.go(APP_CONSTANTS.NAME.POKER_CREATE)
-            $scope.username = data[0].username
-            $scope.url = data[0].url
-            $scope.password = data[0].password
-        }
+        }, function(){
+        })
 
         $scope.createPokerboard = function(){
             let details = {
@@ -21,7 +17,6 @@ app.controller('jiraCredentialsCtrl', [
             pokerboardService.saveCredentials(details).then(function(response){
                 let user = JSON.parse($cookies.get('user'))
                 user.hasJiraCreds = true
-                $rootScope.user.hasJiraCreds = true
                 $cookies.put('user', JSON.stringify(user))
                 $state.go(APP_CONSTANTS.NAME.POKER_CREATE)
             }, function(err){
@@ -30,7 +25,6 @@ app.controller('jiraCredentialsCtrl', [
                 if($scope.errmsg=="Credentials already present"){
                     let user = JSON.parse($cookies.get('user'))
                     user.hasJiraCreds = true
-                    $rootScope.user.hasJiraCreds = true
                     $cookies.put('user', JSON.stringify(user))
                     $state.go(APP_CONSTANTS.NAME.POKER_CREATE)
                 }

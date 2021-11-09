@@ -95,12 +95,7 @@ app.config(
           name: APP_CONSTANTS.NAME.JIRA_CREDENTIALS,
           url: APP_CONSTANTS.URLS.JIRA_CREDENTIALS,
           templateUrl: APP_CONSTANTS.TEMPLATE_URL.JIRA_CREDENTIALS,
-          controller: APP_CONSTANTS.CONTROLLERS.JIRA_CREDENTIALS,
-          resolve: {
-            data: function($q, pokerboardService){
-              return pokerboardService.getJiraDetails()
-            }
-          },
+          controller: APP_CONSTANTS.CONTROLLERS.JIRA_CREDENTIALS
         })
         .state({
           name: APP_CONSTANTS.NAME.PAGE_404,

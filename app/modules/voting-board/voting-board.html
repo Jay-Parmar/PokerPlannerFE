@@ -88,11 +88,11 @@
     <div class="admin-container" ng-show='isAdmin'>
         <div><span class="admin-action-head">ADMIN ACTIONS</span></div>
         <div class="admin-actions">
-            <button type="button" class="btn btn-primary mx-1" ng-click='startCountdown()' ng-show="estimated">Start
+            <button type="button" class="btn btn-primary mx-1" ng-click='startCountdown()' ng-disabled="time != 0" ng-hide="estimated">Start
                 Countdown</button>
             <button type="button" class="btn btn-primary mx-1" ng-click='skipGame()'>Skip &amp; Postpone</button>
-            <!-- <button type="button" class="btn btn-primary mx-1" ng-click='startCountdown()' ng-show="estimated">Replay
-                Session</button> -->
+            <button type="button" class="btn btn-primary mx-1" ng-click='startCountdown()' ng-show="estimated">Replay
+                Session</button>
             <form name='estimateForm' class="final-estimate-container mx-1" ng-show='estimated'>
                 <button class="btn btn-primary mx-1" ng-disabled="estimateForm.$invalid" ng-click='setTicketEstimate()'
                     type="button">Set Estimate</button>

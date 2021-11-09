@@ -6,11 +6,12 @@
         <div>
             <h2>{{ pokerboard.title }}</h2>
         </div>
-        <div ng-show="isManager">
-            <button class="btn btn-info" ng-click="managerinvites()">Invites Sent</button>
-            <button class="btn btn-info" ng-click="goToMembers()">Members</button>
-            <button data-bs-toggle="modal" data-bs-target="#inviteUserModal" class="btn btn-info">Invite user</button>
-        </div> 
+        <div>
+            <button class="btn btn-dark main-btn" ng-click="managerinvites()" ng-show="isManager">Invites Sent</button>
+            <button class="btn btn-primary main-btn" ng-click="goToMembers()">Members</button>
+            <button data-bs-toggle="modal" data-bs-target="#inviteUserModal" class="btn btn-dark main-btn"
+                ng-show="isManager">Invite user</button>
+        </div>
     </div>
 
     <div class="modal fade" id="inviteUserModal" tabindex="-1" aria-labelledby="inviteUserModalLabel"
@@ -36,18 +37,22 @@
                         </div>
                         <div ng-show="emailInviteForm">
                             <label class="mt-3 reqd">Email</label>
-                            <input ng-model="email" required name="email" ng-change="isUserError()" placeholder="Enter email address"
-                                type="email">
+                            <input ng-model="email" required name="email" ng-change="isUserError()"
+                                placeholder="Enter email address" type="email">
                             <div ng-show="inviteForm.email.$invalid" class="invalid mt-1" role="alert">
-                                <span ng-show="inviteForm.email.$touched && inviteForm.email.$invalid">Email is required!</span>
-                                <span ng-show="inviteForm.email.$touched && inviteForm.email.$invalid" style="color: red;">Not a valid email address!</span>
+                                <span ng-show="inviteForm.email.$touched && inviteForm.email.$invalid">Email is
+                                    required!</span>
+                                <span ng-show="inviteForm.email.$touched && inviteForm.email.$invalid"
+                                    style="color: red;">Not a valid email address!</span>
                             </div>
                         </div>
                         <div ng-hide="emailInviteForm">
                             <label class="mt-3 reqd">Group Name</label>
-                            <input ng-model="group" required name="group" ng-change="isGroupError()" placeholder="Enter group name" type="text">
+                            <input ng-model="group" required name="group" ng-change="isGroupError()"
+                                placeholder="Enter group name" type="text">
                             <div ng-show="inviteForm.group.$invalid" class="invalid mt-1" role="alert">
-                                <span style="color: red;" ng-show="inviteForm.group.$touched">Group id is required!</span>
+                                <span style="color: red;" ng-show="inviteForm.group.$touched">Group id is
+                                    required!</span>
                             </div>
                         </div>
                         <label class="mt-2 reqd">Role</label>
@@ -60,7 +65,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" ng-click="inviteUser()" ng-disable="emailInviteForm.$invalid"
-                    data-bs-dismiss="modal" class="btn btn-primary">Invite</button>
+                        data-bs-dismiss="modal" class="btn btn-primary">Invite</button>
                 </div>
             </div>
         </div>
@@ -69,30 +74,39 @@
     <div class="main-outer">
         <h4 class="main-heading">Tickets</h4>
         <p class="mx-1" ng-show="pokerboard.tickets.length==0">There are no unestimated Tickets</p>
-        <div class="tab-head">
-            <p>TICKET ID</p>
-        </div>
-        <div class="hor-rule"></div>
-        <div ng-repeat="ticket in pokerboard.tickets">
-            <div class="tab-content">
-                <p>{{ ticket.ticket_id }}</p>
-                <div class="ticket-btn-container">
-                    <button ng-show="isManager && $index == 0" ng-click="createSession(ticket.id)" class="join-btn btn-primary">Estimate</button>
-                    <button ng-show="isManager" ng-click="moveUp($index)" class="btn-arrow bg-dark mx-1"><i class="bi bi-arrow-up"></i></button>
-                    <button ng-show="isManager" ng-click="moveDown($index)" class="btn-arrow bg-dark mx-1"><i class="bi bi-arrow-down"></i></button>
-                    <button ng-show="!isManager && $index == 0" ng-click="createSession(ticket.id)" class="join-btn btn-success">Join</button>
-                </div>
+        <div ng-show='pokerboard.tickets.length!=0'>
+            <div class="tab-head">
+                <p>TICKET ID</p>
             </div>
             <div class="hor-rule"></div>
-        </div>
-        <div class="my-4">
-            <div class="tab-head">
-                <p>ESTIMATED TICKETS</p>
+            <div ng-repeat="ticket in pokerboard.tickets">
+                <div class="tab-content">
+                    <p>{{ ticket.ticket_id }}</p>
+                    <div class="ticket-btn-container">
+                        <button ng-show="isManager && $index == 0" ng-click="createSession(ticket.id)"
+                            class="join-btn btn-primary">Estimate</button>
+                        <button ng-show="isManager" ng-click="moveUp($index)" class="btn-arrow bg-dark mx-1"><i
+                                class="bi bi-arrow-up"></i></button>
+                        <button ng-show="isManager" ng-click="moveDown($index)" class="btn-arrow bg-dark mx-1"><i
+                                class="bi bi-arrow-down"></i></button>
+                        <button ng-show="!isManager && $index == 0" ng-click="createSession(ticket.id)"
+                            class="join-btn btn-success">Join</button>
+                    </div>
+                </div>
+                <div class="hor-rule"></div>
             </div>
-            <p class="mx-1" ng-show="pokerboard.estimated.length==0">You have not estimated any tickets yet!!</p>
-            <li style="width: fit-content;" class="mx-1 bg-primary d-inline badge" ng-repeat="ticket in pokerboard.estimated">
-                <span>{{ ticket.ticket_id }} : {{ticket.estimate}}</span>
-            </li>
+        </div>
+        <div>
+            <div class="my-4">
+                <div class="tab-head">
+                    <p>ESTIMATED TICKETS</p>
+                </div>
+                <p class="mx-1" ng-show="pokerboard.estimated.length==0">You have not estimated any tickets yet!!
+                </p>
+                <li style="width: fit-content;" class="mx-1 bg-primary d-inline badge"
+                    ng-repeat="ticket in pokerboard.estimated">
+                    <span>{{ ticket.ticket_id }} : {{ticket.estimate}}</span>
+                </li>
+            </div>
         </div>
     </div>
-</div>

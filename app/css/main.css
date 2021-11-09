@@ -447,6 +447,15 @@ form i{
   margin-right: 10px;
 }
 
+.main-btn{
+  color: #fff;
+  border-radius: 4px;
+  height: 30px;
+  padding: 5px 12px 0px 12px;
+  border-width: 0;
+  font-size: 14px;
+}
+
 .btn-arrow{
   width: 30px;
   border: 0px;

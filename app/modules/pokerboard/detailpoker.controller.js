@@ -59,9 +59,14 @@ app.controller('pokerboardDetailsCtrl', [
         pokerboardService.getPokerboardDetails(pokerboardId).then(response => {
             $scope.pokerboard = response;
             $scope.isManager = $cookies.get('id') == $scope.pokerboard.manager.id
-            $scope.pokerboard.estimated = $scope.pokerboard.ticket.filter(obj=>obj.estimate);
-            $scope.pokerboard.tickets = $scope.pokerboard.ticket
-                                        .filter(obj=>!obj.estimate).sort((a,b)=>a.order-b.order);
+            $scope.pokerboard.estimated = $scope.pokerboard.ticket.filter(
+                function(obj){
+                    return obj.status == 3
+                })
+            $scope.pokerboard.tickets = $scope.pokerboard.ticket.filter(
+                function(obj){
+                    return obj.status != 3
+                }).sort((a,b)=>a.order-b.order);
         }, error => {
             $mdToast.show({
                 template: '<md-toast>' +

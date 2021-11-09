@@ -8,7 +8,7 @@ app.service('memberService', [
         }
 
         this.removeMember = pokerboardMemberId => {
-            url = APP_CONSTANTS.API_ENDPOINT.MEMBERS + pokerboardMemberId + '/'
+            url = APP_CONSTANTS.API_ENDPOINT.MEMBERS + '/' + pokerboardMemberId + '/'
             return Restangular.all(url).remove();
         }
     }

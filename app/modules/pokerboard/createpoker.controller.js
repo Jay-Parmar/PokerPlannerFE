@@ -48,7 +48,11 @@ app.controller('createBoardCtrl', [
                 console.log(response);
                 $state.go("pokerboards");
             }, error => {
+                if(error.data.title != undefined)
+                    $scope.errmsg = error.data.title[0]
+                else
                 $scope.errmsg = error.data[0]
+                console.log(error)
             });
         };
     }

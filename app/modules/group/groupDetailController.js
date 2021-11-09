@@ -24,7 +24,6 @@ app.controller('groupDetailController', [
                 $state.go('group')
             }, function(err){
                 msg = err.data['non_field_errors'][0]
-                // $mdToast.show($mdToast.simple().textContent(msg).hideDelay(300000));
                 $mdToast.show({
                     template: '<md-toast>' +
                     '<div class="md-toast-content" id="toaster">' +
@@ -34,13 +33,6 @@ app.controller('groupDetailController', [
                     hideDelay: 4000,
                     position: 'bottom'
                 })
-                // console.log(err.data['non_field_errors'][0])
-                // msg = 
-                // $mdToast.show (
-                //     $mdToast.simple()
-                //     .textContent()                       
-                //     .hideDelay(3000)
-                //  );
             })
         }
 

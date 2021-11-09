@@ -92,6 +92,7 @@ app.controller('pokerboardDetailsCtrl', [
                 }
             }
             pokerboardService.inviteUser(user).then(response => {
+                console.log("hi")
                 $mdToast.show({
                     template: '<md-toast>' +
                     '<div class="md-toast-content" id="toaster">' +
@@ -103,8 +104,12 @@ app.controller('pokerboardDetailsCtrl', [
                 })
                 console.log(response);
             }, error => {
-                console.log(error)
-                msg = error.data[0];
+                if (error.data.group_id == undefined){
+                    msg = error.data[0];
+                } 
+                else{
+                    msg = error.data.group_id[0];
+                }
                 $mdToast.show({
                     template: '<md-toast>' +
                     '<div class="md-toast-content" id="toaster">' +

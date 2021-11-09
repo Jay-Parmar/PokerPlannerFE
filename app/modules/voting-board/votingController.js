@@ -1,4 +1,4 @@
-app.controller('votingController', function (APP_CONSTANTS, $scope, $state, votingService, $stateParams, $cookies) {
+app.controller('votingController', function (APP_CONSTANTS, $scope, $state, votingService, $stateParams, $cookies){
     const authToken = $cookies.get('token')
     const sessionId = $stateParams.id
     const pokerboardId = $stateParams.pid
@@ -9,6 +9,15 @@ app.controller('votingController', function (APP_CONSTANTS, $scope, $state, voti
     const setIssueDetails = ticketId => {
       // Fetching JIRA issue to be estimated
     }
+
+    $scope.postComment = () => {
+      /* Posting new comment on JIRA */
+      votingSessionService.postComment({"ticket_id": sessionId, "comment": $scope.comment}).then(response => {
+
+      }, error => {
+
+      });
+    };
 
     const updateParticipants = data => {
       /* Updating Participants in UI */

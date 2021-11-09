@@ -385,11 +385,15 @@ form i{
 
 #toaster {
   position: fixed;
-  bottom: 20px;
-  left: 11px;
-  width: 98%;
-  z-index: 10000;
+  z-index: 1;
+  margin: auto;
+  bottom: 10px;
+  width: 100%;
   text-align: center;
+  padding: 15px 0px 15px 0px;
+  opacity: 0.9;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .timer-container{
@@ -490,4 +494,16 @@ div.disabled
   pointer-events: none;
   opacity: 0.6;
   background: #CCC;
+}
+
+.error-page-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.error-img{
+  height: 500px;
+  width: 600px;
 }

@@ -1,4 +1,4 @@
-app.controller('votingController', function (APP_CONSTANTS, $scope, $state, votingService, $stateParams, $cookies){
+app.controller('votingController', function (APP_CONSTANTS, $scope, $state, votingService, $stateParams, $cookies, $interval, $mdToast){
     const authToken = $cookies.get('token')
     const sessionId = $stateParams.id
     const pokerboardId = $stateParams.pid
@@ -143,22 +143,34 @@ app.controller('votingController', function (APP_CONSTANTS, $scope, $state, voti
                   break;
               case APP_CONSTANTS.MESSAGE_TYPE.LEAVE: updateParticipants(obj.users);
                   break;
+              case APP_CONSTANTS.MESSAGE_TYPE.ERROR: showError(obj.error)
           }
+      })
+    }
+
+    const showError = (message) => {
+      // Countdown helper
+      $mdToast.show({
+          template: '<md-toast>' +
+          '<div class="md-toast-content" id="toaster">' +
+            message +
+          '</div>' +
+        '</md-toast>',
+          hideDelay: 4000,
+          position: 'bottom'
       })
     }
 
     const countdown = () => {
       // Countdown helper
-      if ($scope.time == 0) {
-          clearInterval($scope.timerId);
-          $scope.estimated = true;
-          console.log("Trigger Event");
-          $scope.$apply();
-          return;
-      } else {
+
+          // $scope.$apply();    
           $scope.time--;
-      }
-      $scope.$apply();
+          if ($scope.time == 0) {
+            $scope.estimated = true;
+            console.log("Trigger Event");
+          }
+      // $scope.$apply();
     }
 
     const setCountdown = timer => {
@@ -170,16 +182,19 @@ app.controller('votingController', function (APP_CONSTANTS, $scope, $state, voti
       timer = timer.substring(1, timer.length - 1);
       let startTime = new Date(timer);
       let currentTime = new Date();
-      $scope.time = Math.round($scope.duration - (currentTime - startTime) / 1000);
+      // $scope.time = Math.round($scope.duration - (currentTime - startTime) / 1000);
+      $scope.time = $scope.duration - Math.ceil((currentTime.getTime() - startTime.getTime()) / 1000)
+      // $scope.time = 10
+      console.log($scope.time)
       if ($scope.time <= 0) {
           clearInterval($scope.timerId);
           $scope.time = 0;
           $scope.estimated = true;
 
-          $scope.$apply();
+          // $scope.$apply();
           return;
       }
-      $scope.timerId = setInterval(countdown, 1000);
+      $scope.timerId = $interval(countdown, 1000, $scope.time);
     }
 
     const onSession = (response) => {

@@ -130,6 +130,7 @@
             JOIN: 'join',
             LEAVE: 'leave',
             ESTIMATE: 'estimate',
+            ERROR: 'error'
         },
     });
 })();

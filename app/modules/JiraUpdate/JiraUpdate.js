@@ -1,5 +1,5 @@
 app.controller('jiraUpdateCtrl',
-    function($scope, $state, $rootScope, APP_CONSTANTS, pokerboardService, $cookies, profileService){
+    function($scope, $state, $mdToast, APP_CONSTANTS, pokerboardService, $cookies, profileService){
         profileService.getJiraCredentials($cookies.get('id')).then(function(response){
             $scope.url = response[0].url
             $scope.username = response[0].username
@@ -24,6 +24,15 @@ app.controller('jiraUpdateCtrl',
                 "password": $scope.password
             }
             pokerboardService.updateCredentials(details).then(function(response){
+                $mdToast.show({
+                    template: '<md-toast>' +
+                    '<div class="md-toast-content" id="toaster">' +
+                      "Change Successfull"+
+                    '</div>' +
+                  '</md-toast>',
+                    hideDelay: 4000,
+                    position: 'bottom'
+                })
                 $state.go('profile')
             }, function(response){ 
                 $scope.errmsg = 'Invalid Credentials'

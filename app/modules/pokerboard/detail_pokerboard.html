@@ -7,9 +7,9 @@
             <h2>{{ pokerboard.title }}</h2>
         </div>
         <div ng-show="isManager">
-            <button class="btn btn-secondary" ng-click="managerinvites()">Invites Sent</button>
-            <button class="btn btn-secondary bg-dark" ng-click="goToMembers()">Members</button>
-            <button data-bs-toggle="modal" data-bs-target="#inviteUserModal" class="btn btn-success">Invite user</button>
+            <button class="btn btn-info" ng-click="managerinvites()">Invites Sent</button>
+            <button class="btn btn-info" ng-click="goToMembers()">Members</button>
+            <button data-bs-toggle="modal" data-bs-target="#inviteUserModal" class="btn btn-info">Invite user</button>
         </div> 
     </div>
 
@@ -40,14 +40,14 @@
                                 type="email">
                             <div ng-show="inviteForm.email.$invalid" class="invalid mt-1" role="alert">
                                 <span ng-show="inviteForm.email.$touched && inviteForm.email.$invalid">Email is required!</span>
-                                <span ng-show="inviteForm.email.$invalid">Not a valid email address!</span>
+                                <span ng-show="inviteForm.email.$touched && inviteForm.email.$invalid" style="color: red;">Not a valid email address!</span>
                             </div>
                         </div>
                         <div ng-hide="emailInviteForm">
                             <label class="mt-3 reqd">Group Name</label>
                             <input ng-model="group" required name="group" ng-change="isGroupError()" placeholder="Enter group name" type="text">
                             <div ng-show="inviteForm.group.$invalid" class="invalid mt-1" role="alert">
-                                <span ng-show="inviteForm.group.$touched">Group name is required!</span>
+                                <span style="color: red;" ng-show="inviteForm.group.$touched">Group id is required!</span>
                             </div>
                         </div>
                         <label class="mt-2 reqd">Role</label>

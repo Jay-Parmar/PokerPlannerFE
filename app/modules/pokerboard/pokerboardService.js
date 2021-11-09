@@ -19,8 +19,9 @@ app.service('pokerboardService', [
             return Restangular.one(url).get();
         };
 
-        this.getJiraDetails = pokerboardId => {
-            return Restangular.one(APP_CONSTANTS.API_ENDPOINT.JIRA_CREDENTIALS).get();
+        this.getJiraDetails = function(){
+            url = APP_CONSTANTS.API_ENDPOINT.GET_JIRA_CREDENTIALS + "?user_id=" + $cookies.get('id')
+            return Restangular.one(url).get();
         };
 
         this.orderTickets = (tickets, pokerboardId) => {

@@ -2,8 +2,6 @@ app.controller('jiraCredentialsCtrl', [
     '$scope', '$state', '$rootScope', 'APP_CONSTANTS', 'pokerboardService', '$cookies', 'data',
     function($scope, $state, $rootScope, APP_CONSTANTS, pokerboardService, $cookies, data){
         $scope.errmsg = null
-        // $scope.hasJiraCreds = false
-
         if(data[0]){
             // $scope.hasJiraCreds = true
 

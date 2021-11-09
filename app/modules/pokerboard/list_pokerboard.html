@@ -5,7 +5,7 @@
         <div class="row d-flex justify-content-center">
             <h2 class="main-heading">Your Poker Boards</h2>
             <p class="mt-4 main-heading" ng-show="boardList.length==0">You have not created any pokerboards yet</p>
-            <div class="filter-objects m-4">
+            <div class="filter-objects m-4" ng-show='boardList.length != 0'>
                 <h3>Filter Boards : </h3>
                 <label for="manager">Manager : </label>
                 <input type="text" name="manager" ng-model="manager" placeholder="Manager Name">
@@ -14,7 +14,7 @@
             </div>
             <div>
                 <div class="hor-rule"></div>
-                <div class="tab-head">
+                <div class="tab-head" ng-show='boardList.length != 0'>
                     <p>TITLE</p>
                     <p>DESCRIPTION</p>
                     <p>MANAGER</p>

@@ -27,6 +27,7 @@
             SESSION: 'pokerboard/ticket'
         },
         TEMPLATE_URL: {
+            HOMEPAGE: 'modules/Homepage/homepage.html',
             SIGNUP: 'modules/signup/signup.html',
             LOGIN: 'modules/login/login.html',
             PROFILE: 'modules/profile/profile.html',
@@ -47,6 +48,7 @@
             JIRAUPDATE: 'modules/JiraUpdate/JiraUpdate.html',
         },
         CONTROLLERS: {
+            HOMEPAGE: 'homepageCtrl',
             SIGNUP: 'SignupController',
             LOGIN: 'LoginController',
             PROFILE: 'ProfileController',
@@ -67,7 +69,8 @@
             PAGE_404:'404Ctrl'
         },
         URLS: {
-            SIGNUP: '/',
+            HOMEPAGE: '/',
+            SIGNUP: '/signup',
             LOGIN: '/login',
             PROFILE: '/profile',
             ACCOUNT_ACTIVATE: '/activate/:uid/:token',
@@ -87,6 +90,7 @@
             JIRAUPDATE: '/jiraupdate',
         },
         NAME: {
+            HOMEPAGE: 'homepage',
             SIGNUP: 'signup',
             LOGIN: 'login',
             PROFILE: 'profile',

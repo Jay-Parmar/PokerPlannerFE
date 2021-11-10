@@ -5,6 +5,12 @@ app.config(
       RestangularProvider.setBaseUrl(APP_CONSTANTS.BASE_URL);
       $stateProvider
         .state({
+          name: APP_CONSTANTS.NAME.HOMEPAGE,
+          url: APP_CONSTANTS.URLS.HOMEPAGE,
+          templateUrl: APP_CONSTANTS.TEMPLATE_URL.HOMEPAGE,
+          controller: APP_CONSTANTS.CONTROLLERS.HOMEPAGE,
+        })
+        .state({
           name: APP_CONSTANTS.NAME.SIGNUP,
           url: APP_CONSTANTS.URLS.SIGNUP,
           templateUrl: APP_CONSTANTS.TEMPLATE_URL.SIGNUP,

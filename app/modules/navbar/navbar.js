@@ -7,7 +7,7 @@ app.directive('navBar', function($state, $cookies, APP_CONSTANTS, pokerboardServ
                   $cookies.remove("token");
                   $cookies.remove("id");
                   $cookies.remove("user");
-                  $state.go("login");
+                  $state.go("homepage");
               },function(err){
                   console.log(err)
               });

@@ -25,7 +25,7 @@ app.service('pokerboardService', [
         };
 
         this.orderTickets = (tickets, pokerboardId) => {
-            return Restangular.one(`pokerboards/${pokerboardId}/order-tickets`).put(tickets);
+            return Restangular.one(`pokerboard/ordertickets`).put(tickets);
         };
 
         this.inviteUser = function(user){

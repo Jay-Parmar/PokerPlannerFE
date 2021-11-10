@@ -17,6 +17,7 @@
             <p>{{member.user.email}}</p>
             <p>{{member.role}}</p>
             <button ng-click='removeMember(member.id)' ng-show='pokerboard.manager.id == user_id' class="join-btn btn-danger">Remove</button>
+            <div ng-show='pokerboard.manager.id != user_id' class="join-btn"></div>
         </div>
         <div class="hor-rule"></div>
     </div>

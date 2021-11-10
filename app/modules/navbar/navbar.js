@@ -34,6 +34,10 @@ app.directive('navBar', function($state, $cookies, APP_CONSTANTS, pokerboardServ
                   'ui-sref': APP_CONSTANTS.NAME.PROFILE,
                   'link': 'Profile'
               },
+              ESTIMATETICKETS: {
+                'ui-sref': APP_CONSTANTS.NAME.ESTIMATE_TICKETS,
+                'link': 'EstimatedTickets'
+            },
           }
       },
       templateUrl:'modules/navbar/navbar.html'

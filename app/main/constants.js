@@ -24,7 +24,8 @@
             POST_JIRA_CREDENTIALS: 'pokerboard/manager',
             GET_JIRA_CREDENTIALS: 'pokerboard/managercredentials',
             UPDATE_JIRA_CREDENTIALS: 'pokerboard/managercredentials/update', 
-            SESSION: 'pokerboard/ticket'
+            SESSION: 'pokerboard/ticket',
+            ESTIMATE_TICKETS:'pokerboard/userestimate',
         },
         TEMPLATE_URL: {
             HOMEPAGE: 'modules/Homepage/homepage.html',
@@ -46,6 +47,7 @@
             ACCOUNT_ACTIVATE: 'modules/email verification/emailverification.html',
             MANAGER_INVITES: 'modules/invite/manager_invites.html',
             JIRAUPDATE: 'modules/JiraUpdate/JiraUpdate.html',
+            ESTIMATE_TICKETS: 'modules/estimateTickets/estimateTickets.html'
         },
         CONTROLLERS: {
             HOMEPAGE: 'homepageCtrl',
@@ -66,7 +68,8 @@
             ACCOUNT_ACTIVATE: 'emailVerificationCtrl',
             MANAGER_INVITES: 'managerCtrl',
             JIRAUPDATE: 'jiraUpdateCtrl',
-            PAGE_404:'404Ctrl'
+            PAGE_404:'404Ctrl',
+            ESTIMATE_TICKETS: 'estimateTicketsCtrl',
         },
         URLS: {
             HOMEPAGE: '/',
@@ -88,6 +91,7 @@
             VERIFY: '/verifyemail/:uid',
             MANAGER_INVITES: '/pokerboard/:pid/invites',
             JIRAUPDATE: '/jiraupdate',
+            ESTIMATE_TICKETS: '/estimatetickets'
         },
         NAME: {
             HOMEPAGE: 'homepage',
@@ -109,6 +113,7 @@
             ACCOUNT_ACTIVATE:'activate_account',
             MANAGER_INVITES: 'manager_invites',
             JIRAUPDATE: 'jiraupdate',
+            ESTIMATE_TICKETS: 'estimatetickets'
         },
         DECK_NAME: {
             1: 'Serial',

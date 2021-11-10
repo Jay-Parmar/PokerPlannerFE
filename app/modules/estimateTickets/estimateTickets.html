@@ -1,0 +1,30 @@
+<nav-bar></nav-bar>
+
+<section class="vh-100" style="overflow-x:hidden;">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center">
+            <h2 class="main-heading">Your Estimated Tickets</h2>
+            <p class="mt-4 main-heading" ng-show="ticketlist.length==0">You have not estimated any tickets yet</p>
+            <div>
+                <div class="hor-rule"></div>
+                <div class="tab-head">
+                    <p>TICKET ID</p>
+                    <p>POKERBOARD</p>
+                    <p>ESTIMATE</p>
+                </div>
+                <div class="hor-rule"></div>
+            </div>
+            <div ng-repeat="ticket in ticketlist">
+                <div class="tab-content">
+                    <p>{{ticket.ticket.ticket_id}}</p>
+                    <p>{{ticket.ticket.pokerboard}}</p>
+                    <p>{{ticket.estimate}}</p>
+                    <button ng-click='removeMember(member.id)' ng-show='pokerboard.manager.id == user_id' class="join-btn btn-danger">Details</button>
+                </div>
+                <div class="hor-rule"></div>
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+</section>

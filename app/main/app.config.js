@@ -58,6 +58,12 @@ app.config(
           controller: APP_CONSTANTS.CONTROLLERS.GROUP_DETAIL,
         })
         .state({
+          name: APP_CONSTANTS.NAME.ESTIMATE_TICKETS,
+          url: APP_CONSTANTS.URLS.ESTIMATE_TICKETS,
+          templateUrl: APP_CONSTANTS.TEMPLATE_URL.ESTIMATE_TICKETS,
+          controller: APP_CONSTANTS.CONTROLLERS.ESTIMATE_TICKETS,
+        })
+        .state({
           name: APP_CONSTANTS.NAME.BOARD,
           url: APP_CONSTANTS.URLS.BOARD,
           templateUrl: APP_CONSTANTS.TEMPLATE_URL.BOARD,

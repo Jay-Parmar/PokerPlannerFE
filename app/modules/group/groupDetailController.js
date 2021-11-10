@@ -12,7 +12,7 @@ app.controller('groupDetailController', [
             groupServices.getGroupDetails(groupId)
             .then(function(response){
                 $scope.group = response
-                console.log(response)
+                console.log($scope.group)
             }, function(err){
                 $state.go("PAGE_404")
             })
@@ -39,8 +39,8 @@ app.controller('groupDetailController', [
 
         $scope.removeMember = (user) => {
             groupServices.removeMember(user.id, groupId)
-            .then(function(response){
-                console.log(response)
+            .then(function(){
+                $scope.group.members = $scope.group.members.filter(member => member.id != user.id)
             }, function(err){
                 console.log(err)
             })

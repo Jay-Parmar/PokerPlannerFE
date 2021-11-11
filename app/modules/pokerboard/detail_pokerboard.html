@@ -83,18 +83,21 @@
                 <div class="tab-content">
                     <p>{{ ticket.ticket_id }}</p>
                     <div class="ticket-btn-container">
-                        <button ng-show="isManager && $index == 0" ng-click="createSession(ticket.id)"
+                        <button ng-show="isManager && $index == 0 && !isEditing" ng-click="createSession(ticket.id)"
                             class="join-btn btn-primary">Estimate</button>
-                        <!-- <button ng-show="isManager" ng-click="moveUp($index)" class="btn-arrow bg-dark mx-1"><i
+                        <button ng-show="isManager" ng-click="moveUp($index)" class="btn-arrow bg-dark mx-1"><i
                                 class="bi bi-arrow-up"></i></button>
                         <button ng-show="isManager" ng-click="moveDown($index)" class="btn-arrow bg-dark mx-1"><i
-                                class="bi bi-arrow-down"></i></button> -->
+                                class="bi bi-arrow-down"></i></button>
                         <button ng-show="!isManager && $index == 0" ng-click="createSession(ticket.id)"
                             class="join-btn btn-success">Join</button>
                     </div>
                 </div>
                 <div class="hor-rule"></div>
             </div>
+        </div>
+        <div ng-show="isEditing" class="my-3 d-flex justify-content-end">
+            <button class="m-1 btn btn-success" ng-click="saveOrder()">Save</button>
         </div>
         <div>
             <div class="my-4">

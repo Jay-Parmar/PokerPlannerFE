@@ -35,11 +35,11 @@ app.controller('createBoardCtrl', [
             const data = {
                 title: $scope.board.title,
                 description: $scope.board.description,
-                estimation_type: $scope.board.selectedType,
+                estimate_type: $scope.selectedType,
                 timer: $scope.board.duration,
                 estimation_cards: $scope.estimation_cards,
             };
-            console.log(ticketid)
+            console.log(data)
             if(ticketid){
                 data.tickets = ticketid
             }

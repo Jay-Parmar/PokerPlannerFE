@@ -3,6 +3,6 @@ app.controller('404Ctrl',function ($scope, $state, $cookies) {
         if($cookies.get('token'))  
             $state.go('pokerboards')
         else 
-            $state.go('login')
+            $state.go('homepage')
       }
 });

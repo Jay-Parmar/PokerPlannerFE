@@ -1,15 +1,16 @@
-app.directive('navBar', function($state, $cookies, APP_CONSTANTS, pokerboardService) {
+app.directive('navBar', function($state, $cookies, APP_CONSTANTS, pokerboardService, Restangular) {
     return {
       scope: {},
       link: function(scope) {
           scope.logout = function() {
             pokerboardService.logout().then(function(){
-                  $cookies.remove("token");
-                  $cookies.remove("id");
-                  $cookies.remove("user");
-                  $state.go("login");
+                Restangular.setDefaultHeaders({});
+                $cookies.remove("token");
+                $cookies.remove("id");
+                $cookies.remove("user");
+                $state.go("homepage");
               },function(err){
-                  console.log(err)
+                console.log(err)
               });
           }
   
@@ -34,6 +35,10 @@ app.directive('navBar', function($state, $cookies, APP_CONSTANTS, pokerboardServ
                   'ui-sref': APP_CONSTANTS.NAME.PROFILE,
                   'link': 'Profile'
               },
+              ESTIMATETICKETS: {
+                'ui-sref': APP_CONSTANTS.NAME.ESTIMATE_TICKETS,
+                'link': 'EstimatedTickets'
+            },
           }
       },
       templateUrl:'modules/navbar/navbar.html'

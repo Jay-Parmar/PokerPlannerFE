@@ -5,6 +5,12 @@ app.config(
       RestangularProvider.setBaseUrl(APP_CONSTANTS.BASE_URL);
       $stateProvider
         .state({
+          name: APP_CONSTANTS.NAME.HOMEPAGE,
+          url: APP_CONSTANTS.URLS.HOMEPAGE,
+          templateUrl: APP_CONSTANTS.TEMPLATE_URL.HOMEPAGE,
+          controller: APP_CONSTANTS.CONTROLLERS.HOMEPAGE,
+        })
+        .state({
           name: APP_CONSTANTS.NAME.SIGNUP,
           url: APP_CONSTANTS.URLS.SIGNUP,
           templateUrl: APP_CONSTANTS.TEMPLATE_URL.SIGNUP,
@@ -50,6 +56,12 @@ app.config(
           url: APP_CONSTANTS.URLS.GROUP_DETAIL,
           templateUrl: APP_CONSTANTS.TEMPLATE_URL.GROUP_DETAIL,
           controller: APP_CONSTANTS.CONTROLLERS.GROUP_DETAIL,
+        })
+        .state({
+          name: APP_CONSTANTS.NAME.ESTIMATE_TICKETS,
+          url: APP_CONSTANTS.URLS.ESTIMATE_TICKETS,
+          templateUrl: APP_CONSTANTS.TEMPLATE_URL.ESTIMATE_TICKETS,
+          controller: APP_CONSTANTS.CONTROLLERS.ESTIMATE_TICKETS,
         })
         .state({
           name: APP_CONSTANTS.NAME.BOARD,

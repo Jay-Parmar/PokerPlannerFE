@@ -21,18 +21,23 @@ app.controller('createBoardCtrl', [
 
         $scope.submit = () => {
             // Creating the pokerboard from desired data
-            $scope.estimation_cards = ($scope.selectedType!==5) ? APP_CONSTANTS.DECK_TYPE[$scope.selectedType] : 
+            $scope.estimation_cards = ($scope.selectedType!=5) ? APP_CONSTANTS.DECK_TYPE[$scope.selectedType] : 
                                        $scope.deckValue.split(',');
             let ticketid = $scope.board.ticketid!=undefined && $scope.board.ticketid.length != 0 && $scope.board.ticketid.split(',')
             let sprintid = $scope.board.sprintid!=undefined && $scope.board.sprintid
             let jql = $scope.board.jql!=undefined && $scope.board.jql
-
+            
+            $scope.estimation_cards = $scope.estimation_cards.filter(
+                function(value, index){ 
+                    return $scope.estimation_cards.indexOf(value) == index 
+                }
+            );
             const data = {
                 title: $scope.board.title,
                 description: $scope.board.description,
                 estimation_type: $scope.board.selectedType,
                 timer: $scope.board.duration,
-                estimation_cards: $scope.deckValue,
+                estimation_cards: $scope.estimation_cards,
             };
             console.log(ticketid)
             if(ticketid){

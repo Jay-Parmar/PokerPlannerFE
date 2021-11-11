@@ -25,9 +25,11 @@
             POST_JIRA_CREDENTIALS: 'pokerboard/manager',
             GET_JIRA_CREDENTIALS: 'pokerboard/managercredentials',
             UPDATE_JIRA_CREDENTIALS: 'pokerboard/managercredentials/update', 
-            SESSION: 'pokerboard/ticket'
+            SESSION: 'pokerboard/ticket',
+            ESTIMATE_TICKETS:'pokerboard/userestimate',
         },
         TEMPLATE_URL: {
+            HOMEPAGE: 'modules/Homepage/homepage.html',
             SIGNUP: 'modules/signup/signup.html',
             LOGIN: 'modules/login/login.html',
             PROFILE: 'modules/profile/profile.html',
@@ -46,8 +48,10 @@
             ACCOUNT_ACTIVATE: 'modules/email verification/emailverification.html',
             MANAGER_INVITES: 'modules/invite/manager_invites.html',
             JIRAUPDATE: 'modules/JiraUpdate/JiraUpdate.html',
+            ESTIMATE_TICKETS: 'modules/estimateTickets/estimateTickets.html'
         },
         CONTROLLERS: {
+            HOMEPAGE: 'homepageCtrl',
             SIGNUP: 'SignupController',
             LOGIN: 'LoginController',
             PROFILE: 'ProfileController',
@@ -65,10 +69,12 @@
             ACCOUNT_ACTIVATE: 'emailVerificationCtrl',
             MANAGER_INVITES: 'managerCtrl',
             JIRAUPDATE: 'jiraUpdateCtrl',
-            PAGE_404:'404Ctrl'
+            PAGE_404:'404Ctrl',
+            ESTIMATE_TICKETS: 'estimateTicketsCtrl',
         },
         URLS: {
-            SIGNUP: '/',
+            HOMEPAGE: '/',
+            SIGNUP: '/signup',
             LOGIN: '/login',
             PROFILE: '/profile',
             ACCOUNT_ACTIVATE: '/activate/:uid/:token',
@@ -86,8 +92,10 @@
             VERIFY: '/verifyemail/:uid',
             MANAGER_INVITES: '/pokerboard/:pid/invites',
             JIRAUPDATE: '/jiraupdate',
+            ESTIMATE_TICKETS: '/estimatetickets'
         },
         NAME: {
+            HOMEPAGE: 'homepage',
             SIGNUP: 'signup',
             LOGIN: 'login',
             PROFILE: 'profile',
@@ -106,6 +114,7 @@
             ACCOUNT_ACTIVATE:'activate_account',
             MANAGER_INVITES: 'manager_invites',
             JIRAUPDATE: 'jiraupdate',
+            ESTIMATE_TICKETS: 'estimatetickets'
         },
         DECK_NAME: {
             1: 'Serial',

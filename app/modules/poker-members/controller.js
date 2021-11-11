@@ -9,12 +9,10 @@ app.controller('pokerboardMembersCtrl', [
 
         pokerboardService.getPokerboardDetails(pokerboardId).then(response => {
             $scope.pokerboard = response;
-            console.log(response)
-            // $scope.isManager = ($rootScope.user.email == response.manager.email);
         });
 
         memberService.getMembers(pokerboardId).then(response => {
-            $scope.members = response
+            $scope.members = response.filter(member => member.user.id != $scope.pokerboard.manager.id)
         }, error => {
             console.log(error);
         });

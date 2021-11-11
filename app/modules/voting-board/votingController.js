@@ -49,6 +49,7 @@ app.controller('votingController', function (APP_CONSTANTS, $scope, $state, voti
           $scope.participantList.push(name);
       }
       data.forEach(parseUsers);
+      console.log($scope.participantList)
     }
 
     const updateVote = (id, estimate) => {

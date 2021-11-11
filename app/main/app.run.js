@@ -63,6 +63,7 @@ app.run(function ($state, $transitions, $cookies, Restangular) {
                 $state.go('login')
             }
         }
+        console.log("D");
     });
 
     Restangular.setFullRequestInterceptor((element, operation, route, url, headers, params, httpConfig) => {

@@ -134,5 +134,9 @@
             ESTIMATE: 'estimate',
             ERROR: 'error'
         },
+        ROLES:{
+            SPECTATOR:1,
+            CONTRIBUTOR:2
+        }
     });
 })();

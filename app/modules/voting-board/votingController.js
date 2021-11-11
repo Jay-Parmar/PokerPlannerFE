@@ -4,7 +4,6 @@ app.controller('votingController', function (APP_CONSTANTS, $scope, $state, voti
     const pokerboardId = $stateParams.pid
     $scope.participantList = []
     $scope.voteList = []
-    $scope.isSpectator = false
 
     const setIssueDetails = () => {
       // Fetching JIRA issue to be estimated
@@ -44,7 +43,9 @@ app.controller('votingController', function (APP_CONSTANTS, $scope, $state, voti
       /* Updating Participants in UI */
       $scope.participantList = [];
       const parseUsers = ele => {
-          let name = ele.first_name + " " + ele.last_name;
+          if($scope.user == ele.user.id && ele.role == APP_CONSTANTS.ROLES.SPECTATOR)
+            $scope.isSpectator = true
+          let name = ele.user.first_name + " " + ele.user.last_name;
           $scope.participantList.push(name);
       }
       data.forEach(parseUsers);
@@ -141,6 +142,7 @@ app.controller('votingController', function (APP_CONSTANTS, $scope, $state, voti
           message_type: APP_CONSTANTS.MESSAGE_TYPE.START_TIMER
       }
       $scope.websocket.send(data);
+      $state.reload()
     }
 
     const setSocketConnection = sessionId => {
@@ -223,9 +225,16 @@ app.controller('votingController', function (APP_CONSTANTS, $scope, $state, voti
       setIssueDetails();
     }
 
-    const setCards = type => {
+    const setCards = (type, estimation_cards) => {
       /* Setting card type */
-      $scope.cardList = APP_CONSTANTS.DECK_TYPE[type];
+      if(type == 5){
+        if(estimation_cards != null)
+          $scope.cardList = estimation_cards
+        else
+          $scope.cardList = APP_CONSTANTS.DECK_TYPE[1]
+      }else{
+        $scope.cardList = APP_CONSTANTS.DECK_TYPE[type]
+      }
     }
 
     const init = () => {  
@@ -237,7 +246,7 @@ app.controller('votingController', function (APP_CONSTANTS, $scope, $state, voti
           $scope.duration = response.pokerboard.timer;
           $scope.title = response.pokerboard.title;
           $scope.description = response.pokerboard.description;
-          setCards(response.pokerboard.estimate_type);
+          setCards(response.pokerboard.estimate_type, response.pokerboard.estimation_cards);
       }, error => {
           $state.go(APP_CONSTANTS.NAME.PAGE_404);
       })

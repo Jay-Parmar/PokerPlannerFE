@@ -1,0 +1,66 @@
+<nav-bar></nav-bar>
+
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <button type="button" ng-show="updatejira" ng-click="updateCredentials()" class="btn btn-outline-dark updatejira" style="margin-left: 180px; margin-top: 50px;">Update Jira Credentials</button>
+                <form name="myForm" class='main-form'>
+                    <h1 style="text-align: center;">View Profile</h1>
+                    <!-- First name input -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label " for="form3Example1">First name </label>
+                        <input type="text" id="form3Example1" name="first_name" ng-model="first_name"
+                            class="form-control form-control-lg" placeholder="Enter first name" required novalidate />
+                        <span class="error_msg" ng-show="myForm.first_name.$invalid && myForm.first_name.$dirty">
+                            first name is required
+                        </span>
+                    </div>
+
+                    <!-- Last name input -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label " for="form3Example2">Last name</label>
+                        <input type="text" id="form3Example2" ng-model="last_name" class="form-control form-control-lg"
+                            placeholder="Enter last name" novalidate />
+                    </div>
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label " for="form3Example3">Email address</label>
+                        <input type="email" id="form3Example3" name="email" ng-model="email"
+                            class="form-control form-control-lg" readonly/>
+                    </div>
+                    <div class='backend-message'>{{message}}</div>
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="button" class="btn btn-primary btn-lg" ng-click="save()"
+                            ng-disabled="myForm.$invalid"
+                            style="padding-left: 2.5rem; padding-right: 2.5rem;">Save</button>
+                        <button type="button" class="btn btn-danger btn-lg" ng-click="editPassword()"
+                            style="padding-left: 2.5rem; padding-right: 2.5rem;">Edit Passsword</button>
+                    </div>
+
+                </form>
+                <!-- <div>
+                    <h3>Groups</h3>
+                    <p ng-repeat="x in groups">{{x}}</p>
+                </div>
+
+                <div>
+                    <h3>Pokerboards</h3>
+                    <p ng-repeat="y in pokerboards">{{y}}</p>
+                </div> -->
+
+                <!-- <div>
+                    <h3>Tickets</h3>
+                    <p ng-repeat="z in tickets">{{z}}</p>
+                </div> -->
+
+                <!-- <div class="my-chart">
+                    <linechart data="data" options="options"></linechart>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+</section>

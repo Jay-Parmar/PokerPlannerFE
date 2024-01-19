@@ -1,0 +1,47 @@
+<nav-bar></nav-bar>
+<div class="group-outer">
+   <h4 class="main-heading">Available Groups</h4>
+   <!-- Modal -->
+   <div class="modal fade" id="createGroupModal" tabindex="-1" aria-labelledby="createGroupModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="createGroupModalLabel">Create group</h5>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <form name="createGroupForm" class='main-form'>
+                  <input ng-model="groupName" name="groupName" placeholder="Enter group name" type="text"
+                     ng-required='true'>
+                  <div>
+                     <span ng-show="createGroupForm.groupName.$touched && createGroupForm.groupName.$invalid"
+                        class='form-error'>Group name is required!</span>
+                  </div>
+               </form>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+               <button ng-disabled="createGroupForm.$invalid" type="button" ng-click="createGroup()"
+                  data-bs-dismiss="modal" class="btn btn-primary">Create</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <button data-bs-toggle="modal" data-bs-target="#createGroupModal" class="user-btn btn-add-user">New group</button>
+   <p class="main-heading" ng-show="!(groups.length)">No Group Available</p>
+   <div ng-show="groups.length!=0">
+      <div class="tab-head">
+         <p>GroupId</p>
+         <p>Name</p>
+      </div>
+      <div class="hor-rule"></div>
+      <div ng-repeat="group in groups">
+         <div class="tab-content">
+            <p>{{ group.id }}</p>
+            <p>{{ group.name }}</p>
+            <button ng-click="goToGroup(group.id)" class="join-btn btn-primary">View</button>
+         </div>
+         <div class="hor-rule"></div>
+      </div>
+   </div>

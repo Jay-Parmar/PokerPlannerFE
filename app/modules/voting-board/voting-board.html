@@ -1,0 +1,112 @@
+<div>
+    <!-- Modal -->
+    <div class="modal fade" id="postCommentsModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="postCommentsModalLabel">Add Comment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form name="commentForm" class='main-form'>
+                        <textarea type="text" name="comment" ng-model="comment" class="form-control grey-back"
+                            id="comment" required placeholder="Enter Comment"></textarea>
+                        <button type="submit" data-bs-dismiss="modal" class="btn btn-primary sub-btn mt-3"
+                            ng-click="postComment()">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="showCommentsModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="showCommentsModalLabel">Comments</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div ng-show="comments.length==0">There are No comments to display!</div>
+                    <div ng-repeat="comment in comments">
+                        <p>
+                            {{comment.body}}
+                        </p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="board-detail-container">
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+    </div>
+
+    <div class="right-panel">
+        <h6>COUNTDOWN TIMER</h6>
+        <div class="timer-container">
+            <h2 class="btn-dark timer">{{ time }}</h2>
+        </div>
+        <h6>PARTICIPANTS</h6>
+        <div class="board-participant-container">
+            <div class="participant" ng-repeat='participant in participantList'>
+                <span>{{participant}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="ticket-container">
+        <div class="ticket">
+            <h3 class='ticket-head'>{{ticketTitle}}</h3>
+            <div class="hor-rule"></div>
+            <p class='ticket-content'>{{ticketDescription}}</p>
+            <!-- <div class="comments-container" ng-if='comments.length > 0'>
+                <h5>Comments</h5>
+                <div ng-repeat="comment in comments">
+                    <p>
+                        {{comment.body}}
+                    </p>
+                    <hr>
+                </div>
+                <a href="" class="link-dark" data-bs-toggle="modal" data-bs-target="#showCommentsModal" ng-if='comments.length > 1'>show more</a>
+            </div> -->
+            <div class='comment-btn-container'>
+                <button type="button" class="btn btn-primary main-btn" data-bs-toggle="modal" data-bs-target="#showCommentsModal" ng-click="getComments()">Show Comments</button>
+                <button type="button" class="btn btn-primary main-btn" data-bs-toggle="modal" data-bs-target="#postCommentsModal" ng-show='isAdmin'>Add Comment</button>
+            </div>
+        </div>
+    </div>
+    <div class="vote-container">
+        <div class="vote" ng-repeat='vote in voteList'>
+            <h6>{{vote.name}}</h6>
+            <h6 ng-show="isAdmin">{{vote.estimate}}</h6>
+        </div>
+    </div>
+    <div class="admin-container" ng-show='isAdmin'>
+        <div><span class="admin-action-head">ADMIN ACTIONS</span></div>
+        <div class="admin-actions">
+            <button type="button" class="btn btn-primary mx-1" ng-click='startCountdown()' ng-disabled="time != 0" ng-hide="estimated">Start
+                Countdown</button>
+            <button type="button" class="btn btn-primary mx-1" ng-click='skipGame()'>Skip &amp; Postpone</button>
+            <button type="button" class="btn btn-primary mx-1" ng-click='startCountdown()' ng-show="estimated">Replay
+                Session</button>
+            <form name='estimateForm' class="final-estimate-container mx-1" ng-show='estimated'>
+                <button class="btn btn-primary mx-1" ng-disabled="estimateForm.$invalid" ng-click='setTicketEstimate()'
+                    type="button">Set Estimate</button>
+                <input class='mx-1' type="number" placeholder="Final Estimate" ng-model='finalEstimate'
+                    name='finalEstimate' ng-required='true'/>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <p class='d-flex justify-content-center' ng-show='time == 0'>You will be able to vote once the timer starts</p>
+    <div class="estimation-card-container" ng-class="{'disabled': time == 0 || isSpectator}">
+        <div ng-click='setEstimate($index, estimate)' class="estimation-card" ng-repeat='estimate in cardList'
+            id='card{{$index}}'>
+            <p>{{estimate}}</p>
+        </div>
+    </div>
+</div>

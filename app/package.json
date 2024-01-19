@@ -1,0 +1,31 @@
+{
+  "name": "fe_poker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node main/app.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.29",
+    "angular": "^1.8.2",
+    "angular-animate": "^1.8.2",
+    "angular-aria": "^1.8.2",
+    "angular-cookies": "^1.8.2",
+    "angular-material": "^1.2.3",
+    "angular-ui-router": "^1.0.29",
+    "angular-websocket": "^2.0.1",
+    "angularjs": "0.0.1",
+    "bootstrap": "^5.1.1",
+    "bootstrap-icons": "^1.5.0",
+    "bootstrap-select": "^1.13.18",
+    "lodash": "^4.17.21",
+    "md-toast": "0.0.1-alpha.1",
+    "n3-charts": "^2.0.28",
+    "ng-material": "0.0.0",
+    "restangular": "^1.6.1"
+  }
+}
